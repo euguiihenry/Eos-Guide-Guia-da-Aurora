@@ -1,8 +1,9 @@
 import { NgModule, Component } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { HomePageComponent } from './home-page/home-page.component';
-import { LoginPageComponent } from './login-page/login-page.component';
-import { SignUpPageComponent } from './sign-up-page/sign-up-page.component';
+import { SignInComponent } from './sign/sign-in/sign-in.component';
+import { SignUpComponent } from './sign/sign-up/sign-up.component';
+import { MenuComponent } from './settings/menu/menu.component';
 
 const routes: Routes = [
   {
@@ -12,15 +13,19 @@ const routes: Routes = [
   },
   {
     path: 'home',
-    component: HomePageComponent,
+    component: HomePageComponent
   },
   {
-    path: 'login',
-    component: LoginPageComponent,
+    path: 'sign-in',
+    component: SignInComponent
   },
   {
     path: 'sign-up',
-    component: SignUpPageComponent,
+    component:SignUpComponent
+  },
+  {
+    path:'settings',
+    component: MenuComponent
   }
 ];
 

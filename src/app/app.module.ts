@@ -3,15 +3,15 @@ import { BrowserModule } from '@angular/platform-browser';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-import { LoginPageComponent } from './login-page/login-page.component';
-import { SignUpPageComponent } from './sign-up-page/sign-up-page.component';
+import { SignInComponent} from './sign/sign-in/sign-in.component';
+import { SignUpComponent } from './sign/sign-up/sign-up.component';
 import { HomePageComponent } from './home-page/home-page.component';
 
 @NgModule({
   declarations: [
     AppComponent,
-    LoginPageComponent,
-    SignUpPageComponent,
+    SignInComponent,
+    SignUpComponent,
     HomePageComponent
   ],
   imports: [
