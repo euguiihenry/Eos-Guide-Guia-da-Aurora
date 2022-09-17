@@ -1,0 +1,38 @@
+<section class="weather-main">
+    <div class="weather-main-local-and-icon">
+        <div class="local">
+            <span class="weather-main-div1-span">Sua localização:</span>
+            <p>{{local}}</p>
+        </div>
+        
+        <div class="icon">
+            <svg class="bi weather-icon" width="20" height="20" fill="currentColor" id="login-btn">
+                <use attr.xlink:href="{{bootstrapWeatherIcon}}"></use>
+            </svg>
+        </div>
+
+    </div>
+
+    <div class="weather-main-climate-data">
+        <div class="specific-info">
+            <svg class="bi specific-info-icon" width="20" height="20" fill="currentColor" id="login-btn">
+                <use xlink:href="bootstrap-icons.svg#wind"/>
+            </svg>
+
+            <svg class="bi specific-info-icon" width="20" height="20" fill="currentColor" id="login-btn">
+                <use xlink:href="bootstrap-icons.svg#droplet-half"/>
+            </svg>
+
+            <svg class="bi specific-info-icon" width="20" height="20" fill="currentColor" id="login-btn">
+                <use xlink:href="bootstrap-icons.svg#percent"/>
+            </svg>
+        </div>
+
+        <div class="temperature">
+            <p id="temperature-status-phrase">{{temperatureStatus}}</p>
+            <p id="degrees">{{degrees}} °C</p>
+        </div>
+    </div>
+
+
+</section>

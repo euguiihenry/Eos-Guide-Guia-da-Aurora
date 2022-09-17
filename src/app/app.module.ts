@@ -3,20 +3,22 @@ import { BrowserModule } from '@angular/platform-browser';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-import { SignInComponent} from './sign/sign-in/sign-in.component';
-import { SignUpComponent } from './sign/sign-up/sign-up.component';
-import { HomePageComponent } from './home-page/home-page.component';
+
+
+import { HomeModule } from './home/home.module';
+import { SignModule } from './sign/sign.module';
+import { SettingsModule } from './settings/settings.module';
 
 @NgModule({
   declarations: [
     AppComponent,
-    SignInComponent,
-    SignUpComponent,
-    HomePageComponent
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    HomeModule,
+    SignModule,
+    SettingsModule
   ],
   providers: [],
   bootstrap: [AppComponent]
