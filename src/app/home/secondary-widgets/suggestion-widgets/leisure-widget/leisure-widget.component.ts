@@ -6,8 +6,13 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./leisure-widget.component.scss']
 })
 export class LeisureWidgetComponent implements OnInit {
+  leisureSubtitle: string;
+  leisureDescription: string;
 
-  constructor() { }
+  constructor() {
+    this.leisureSubtitle = "";
+    this.leisureDescription = "";
+  }
 
   ngOnInit(): void {
   }

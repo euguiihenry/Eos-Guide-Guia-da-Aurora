@@ -6,8 +6,13 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./entertainment-widget.component.scss']
 })
 export class EntertainmentWidgetComponent implements OnInit {
+  entertainmentSubtitle: string;
+  entertainmentDescription: string;
 
-  constructor() { }
+  constructor() {
+    this.entertainmentSubtitle = "";
+    this.entertainmentDescription = "";
+  }
 
   ngOnInit(): void {
   }

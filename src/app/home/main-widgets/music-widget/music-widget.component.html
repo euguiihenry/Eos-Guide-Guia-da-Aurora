@@ -1,1 +1,12 @@
-<p>music-widget works!</p>
+<section class="music-main">
+    <div class="music-image"></div>
+    <div class="music-details">
+        <p class="music-title">{{musicName}}</p>
+        <span class="music-singer">{{singer}}</span>
+    </div>
+    <div class="player-controller">
+        <svg class="bi weather-icon" width="20" height="20" fill="currentColor" id="login-btn">
+            <use attr.xlink:href="{{statusOfPlayer}}"></use>
+        </svg>
+    </div>
+</section>

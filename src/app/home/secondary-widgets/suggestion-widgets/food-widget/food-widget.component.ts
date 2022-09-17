@@ -6,8 +6,13 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./food-widget.component.scss']
 })
 export class FoodWidgetComponent implements OnInit {
+  foodSubtitle: string;
+  foodDescription: string;
 
-  constructor() { }
+  constructor() {
+    this.foodSubtitle = "";
+    this.foodDescription = "";
+  }
 
   ngOnInit(): void {
   }
