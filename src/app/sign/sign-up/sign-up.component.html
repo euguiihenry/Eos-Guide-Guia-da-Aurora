@@ -1,1 +1,65 @@
-<p>sign-up works!</p>
+<div class="container-access">
+    <div class="wrap-access">
+        <form class="registration-form">
+            <span class="title-form">CRIAR CONTA</span>
+            <p class="text-form">Crie seu cadastro de usuário abaixo</p>
+
+            <div class="firstname-field">
+                <span class="firstname-text">NOME:</span>
+                <br>
+                <input class="firstname-registration" name="firstname-registration" required="required" type="text"
+                    placeholder="John" />
+            </div>
+    
+            <div class="lastname-field">
+                <span class="lastname-text">SOBRENOME:</span>
+                <br>
+                <input class="lastname-registration" name="lastname-registration" required="required" type="text"
+                    placeholder="Lennon" />
+            </div>
+
+            <div>
+                <span class="username-text">USUÁRIO:</span>
+                <br>
+                <input class="username-login" name="username-login" required="required" type="text"
+                    placeholder="Ex.: johnlennon" />
+            </div>
+
+            <br>
+
+            <div data-validate="Enter password">
+                <span class="password-text">SENHA:</span>
+                <br>
+                <input class="password-login" name="password-login" required="required" type="password"
+                    placeholder="***********" />
+            </div>
+
+            <br>
+
+            <div data-validate="Enter password" class="field-input">
+                <span class="password-text">CONFIRMAR SENHA:</span>
+                <br>
+                <input class="confirmPass-registration" name="confirmPass-registration" required="required"
+                    type="password" placeholder="***********" minlength="8" required/>
+            </div>
+
+            <div class="container-form-btn">
+                <button class="registerUser-form-btn">
+                    CRIAR CONTA
+                </button>
+            </div>
+
+            <div class="container-form-btn">
+                <div>
+                    <hr>
+                    <p class="text-form">Já possui uma conta?</p>
+                    <button class="accessAccount-form-btn">
+                        FAZER LOGIN
+                    </button>
+                </div>
+            </div>
+        </form>
+
+    </div>
+
+</div>
