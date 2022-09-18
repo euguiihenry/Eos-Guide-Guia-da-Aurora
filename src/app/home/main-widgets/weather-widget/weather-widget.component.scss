@@ -1,0 +1,111 @@
+.weather-main{
+    background-color: rgba(255, 243, 194, 0.9);
+    border-radius: 1.1em;
+    width: 100%;
+    height: auto;
+    padding: 2em;
+    display: flex;
+    justify-content: space-between;
+    align-content: space-between;
+    flex-direction: column;
+    gap: 5em;
+
+    .weather-main-local-and-icon{
+        display: flex;
+        justify-content: space-between;
+        align-content: center;
+        flex-direction: row;
+        gap: 5em;
+
+        .local{
+            .weather-main-div1-span{
+
+            }
+
+            .weather-main-div1-h4{
+                font-size: 2em;
+            }
+        }
+
+        .icon{
+            .weather-icon{
+                width: 4em;
+                height: 4em;
+            }
+        }
+    }
+
+    .weather-main-climate-data{
+        display: flex;
+        justify-content: center;
+        align-content: center;
+        flex-direction: row;
+        gap: 4em;
+
+        .specific-info{
+            display: flex;
+            display:-webkit-box;
+            display: -webkit-flex;
+            display: -moz-box;
+            display: -ms-flexbox;
+            justify-content: space-between;
+            align-content: space-between;
+            flex-direction: row;
+            gap: 3em;
+            font-size: small;
+
+            .specific-info-icon{
+                display: flex;
+                justify-self: center;
+                align-self: center;
+            }
+
+            .wind-info, .umidade, .rain-chance{
+                display: flex;
+                justify-content: center;
+                align-content: space-between;
+                flex-direction: column;
+                text-align: center;
+            }
+
+            .wind-info{
+                text-align: center;
+
+                .wind-info-p{
+
+                }
+            }
+
+            .umidade{
+                text-align: center;
+
+                .water-info-p{
+
+                }
+            }
+
+            .rain-chance{
+                text-align: center;
+
+                .rain-p{
+
+                }
+            }
+        }
+
+        .temperature{
+
+            #temperature-status-phrase{
+
+            }
+
+            #degrees{
+                font-family: var(--inter-title);
+                font-size: 3.5em;
+            }
+        }
+
+
+    }
+}
+

@@ -1,0 +1,24 @@
+.quote-main{
+    display: flex;
+    justify-content: space-between;
+    align-content: center;
+    flex-direction: column;
+    background-color: rgba(230, 255, 237, 0.7);
+    width: 80%;
+    height: auto;
+    padding: 1.5em;
+    border-radius: 1.1em;
+    text-align: center;
+
+    .quote-main-title{
+
+    }
+
+    .quote-main-paragraph{
+        text-align: justify;
+    }
+
+    .author{
+
+    }
+}

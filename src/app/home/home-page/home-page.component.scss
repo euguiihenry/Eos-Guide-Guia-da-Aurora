@@ -1,0 +1,80 @@
+.main-content{
+    display: flex;
+    justify-content: center;
+    align-content: center;
+    flex-direction: column;
+
+    .main-section-1{
+        display: flex;
+        justify-content: center;
+        align-content: center;
+        flex-direction: row;
+        padding: 3em 0;
+        gap: 7em;
+        height: 100%;
+        background-image: url('https://i.redd.it/m6y3b2fkyie51.jpg');
+        background-size: cover;
+
+
+        .main-section-1-div1{
+            display: flex;
+            justify-content: center;
+            padding: 2em;
+            width: 50%;
+        }
+
+        .main-section-1-div2{
+            display: flex;
+            justify-content: space-evenly;
+            flex-direction: column;
+            width: 50%;
+        }
+    }
+
+    #first-home-line{
+        display: flex;
+        justify-content: center;
+        align-self: center;
+        width: 25em;
+        border: 0.2em solid;
+        border-radius: 1.2em;
+    }
+
+    .check-it{
+        display: flex;
+        justify-content: center;
+        align-content: center;
+        text-align: center;
+        text-transform: uppercase;
+    }
+
+    #second-home-line{
+        display: flex;
+        align-self: center;
+        width: 1em;
+        border: 0.19em solid;
+        border-radius: 1.2em;
+        margin-top: 0;
+    }
+
+    .main-section-2{
+        display: flex;
+        justify-content: space-between;
+        align-content: space-between;
+        flex-direction: column;
+
+        .main-section-2-div1{
+            display: flex;
+            justify-content: space-between;
+            align-content: space-between;
+            flex-direction: column;
+        }
+
+        .main-section-2-div2{
+            display: flex;
+            justify-content: space-around;
+            align-content: space-between;
+            flex-direction: row;
+        }
+    }
+}

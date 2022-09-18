@@ -2,7 +2,7 @@
     <div class="weather-main-local-and-icon">
         <div class="local">
             <span class="weather-main-div1-span">Sua localização:</span>
-            <p>{{local}}</p>
+            <h3 class="weather-main-div1-h4">{{local}}</h3>
         </div>
         
         <div class="icon">
@@ -10,22 +10,33 @@
                 <use attr.xlink:href="{{bootstrapWeatherIcon}}"></use>
             </svg>
         </div>
-
     </div>
 
     <div class="weather-main-climate-data">
         <div class="specific-info">
-            <svg class="bi specific-info-icon" width="20" height="20" fill="currentColor" id="login-btn">
-                <use xlink:href="bootstrap-icons.svg#wind"/>
-            </svg>
+            <div class="wind-info">
+                <svg class="bi specific-info-icon" width="20" height="20" fill="currentColor" id="login-btn">
+                    <use xlink:href="bootstrap-icons.svg#wind"/>
+                </svg>
+                <p>Vento:</p>
+                <p class="wind-info-p">{{windP}}km/h</p>
+            </div>
+            
+            <div class="umidade">
+                <svg class="bi specific-info-icon" width="20" height="20" fill="currentColor" id="login-btn">
+                    <use xlink:href="bootstrap-icons.svg#droplet-half"/>
+                </svg>
+                <p>Umidade:</p>
+                <p class="water-info-p">{{waterP}}%</p>
+            </div>
 
-            <svg class="bi specific-info-icon" width="20" height="20" fill="currentColor" id="login-btn">
-                <use xlink:href="bootstrap-icons.svg#droplet-half"/>
-            </svg>
-
-            <svg class="bi specific-info-icon" width="20" height="20" fill="currentColor" id="login-btn">
-                <use xlink:href="bootstrap-icons.svg#percent"/>
-            </svg>
+            <div class="rain-chance">
+                <svg class="bi specific-info-icon" width="20" height="20" fill="currentColor" id="login-btn">
+                    <use xlink:href="bootstrap-icons.svg#percent"/>
+                </svg>
+                <p>Precipitação:</p>
+                <p class="rain-p">{{rainP}}%</p>
+            </div>
         </div>
 
         <div class="temperature">

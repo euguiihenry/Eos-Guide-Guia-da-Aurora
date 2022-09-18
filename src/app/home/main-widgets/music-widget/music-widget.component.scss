@@ -1,0 +1,41 @@
+.music-main{
+    display: flex;
+    justify-content: space-between;
+    align-content: center;
+    background-color: rgba(230, 255, 237, 0.7);
+    width: 80%;
+    height: auto;
+    padding: 1em;
+    border-radius: 1.1em;
+
+    .music-image{
+        display: flex;
+        justify-content: flex-start;
+        align-content: center;
+        background-image: url("https://upload.wikimedia.org/wikipedia/en/f/f5/Dua_Lipa_-_Future_Nostalgia_%28Official_Album_Cover%29.png");
+        background-size: cover;
+    }
+
+    .music-details{
+        gap: 0.2em;
+
+        .music-title{
+            font-size: medium;
+        }
+        .music-singer{
+            font-size: small;
+        }
+    }
+
+    .player-controller{
+        display: flex;
+        justify-content: flex-end;
+        align-items: center;
+        padding-right: 1.5em;
+
+        .player-icon{
+            width: 3em;
+            height: 3em;
+        }
+    }
+}
