@@ -3,6 +3,9 @@
 
 /*------------------------------------------------------------------
 [ Main container ]*/
+body{
+    background-image: url('https://i.redd.it/m6y3b2fkyie51.jpg');
+}
 
 .container-access {
     width:auto;
@@ -16,7 +19,8 @@
     justify-content: center;
     align-items: center;
     padding: 15px;
-    background-color: rgb(214, 219, 239);
+    /*background-color: rgb(214, 219, 239);*/
+    
 }
 
 .wrap-access {
@@ -45,7 +49,7 @@
     display: block;
     font-family: 'Inter', sans-serif;
     font-size: 30px;
-    color: #2C3442;
+    color: #3D495C;
     line-height: 1.2;
     text-align: center;
 }
