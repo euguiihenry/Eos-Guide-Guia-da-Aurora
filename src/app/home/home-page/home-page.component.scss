@@ -1,10 +1,100 @@
+@import "../../../scss/abstracts/mixins";
+@import "../../../scss/components/typography";
+@import "../../../scss/abstracts/variables";
+
 .main-content{
-    display: flex;
-    justify-content: center;
-    align-content: center;
-    flex-direction: column;
+    $area: (
+        'sec1'
+        'sec2'
+        'sec3'
+    );
+    @include display-grid(grid, 1fr, 3fr, $area, 1em);
 
     .main-section-1{
+        grid-area: sec1;
+        background-image: url('https://i.redd.it/m6y3b2fkyie51.jpg');
+        background-size: cover;
+        min-height: 60vh;
+        max-width: 100vw;
+        width: 100%;
+        height: 100%;
+
+        .main-section-1-foreground{
+            @include display-flex(row, space-between, center);
+            align-items: center;
+            flex-wrap: wrap;
+            padding: 0 5em;
+            width: 100%;
+            height: 100%;
+
+            .main-section-1-div1{
+                max-width: 50%;
+                //background-color: aqua;
+                @include display-flex(center);
+            }
+    
+            .main-section-1-div2{
+                max-width: 50%;
+                width: 100%;
+                height: auto;
+                //background-color: red;
+                @include display-flex(column, center, center, 2.5em);
+                
+            }
+        }
+    }
+
+    .main-section-2{
+        grid-area: sec2;
+        @include display-flex(column, center center, 0);
+        align-items: center;
+        
+
+        #first-home-line{
+            width: 23em;
+            border: solid 3px var(--charcoal-primary-color);
+            border-radius: 1.2em;
+            margin-bottom: 0;
+        }
+    
+        .check-it{
+            font: var(--nunito-bold);
+            text-transform: uppercase;
+            padding: 0;
+            margin: 0;
+        }
+    
+        #second-home-line{
+            display: flex;
+            align-self: center;
+            width: 1em;
+            border: 0.19em solid;
+            border-radius: 1.2em;
+            margin-top: 0;
+        }
+    }
+
+    .main-section-3{
+        grid-area: sec3;
+
+        .main-section-3-div1{
+            
+        }
+
+        .main-section-3-div2{
+            
+        }
+    }
+}
+
+
+/* .main-content{
+    $area: (sec1, sec2, sec3);
+    @include display-grid(grid, 3f, 1f, $area, 1em);
+
+    .main-section-1{
+        grid-area: sec1;
+
         display: flex;
         justify-content: center;
         align-content: center;
@@ -31,50 +121,55 @@
         }
     }
 
-    #first-home-line{
-        display: flex;
-        justify-content: center;
-        align-self: center;
-        width: 25em;
-        border: 0.2em solid;
-        border-radius: 1.2em;
-    }
-
-    .check-it{
-        display: flex;
-        justify-content: center;
-        align-content: center;
-        text-align: center;
-        text-transform: uppercase;
-    }
-
-    #second-home-line{
-        display: flex;
-        align-self: center;
-        width: 1em;
-        border: 0.19em solid;
-        border-radius: 1.2em;
-        margin-top: 0;
-    }
-
     .main-section-2{
+        grid-area: sec2;
+
+        #first-home-line{
+            display: flex;
+            justify-content: center;
+            align-self: center;
+            width: 25em;
+            border: 0.2em solid;
+            border-radius: 1.2em;
+        }
+    
+        .check-it{
+            display: flex;
+            justify-content: center;
+            align-content: center;
+            text-align: center;
+            text-transform: uppercase;
+        }
+    
+        #second-home-line{
+            display: flex;
+            align-self: center;
+            width: 1em;
+            border: 0.19em solid;
+            border-radius: 1.2em;
+            margin-top: 0;
+        }
+    }
+
+    .main-section-3{
+        grid-area: sec3;
         display: flex;
         justify-content: space-between;
         align-content: space-between;
         flex-direction: column;
 
-        .main-section-2-div1{
+        .main-section-3-div1{
             display: flex;
             justify-content: space-between;
             align-content: space-between;
             flex-direction: column;
         }
 
-        .main-section-2-div2{
+        .main-section-3-div2{
             display: flex;
             justify-content: space-around;
             align-content: space-between;
             flex-direction: row;
         }
     }
-}
+} */

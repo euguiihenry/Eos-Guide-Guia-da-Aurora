@@ -1,0 +1,12 @@
+@use "../abstracts/variables";
+
+@import url('https://fonts.googleapis.com/css2?family=Gentium+Book+Basic:ital,wght@0,700;1,400&family=Inter:wght@700&family=Nunito:wght@300;400;700&display=swap');
+
+:root{
+    --inter-title: 'Inter', sans-serif;
+    --nunito-light: 300 'Nunito', sans-serif;
+    --nunito-regular: 400 'Nunito', sans-serif;
+    --nunito-bold: 700 'Nunito', sans-serif;
+    --gentium-italic: italic 400 'Gentium Book Basic', serif;
+    --gentium-bold: 700 'Gentium Book Basic', serif;
+}

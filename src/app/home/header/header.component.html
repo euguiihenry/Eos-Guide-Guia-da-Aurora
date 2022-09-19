@@ -8,15 +8,14 @@
     </div>
 
     <nav class="nav-area">
-        <a ></a>
-        <div class="nav-icon-foreground" (click)="callSignIn()">
-            <svg class="bi nav-icons" width="20" height="20" fill="currentColor" id="login-btn">
+        <div class="nav-icon-foreground" [routerLink]="['/sign-in']" routerLinkActive="active">
+            <svg class="bi nav-icons" fill="currentColor" id="login-btn">
                 <use xlink:href="bootstrap-icons.svg#person-circle"/>
             </svg>
         </div>
 
-        <div class="nav-icon-foreground hide-settings">
-            <svg class="bi nav-icons" width="20" height="20" fill="currentColor" id="login-btn">
+        <div class="nav-icon-foreground" *ngIf="logged">
+            <svg class="bi nav-icons" fill="currentColor" id="login-btn">
                 <use xlink:href="bootstrap-icons.svg#gear-fill"/>
             </svg>
         </div>        

@@ -48,18 +48,17 @@
                     CRIAR CONTA
                 </button>
             </div>
-
-            <div class="container-form-btn">
-                <div>
-                    <hr>
-                    <p class="text-form">Já possui uma conta?</p>
-                    <button class="accessAccount-form-btn">
-                        FAZER LOGIN
-                    </button>
-                </div>
-            </div>
         </form>
 
+        <div class="container-form-btn">
+            <div>
+                <hr>
+                <p class="text-form">Já possui uma conta?</p>
+                <button class="accessAccount-form-btn" [routerLink]="['/sign-in']" routerLinkActive="active">
+                    FAZER LOGIN
+                </button>
+            </div>
+        </div>
     </div>
 
 </div>

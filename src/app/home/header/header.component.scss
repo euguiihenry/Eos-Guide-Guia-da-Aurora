@@ -7,7 +7,7 @@ header{
     align-content: center;
     text-align: center;
     flex-direction: row;
-    padding: 2em 0;
+    padding: 2em 5em;
 
     .logo-area{
         display: flex;
@@ -49,18 +49,18 @@ header{
         gap: 0.9em;
 
         .nav-icon-foreground{
-            width: 2.5em;
-            height: 2.5em;
+            width: 3em;
+            height: 3em;
             display: flex;
             justify-content: center;
             align-items: center;
             background-color: rgba(199, 188, 138, 0.5);
             border-radius: 1em;
+            cursor: pointer;
 
-
-            nav-icons{
-                width: 2.5rem;
-                height: 2.5rem
+            .nav-icons{
+                width: 1.8rem;
+                height: 1.8rem;
             }
         }
 

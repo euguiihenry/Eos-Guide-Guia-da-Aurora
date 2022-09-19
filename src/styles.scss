@@ -1,42 +1,11 @@
 /* You can add global styles to this file, and also import other style files */
 
 // Reset:
-    html {
-        box-sizing: border-box;
-        font-size: 16px;
-    }
+    @use "./scss/components/reset";
 
-    *, *:before, *:after {
-        box-sizing: inherit;
-    }
+// Typography:
+    @use "./scss/components/typography";
 
-    body, h1, h2, h3, h4, h5, h6, p, ol, ul {
-        margin: 0;
-        padding: 0;
-        font-weight: normal;
-    }
-
-    ol, ul {
-        list-style: none;
-    }
-
-    img {
-        max-width: 100%;
-        height: auto;
-    }
-
-// Fonts:
-    @import url('https://fonts.googleapis.com/css2?family=Gentium+Book+Basic:ital,wght@0,700;1,400&family=Inter:wght@700&family=Nunito:wght@300;400;700&display=swap');
-
-    :root{
-        --inter-title: 'Inter', sans-serif;
-        --nunito-light: 'Nunito', sans-serif 300;
-        --nunito-regular: 'Nunito', sans-serif 400;
-        --nunito-bold: 'Nunito', sans-serif 700;
-        --gentium-italic: 'Gentium Book Basic', serif 400 italic;
-        --gentium-bold: 'Gentium Book Basic', serif 700;
-    }
-
-body{
-    padding: 0 3em;
-}
+// Abstracts:
+    @use "./scss/abstracts/mixins";
+    @use "./scss/abstracts/variables";

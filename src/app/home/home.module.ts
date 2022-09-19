@@ -9,6 +9,7 @@ import { FooterComponent } from './footer/footer.component';
 
 import { MainWidgetsModule } from './main-widgets/main-widgets.module';
 import { SecondaryWidgetsModule } from './secondary-widgets/secondary-widgets.module';
+import { AppRoutingModule } from '../app-routing.module';
 
 
 @NgModule({
@@ -21,6 +22,7 @@ import { SecondaryWidgetsModule } from './secondary-widgets/secondary-widgets.mo
     CommonModule,
     MainWidgetsModule,
     SecondaryWidgetsModule,
+    AppRoutingModule
   ],
   exports: [
     HomePageComponent

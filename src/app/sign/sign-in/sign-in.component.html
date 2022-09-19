@@ -26,18 +26,17 @@
                 <button class="login-form-btn">
                     ENTRAR
                 </button>
-            </div>
-
-            <div class="container-form-btn">
-                <div>
-                    <hr>
-                    <p class="text-form">Não possuiu conta?</p>
-                    <button class="createUser-form-btn">
-                        CRIAR
-                    </button>
-                </div>
-            </div>
-
+            </div> 
         </form>
+
+        <div class="container-form-btn">
+            <div>
+                <hr>
+                <p class="text-form">Não possui conta?</p>
+                <button class="createUser-form-btn" [routerLink]="['/sign-up']" routerLinkActive="active">
+                    CRIAR
+                </button>
+            </div>
+        </div>
     </div>
 </div>
