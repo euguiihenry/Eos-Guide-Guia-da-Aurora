@@ -1,0 +1,51 @@
+@import '../../../scss/abstracts/mixins';
+@import '../../../scss/abstracts/variables';
+
+.footer-body{
+    @include display-flex(row, space-between, center, 1em);
+    align-items: center;
+    padding: 3em 5em;
+    background-color: var(--main-color-in-use-1);
+    color: var(--main-font-color);
+    flex-wrap: wrap;
+
+    .footer-body-sec1{
+        @include display-flex(row, space-around, center, 1em);
+
+        .social{
+            @include display-flex(column, space-around, center, 1em);
+            text-align: center;
+
+            #name{
+
+            }
+
+            .div-for-icon{
+                @include display-flex(row, space-around, center, 1em);
+            }
+
+            
+
+            .social-icons{
+                width: 1.8rem;
+                height: 1.8rem;
+            }
+        }
+    }
+
+    .footer-body-sec2{
+
+
+        .footer-body-sec2-p{
+
+        }
+    }
+
+    .footer-body-sec3{
+
+
+        .footer-body-sec3-p{
+
+        }
+    }
+}

@@ -9,3 +9,8 @@
 // Abstracts:
     @use "./scss/abstracts/mixins";
     @use "./scss/abstracts/variables";
+
+// Common Background Color:
+    .body-color{
+        background-color: var(--bg-light-theme-color);
+    }
