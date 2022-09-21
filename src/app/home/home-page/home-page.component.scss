@@ -63,9 +63,7 @@
 
         #first-home-line{
             width: 23rem;
-            border: var(--main-color-in-use-1) solid 3px;
-            border-color: var(--main-color-in-use-1);
-            background-color: var(--main-color-in-use-1);
+            border: solid 3px var(--main-color-in-use-1);
             border-radius: 1.2em;
             margin-bottom: 0;
         }
