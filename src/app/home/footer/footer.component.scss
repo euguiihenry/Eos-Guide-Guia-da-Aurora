@@ -9,7 +9,7 @@
 }
 
 .footer-body{
-    @include display-flex(row, space-between, center, 1.5em);
+    @include display-flex(row, space-evenly, center, 1.5em);
     flex-wrap: wrap;
     align-items: center;
     background-color: var(--main-color-in-use-1);
