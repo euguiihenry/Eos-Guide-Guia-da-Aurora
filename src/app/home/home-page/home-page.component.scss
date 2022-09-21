@@ -26,10 +26,10 @@
         height: 100%;
 
         .main-section-1-foreground{
-            @include display-flex(row, space-between, center);
+            @include display-flex(row, center, center, 5em);
             align-items: center;
             flex-wrap: wrap;
-            padding: 0 5em;
+            //padding: 0 5em;
             width: 100%;
             height: 100%;
 
@@ -56,15 +56,6 @@
         grid-area: sec2;
         @include display-flex(column, center center, 0);
         align-items: center;
-        
-        /* hr{
-            border: none;
-            background-color: var(--main-color-in-use-1);
-            background: var(--main-color-in-use-1);
-            width: 23rem;
-            height: 4px;
-            color: red;
-        } */
 
         #first-home-line{
             width: 23rem;

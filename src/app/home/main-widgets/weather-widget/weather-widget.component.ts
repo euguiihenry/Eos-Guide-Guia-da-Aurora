@@ -3,7 +3,9 @@ import { Component, OnInit } from '@angular/core';
 @Component({
   selector: 'app-weather-widget',
   templateUrl: './weather-widget.component.html',
-  styleUrls: ['./weather-widget.component.scss']
+  styleUrls: ['./weather-widget.component.scss',
+              '../../../../scss/abstracts/_mixins.scss'
+  ]
 })
 export class WeatherWidgetComponent implements OnInit {
   local: string;
