@@ -3,7 +3,10 @@ import { Component, OnInit } from '@angular/core';
 @Component({
   selector: 'app-news-widget',
   templateUrl: './news-widget.component.html',
-  styleUrls: ['./news-widget.component.scss']
+  styleUrls: ['./news-widget.component.scss',
+              '../../../../scss/abstracts/_mixins.scss',
+              '../../../../scss/abstracts/_variables.scss'
+  ]
 })
 export class NewsWidgetComponent implements OnInit {
   newsTitle1: string = 'loren ipsum';
