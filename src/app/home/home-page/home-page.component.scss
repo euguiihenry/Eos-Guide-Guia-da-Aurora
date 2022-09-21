@@ -35,19 +35,22 @@
 
             .main-section-1-div1{
                 grid-area: item1;
-                max-width: 50%;
-                //background-color: aqua;
-                @include display-flex(center);
+                max-width: 100%;
+                width: fit-content;
+                height: auto;
+                @include display-flex(row, center, center, 1em);
+                justify-items: center;
+                align-items: center;
             }
     
             .main-section-1-div2{
                 grid-area: item2;
-                max-width: 50%;
-                width: 100%;
+                max-width: 100%;
+                width: fit-content;
                 height: auto;
-                //background-color: red;
-                @include display-flex(column, center, center, 2.5em);
-                
+                @include display-flex(column, center, center, 2em);
+                justify-items: center;
+                align-items: center;
             }
         }
     }
@@ -97,7 +100,8 @@
         }
 
         .main-section-3-div2{
-            @include display-flex(column, space-between, center, 1em);
+            padding: 1.5em 0;
+            @include display-flex(row, space-around, center, 1em);
         }
     }
 }
