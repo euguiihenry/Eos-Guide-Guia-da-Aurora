@@ -21,6 +21,12 @@ export class NewsWidgetComponent implements OnInit {
   newsTitle4: string = 'loren ipsum';
   newsSummary4: string = this.newsSummary1;
 
+  public newsWidget: unknown[] = [
+    {
+      
+    }
+  ]
+
   constructor() { }
 
   ngOnInit(): void {

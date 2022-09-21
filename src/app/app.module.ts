@@ -20,7 +20,6 @@ import { SettingsModule } from './settings/settings.module';
     SignModule,
     SettingsModule
   ],
-  providers: [],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
