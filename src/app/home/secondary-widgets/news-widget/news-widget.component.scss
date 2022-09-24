@@ -1,29 +1,27 @@
-@import "../../../../scss/abstracts/mixins";
-@import "../../../../scss/abstracts/variables";
-
 .news-main{
-    @include display-flex(column, center, center, 1em);
-    background-color: var(--actual-dvi2-color);
-    padding: 2em 1em;
-    border-radius: 1.2em;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-content: center;
 
     .news-title-and-icon{
-        @include display-flex(row, space-between, center, 0.5em);
-        align-items: center;
-        padding: 0 1em;
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        align-content: center;
 
         .sumarry{
             text-transform: uppercase;
         }
 
         .news-icon-fg{
-            @include display-flex(row, center);
-            align-items: center;
             width: 2.5em;
             height: 2.5em;
-            background-color: var(--secondary-main-color-in-use-1);
-            border-radius: 0.9em;
-            color: #000000;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background-color: rgba(199, 188, 138, 0.5);
+            border-radius: 1em;
 
             .news-icon{
 
@@ -32,66 +30,62 @@
     }
 
     .news-briefing{
-        @include display-flex(row, space-around, center, 1em);
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        align-content: center;
 
         .first-row{
-            @include display-flex(column, center, center, 0.5em);
-            flex-wrap: wrap;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-content: center;
 
             .news1, .news2{
+                display: flex;
+                flex-direction: column;
+                justify-content: center;
+                align-content: center;
+
+
                 .news-title{
-
+                    
                 }
-
+    
                 .news-summary{
-
+    
                 }
-
+    
                 .news-image{
-
+    
                 }
             }
         }
 
         .second-row{
-            @include display-flex(column, center, center, 0.5em);
-            flex-wrap: wrap;
-
             .news3, .news4{
                 .news-title{
-
+    
                 }
-
+    
                 .news-summary{
-
+    
                 }
-
+    
                 .news-image{
-
+    
                 }
             }
         }
 
-
+        
     }
 }
 
-.news1, .news2, .news3, .news4{
-  background-color: var(--actual-div1-color);
-  margin: 1em;
-  border-radius: 1.2em;
-  @include display-flex(row, space-around, center, 1em);
-  width: fit-content;
-
-  div{
-    padding: 2em;
-  }
-}
-
 .news-image{
-    width: 20em;
-    height: 100%;
+    width: 5em;
+    height: 5em;
     background-image: url('https://sm.ign.com/ign_br/screenshot/default/goku_an6e.jpg');
     background-size: cover;
-    border-radius: 0 1.2em 1.2em 0;
+    border-radius: 1.2em;
 }
