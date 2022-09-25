@@ -7,7 +7,6 @@
     min-height: 60vh;
     height: 100%;
     width: 100%;
-    background-color: aqua;
     @include display-flex(column, center, center, 1em);
     align-items: center;
 
@@ -20,14 +19,24 @@
     }
 }
 
+.main-sec4{
+    
+}
+
 .main-sec5{
-    @include display-flex(row, space-around, center, 1em);
+    @include display-flex(column, space-around, center, 1em);
     align-items: center;
+    text-align: center;
 }
 
 @media only screen and (min-width: 700px) {
     .main-sec2{
         width: 100%;
         @include display-flex(row, center, center, 1em);
+    }
+
+    .main-sec5{
+        @include display-flex(row, space-around, center, 1em);
+        align-items: center;
     }
 }

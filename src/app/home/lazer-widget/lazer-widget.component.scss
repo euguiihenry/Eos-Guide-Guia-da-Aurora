@@ -1,0 +1,33 @@
+@import "../../../assets/scss/mixins";
+
+.lazer-main{
+    background-color: var(--actual-div1-color);
+    border-radius: 1.2em;
+    margin: 15px;
+    padding: 1.5rem;
+    height: 100%;
+    @include display-flex(column, center, center, 1em);
+    align-items: center;
+
+    .lazer-title{
+
+    }
+    .lazer-image{
+        width: 200px;
+        height: 170px;
+        border-radius: 0.9em;
+        margin: 10px;
+    }
+
+    .lazer-subtitle{
+        
+    }
+
+    .lazer-description{
+
+    }
+
+    .a-link{
+
+    }
+}
