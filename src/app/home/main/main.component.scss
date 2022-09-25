@@ -1,0 +1,28 @@
+@import "../../../assets/scss/mixins.scss";
+
+.main-sec2{
+    background-image: url('https://i.redd.it/m6y3b2fkyie51.jpg');
+    background-size: 100% 100%;
+    max-height: 100%;
+    min-height: 60vh;
+    height: 100%;
+    width: 100%;
+    background-color: aqua;
+    @include display-flex(column, center, center, 1em);
+    align-items: center;
+
+    .sec2-div1{
+        width: 100%;
+    }
+
+    .sec2-div2-div1{
+        width: 100%;
+    }
+}
+
+@media only screen and (min-width: 700px) {
+    .main-sec2{
+        width: 100%;
+        @include display-flex(row, center, center, 1em);
+    }
+}

@@ -1,0 +1,19 @@
+@mixin display-flex($direction:row, $x:center, $y:center, $gap:1em) {
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -moz-box;
+    display: -ms-flexbox;
+    display: flex;
+    flex-direction: $direction;
+    justify-content: $x;
+    align-content: $y;
+    gap: $gap;
+}
+
+@mixin display-grid($grid:grid, $columns, $rows, $areas, $gap:1em) {
+    display: $grid;
+    grid-template-columns: $columns;
+    grid-template-rows: $rows;
+    grid-template-areas: $areas;
+    gap: $gap;
+}

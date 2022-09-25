@@ -1,23 +1,19 @@
-<header class="navbar navbar-expand-lg navbar-light">
-    <div class="logo-area">
-        <div class="logo-image"></div>
-        <div class="logo-text">
-            <p class="logo-paragraph">Eos Guide</p>
-            <span class="logo-span">Guia da Aurora</span>
-        </div>
+<nav class="navbar p-5 d-flex flex-row justify-content-between align-content-center">
+    <div class="nav-div-logo">
+        <div class="logo-name">Eos Guide</div>
     </div>
 
-    <nav class="nav-area">
-        <div class="nav-icon-foreground" [routerLink]="['/sign-in']" routerLinkActive="active">
+    <div class="nav-links d-flex flex-row justify-content-between align-content-center">
+        <div [routerLink]="['/sign-in']" routerLinkActive="active" class="icon-fg">
             <svg class="bi nav-icons" fill="currentColor" id="login-btn">
                 <use xlink:href="bootstrap-icons.svg#person-circle"/>
             </svg>
         </div>
 
-        <div class="nav-icon-foreground" *ngIf="logged">
+        <div class="icon-fg" *ngIf="logged">
             <svg class="bi nav-icons" fill="currentColor" id="login-btn">
                 <use xlink:href="bootstrap-icons.svg#gear-fill"/>
             </svg>
-        </div>        
-    </nav>
-</header>
+        </div>  
+    </div>
+</nav>

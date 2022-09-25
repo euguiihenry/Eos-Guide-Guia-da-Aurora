@@ -3,7 +3,7 @@
   "version": 1,
   "newProjectRoot": "projects",
   "projects": {
-    "eosGuide": {
+    "Eos-Guide-Guia-da-Aurora": {
       "projectType": "application",
       "schematics": {
         "@schematics/angular:component": {
@@ -17,7 +17,7 @@
         "build": {
           "builder": "@angular-devkit/build-angular:browser",
           "options": {
-            "outputPath": "dist/eos-guide",
+            "outputPath": "dist/eos-guide-guia-da-aurora",
             "index": "src/index.html",
             "main": "src/main.ts",
             "polyfills": "src/polyfills.ts",
@@ -26,19 +26,20 @@
             "assets": [
               "src/favicon.ico",
               "src/assets",
-              {
+	            {
                 "glob": "*.svg",
-                "input": "./node_modules/bootstrap-icons/",
+                "input": "./node_modules/bootstrap-icons",
                 "output": "/"
               }
             ],
             "styles": [
               "src/styles.scss",
-              "node_modules/bootstrap/dist/css/bootstrap.min.css",
-              "node_modules/bootstrap-icons/font/bootstrap-icons.css"
+              "src/assets/scss/mixins.scss",
+              "src/assets/scss/typography.scss",
+              "src/assets/scss/variables.scss"
             ],
             "scripts": [
-              "node_modules/bootstrap/dist/js/bootstrap.min.js"
+              
             ]
           },
           "configurations": {
@@ -78,10 +79,10 @@
           "builder": "@angular-devkit/build-angular:dev-server",
           "configurations": {
             "production": {
-              "browserTarget": "eosGuide:build:production"
+              "browserTarget": "Eos-Guide-Guia-da-Aurora:build:production"
             },
             "development": {
-              "browserTarget": "eosGuide:build:development"
+              "browserTarget": "Eos-Guide-Guia-da-Aurora:build:development"
             }
           },
           "defaultConfiguration": "development"
@@ -89,7 +90,7 @@
         "extract-i18n": {
           "builder": "@angular-devkit/build-angular:extract-i18n",
           "options": {
-            "browserTarget": "eosGuide:build"
+            "browserTarget": "Eos-Guide-Guia-da-Aurora:build"
           }
         },
         "test": {
@@ -114,6 +115,6 @@
     }
   },
   "cli": {
-    "analytics": "60f1b0fd-4223-4eab-ba5c-69bba1ba64d3"
+    "analytics": "88d207f5-ab03-41ee-9e86-ca5d8465523e"
   }
 }

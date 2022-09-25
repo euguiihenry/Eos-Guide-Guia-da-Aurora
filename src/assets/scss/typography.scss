@@ -1,0 +1,67 @@
+:root{
+    /* Main Colors:
+    ================================================================*/
+        /* Primary Colors:
+        ================================================================*/
+            --charcoal-primary-color: #3D495C;
+            --chinese-red-primary-color: #A4311E;
+            --indian-yellow-primary-color: #D9A64A;
+
+        /* Secondary Colors:
+        ================================================================*/
+            --sage-secondary-color: #C7BC8A;
+            --khaki-secondary-color: #BFAC98;
+
+    /* Light Theme:
+    ================================================================*/
+        /* Font Colors:
+        ================================================================*/
+            --font-light-theme-color: #2C3442;
+
+        /* BG Color:
+        ================================================================*/
+            --bg-light-theme-color: #FAF4D7;
+
+        /* Div Colors:
+        ================================================================*/
+            --div1-light-theme-color: #FFF3C2;
+            --div2-light-theme-color: #E6FFED;
+
+    /* Dark Theme:
+    ================================================================*/
+        /* Font Colors:
+        ================================================================*/
+            --font-dark-theme-color: #FFF5C9;
+
+        /* BG Color:
+        ================================================================*/
+            --bg-dark-theme-color: #1D212D;
+
+        /* Div Colors:
+        ================================================================*/
+            --div1-dark-theme-color: #293745;
+            --div2-dark-theme-color: #23353B;
+
+    /* Actual Colors:
+    ================================================================*/
+        /* Actual BG Color:
+        ================================================================*/
+            --actual-bg-color: var(--bg-light-theme-color);
+
+        /* Actual Div Colors:
+        ================================================================*/
+            --actual-div1-color: var(--div1-light-theme-color);
+            --actual-dvi2-color: var(--div2-light-theme-color);
+
+        /* Actual Font Color:
+        ================================================================*/
+            --main-font-color: var(--font-light-theme-color);
+            --alternative-font-color: var(--font-dark-theme-color);
+
+        /* Actual Main Colors in Use:
+        ================================================================*/
+            --main-color-in-use-1: var(--charcoal-primary-color);
+            --main-color-in-use-2: var(--indian-yellow-primary-color);
+            --secondary-main-color-in-use-1: var(--sage-secondary-color);
+            --secondary-main-color-in-use-2: var(--khaki-secondary-color);
+}

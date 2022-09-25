@@ -1,11 +1,12 @@
-import { NgModule, Component } from '@angular/core';
+import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
-
-import { HomePageComponent } from './home/home-page/home-page.component';
+import { MainComponent } from './home/main/main.component';
 import { SignInComponent } from './sign/sign-in/sign-in.component';
 import { SignUpComponent } from './sign/sign-up/sign-up.component';
 import { MenuComponent } from './settings/menu/menu.component';
-
+import { CinemaComponent } from './settings/cinema/cinema.component';
+import { ComidaComponent } from './settings/comida/comida.component';
+import { LazerComponent } from './settings/lazer/lazer.component';
 
 const routes: Routes = [
   {
@@ -13,21 +14,40 @@ const routes: Routes = [
     redirectTo: 'home',
     pathMatch: 'full'
   },
+
   {
     path: 'home',
-    component: HomePageComponent
+    component: MainComponent
   },
+
   {
     path: 'sign-in',
     component: SignInComponent
   },
+
   {
     path: 'sign-up',
-    component:SignUpComponent
+    component: SignUpComponent
   },
+
   {
     path:'settings',
     component: MenuComponent
+  },
+
+  {
+    path:'settings/cinema',
+    component: CinemaComponent
+  },
+
+  {
+    path:'settings/comida',
+    component: ComidaComponent
+  },
+
+  {
+    path:'settings/lazer',
+    component: LazerComponent
   }
 ];
 

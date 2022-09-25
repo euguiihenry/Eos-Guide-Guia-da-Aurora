@@ -1,0 +1,61 @@
+<!-- <div class="container-fluid">
+    <section>
+        <h2>Cursos em alta</h2>
+
+        <div class="row justify-content-center">
+
+            <div *ngFor="let curso of listaCursosTop" class="card col-4 mx-1" style="width: 18rem;">
+                <img style="height: 100px; width: 100px;" [src]="curso.foto" class="card-img-top" alt="...">
+                <div class="card-body">
+                    <h5 class="card-title">{{curso.nome}}</h5>
+                    <p class="card-text">
+                        {{curso.descricao}}.
+                    </p>
+                    <div>
+                        <span>
+                            Preço: {{curso.preco | currency: 'BRL'}}
+                        </span>
+                    </div>
+                    <a [routerLink]="['/curso-detalhe', curso.id]" class="btn btn-success">
+                        Comprar
+                    </a>
+                </div>
+            </div>
+
+
+        </div>
+
+
+    </section>
+</div> -->
+
+<div class="container-fluid">
+    <section>
+        <div class="row justify-content-between">
+            <h3>Resumo de Notícias</h3>
+
+            <!-- place icon -->
+        </div>
+        
+        <div class="row justify-content-center">
+            <div *ngFor="let news of newsArray" class="card col-2 mx-1" style="width: 18rem;">
+                
+                <div class="card-body">
+                    <h5 class="card-title">{{news.title}}</h5>
+                    <p class="card-text">
+                        {{news.content}}.
+                    </p>
+                    <div>
+                        <span>
+                            Link: {{news.url}}
+                        </span>
+                    </div>
+                </div>
+
+                <img style="height: 100px; width: 100px;" [src]="news.image" class="card-img-top" alt="...">
+            </div>
+        </div>
+
+
+    </section>
+</div>
