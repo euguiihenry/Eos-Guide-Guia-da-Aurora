@@ -8,3 +8,7 @@
 @import "./assets/scss/mixins.scss";
 @import "./assets/scss/typography.scss";
 @import "./assets/scss/variables.scss";
+
+body{
+    background-color: var(--bg-light-theme-color);
+}

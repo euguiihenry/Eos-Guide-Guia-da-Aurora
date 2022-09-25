@@ -1,0 +1,63 @@
+@import '../../../assets/scss/mixins.scss';
+@import '../../../assets/scss/variables.scss';
+
+@media only screen and (max-width: 700px) {
+    .footer-body{
+        width: 100%;
+        justify-items: center;
+    }
+}
+
+.footer-body{
+    @include display-flex(row, space-evenly, center, 1.5em);
+    flex-wrap: wrap;
+    align-items: center;
+    background-color: var(--main-color-in-use-1);
+    color: var(--main-font-color);
+    text-align: center;
+    padding: 3em 5em;
+    width: 100%;
+    height: 100%;
+
+    .footer-body-sec1{
+        grid-area: sec1;
+        @include display-flex(row, center, center, 1em);
+
+        .social{
+            @include display-flex(column, space-around, center, 1em);
+
+            #name{
+                text-align: center;
+            }
+
+            .div-for-icon{
+                @include display-flex(row, center, center, 1em);
+
+                .social-icons{
+                    width: 1.8rem;
+                    height: 1.8rem;
+                }
+            }
+        }
+    }
+
+    .footer-body-sec2{
+        grid-area: sec2;
+        @include display-flex(column, center, center, 0.2em);
+        margin: 0;
+        padding: 0;
+
+
+        .footer-body-sec2-p{
+            padding: 0;
+        }
+    }
+
+    .footer-body-sec3{
+        grid-area: sec3;
+
+        .footer-body-sec3-p{
+            padding: 0;
+        }
+    }
+}
