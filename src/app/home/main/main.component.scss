@@ -20,6 +20,11 @@
     }
 }
 
+.main-sec5{
+    @include display-flex(row, space-around, center, 1em);
+    align-items: center;
+}
+
 @media only screen and (min-width: 700px) {
     .main-sec2{
         width: 100%;
