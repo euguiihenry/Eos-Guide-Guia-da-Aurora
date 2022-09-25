@@ -1,0 +1,123 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Nunito&display=swap');
+
+
+/*------------------------------------------------------------------
+[ Main container ]*/
+.container-settings {
+    width:auto;
+    min-height: 100vh;
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -moz-box;
+    display: -ms-flexbox;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    padding: 15px;
+    /*background-color: rgb(214, 219, 239);*/
+    
+}
+.wrap-settings {
+    width: 550px;
+    background: var(--actual-bg-color);
+    border-radius: 10px;
+    overflow: hidden;
+    padding: 50px 60px 50px 60px;
+
+    box-shadow: 0 5px 10px 0px var(--actual-shadow-color-use);
+    -moz-box-shadow: 0 5px 10px 0px var(--actual-shadow-color-use);
+    -webkit-box-shadow: 0 5px 10px 0px var(--actual-shadow-color-use);
+    -o-box-shadow: 0 5px 10px 0px var(--actual-shadow-color-use);
+    -ms-box-shadow: 0 5px 10px 0px var(--actual-shadow-color-use);
+}
+
+/*------------------------------------------------------------------
+[ Form ]*/
+
+.settings-form{
+    width: 100%;
+}
+
+.title-form {
+    display: block;
+    font-family: 'Inter', sans-serif;
+    font-size: 20px;
+    color: var(--main-font-color);
+    line-height: 1.2;
+    text-align: center;
+}
+
+/*------------------------------------------------------------------
+[ Button ]*/
+
+.settings-form-btn, .address-field, .logOut-form-btn{
+    font-family: 'Nunito', sans-serif;
+    font-size: 15px;
+    color: var(--main-font-color);
+    line-height: 1.2;
+
+    display: block;
+    float: right;
+    justify-content: center;
+    align-items: center;
+    background-color: var(--actual-div2-color);
+
+    height: 35px;
+
+    -webkit-box-shadow: 0px 0px 3px 0px var(--actual-shadow-color-use);
+    -moz-box-shadow: 0px 0px 3px 0px var(--actual-shadow-color-use);
+    box-shadow: 0px 0px 3px 0px var(--actual-shadow-color-use);
+    border-radius: 16px 16px 16px 16px;
+    -moz-border-radius: 16px 16px 16px 16px;
+    -webkit-border-radius: 16px 16px 16px 16px;
+    border: 1px solid var(--actual-shadow-color-use);
+    
+}
+
+.settings-form-btn, .logOut-form-btn{
+    width: 150px;
+}
+
+.address-field{
+    width: 200px;
+    padding: 0px 15px 0px 15px;
+}
+
+.settings-field{
+    margin-top: 25px;
+}
+
+.logOut-field{
+    margin-top: 70px;
+}
+
+/*------------------------------------------------------------------
+[ Animation Button ]*/
+
+.settings-form-btn:hover{
+    background-color: var(--main-color-in-use-2);
+    color: var(--main-font-color);
+    transition: 0.5s;
+
+}
+.logOut-form-btn:hover{
+    background-color: var(--secondary-main-color-in-use-1);
+    color: var(--main-font-color);
+    transition: 0.5s;
+
+}
+
+
+/*------------------------------------------------------------------
+[ Text Forms ]*/
+
+.forms-text{
+    display: block;
+    float: left;
+
+    font-family: 'Nunito', sans-serif;
+    font-size: 15px;
+    color: var(--main-font-color);
+}

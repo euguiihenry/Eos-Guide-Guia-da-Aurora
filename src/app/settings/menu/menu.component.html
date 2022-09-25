@@ -1,1 +1,68 @@
-<p>menu works!</p>
+<!--FORMULÁRIO DE CONFIGURAÇÕES-->
+
+<div class="container-settings">
+    <div class="wrap-settings">
+        <form class="settings-form">
+
+            <span class="title-form">CONFIGURAÇÕES</span>
+
+            <br>
+
+            <div class="settings-field">
+                <p>
+                    <span class="forms-text">Trocar Endereço</span>
+                    <input class="address-field" name="address-field" type="text" placeholder="30130-000" />
+                </p>
+            </div>
+
+            <br>
+
+            <div class="settings-field">
+                <p >
+                    <span class="forms-text">Definir Gêneros Cinematográficos</span>
+                    <button class="settings-form-btn" [routerLink]="['/cinema']" routerLinkActive="active">
+                        Configurar
+                    </button>
+                </p>
+
+            </div>
+
+            <br>
+
+            <div class="settings-field">
+                <p>
+                    <span class="forms-text">Definir Preferências Alimentares</span>
+                    <button class="settings-form-btn" routerLinkActive="active">
+                        Configurar
+                    </button>
+                </p>
+
+            </div>
+
+            <br>
+
+            <div class="settings-field">
+                <p>
+                    <span class="forms-text">Definir Preferências de Lazer</span>
+                    <button class="settings-form-btn" routerLinkActive="active">
+                        Configurar
+                    </button>
+                </p>
+
+            </div>
+
+            <br>
+
+            <div class="logOut-field">
+                <p>
+                    <span class="forms-text">Sair da conta</span>
+                    <button class="logOut-form-btn" [routerLink]="['/home']" routerLinkActive="active">
+                        Log-out
+                    </button>
+                </p>
+            </div>
+
+        </form>
+
+    </div>
+</div>

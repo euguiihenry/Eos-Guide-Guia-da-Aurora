@@ -9,7 +9,7 @@
 
         /* Secondary Colors:
         ================================================================*/
-            --sage-secondary-color: #C7BC8A;
+            --sage-secondary-color: #C7BC8AD3;
             --khaki-secondary-color: #BFAC98;
 
     /* Light Theme:
@@ -26,6 +26,12 @@
         ================================================================*/
             --div1-light-theme-color: #FFF3C2;
             --div2-light-theme-color: #E6FFED;
+
+        /* Shadow Colors:
+        ================================================================*/
+            --shadow-light-theme-color: #00000081;
+        
+
 
     /* Dark Theme:
     ================================================================*/
@@ -51,7 +57,7 @@
         /* Actual Div Colors:
         ================================================================*/
             --actual-div1-color: var(--div1-light-theme-color);
-            --actual-dvi2-color: var(--div2-light-theme-color);
+            --actual-div2-color: var(--div2-light-theme-color);
 
         /* Actual Font Color:
         ================================================================*/
@@ -64,4 +70,9 @@
             --main-color-in-use-2: var(--indian-yellow-primary-color);
             --secondary-main-color-in-use-1: var(--sage-secondary-color);
             --secondary-main-color-in-use-2: var(--khaki-secondary-color);
+
+        /* Actual Shadow Colors in Use:
+        ================================================================*/
+            --actual-shadow-color-use: var(--shadow-light-theme-color);
+
 }

@@ -1,1 +1,163 @@
-@import "../common-styles/sign-styles.scss";
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Nunito&display=swap');
+
+/*------------------------------------------------------------------
+[ Main container ]*/
+.container-access {
+    width:auto;
+    min-height: 100vh;
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -moz-box;
+    display: -ms-flexbox;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    padding: 15px;
+    
+}
+
+.wrap-access {
+    width: 550px;
+    background: var(--actual-bg-color);
+    border-radius: 10px;
+    overflow: hidden;
+    padding: 50px 60px 50px 60px;
+
+    box-shadow: 0 5px 10px 0px var(--actual-shadow-color-use);
+    -moz-box-shadow: 0 5px 10px 0px var(--actual-shadow-color-use);
+    -webkit-box-shadow: 0 5px 10px 0px var(--actual-shadow-color-use);
+    -o-box-shadow: 0 5px 10px 0px var(--actual-shadow-color-use);
+    -ms-box-shadow: 0 5px 10px 0px var(--actual-shadow-color-use);
+}
+
+/*------------------------------------------------------------------
+[ Form ]*/
+
+.registration-form {
+    width: 100%;
+}
+
+.firstname-field, .lastname-field{
+    display: block;
+    float: left;
+    width: 49%;
+    
+}
+
+.firstname-field {
+    margin-right: 1%; 
+}
+
+.username-login, .password-login,
+.lastname-registration,.firstname-registration,
+.confirmPass-registration
+ {
+    font-family: 'Nunito', sans-serif;
+    color: var(--main-font-color);
+    width: 100%;
+    height: 35px;
+    background-color: var(--actual-div2-color);
+
+    position: relative;
+    padding-left: 15px;
+    padding-right: 15px;
+    margin-bottom: 15px;
+
+    border-radius: 10px 10px 10px 10px;
+    -moz-border-radius: 10px 10px 10px 10px;
+    -webkit-border-radius: 10px 10px 10px 10px;
+    border: 1px solid var(--actual-shadow-color-use);
+}
+
+.goToSingIn-field{
+    border-top: 1px solid var(--actual-shadow-color-use);
+    margin-top: 25px;
+}
+
+/*------------------------------------------------------------------
+[ Button ]*/
+
+.container-form-btn {
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -moz-box;
+    display: -ms-flexbox;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    margin: 10px 0px 10px 0px;
+
+}
+
+.registerUser-form-btn, .accessAccount-form-btn {
+    font-family: 'Nunito', sans-serif;
+    font-size: 15px;
+    color: var(--main-font-color);
+    line-height: 1.2;
+
+    display: inline-block;
+    justify-content: center;
+    align-items: center;
+    padding: 0 20px;
+    width: 150px;
+    height: 35px;
+
+    -webkit-box-shadow: 0px 0px 3px 0px var(--actual-shadow-color-use);
+    -moz-box-shadow: 0px 0px 3px 0px var(--actual-shadow-color-use);
+    box-shadow: 0px 0px 3px 0px var(--actual-shadow-color-use);
+    border-radius: 16px 16px 16px 16px;
+    -moz-border-radius: 16px 16px 16px 16px;
+    -webkit-border-radius: 16px 16px 16px 16px;
+    border: 1px solid var(--actual-shadow-color-use);
+}
+
+.registerUser-form-btn {
+    background-color: var(--actual-div1-color);
+}
+
+.accessAccount-form-btn {
+    background-color: transparent;
+}
+
+/*------------------------------------------------------------------
+[ Animation Button ]*/
+.registerUser-form-btn:hover {
+    background-color: var(--main-color-in-use-2);
+    color: var(--main-font-color);
+    transition: 0.5s;
+}
+
+.accessAccount-form-btn:hover {
+    background-color: var(--secondary-main-color-in-use-1);
+    color: var(--main-font-color);
+    transition: 0.5s;
+}
+
+/*------------------------------------------------------------------
+[ Text Forms ]*/
+
+.text-form {
+    font-family: 'Nunito', sans-serif;
+    font-size: 15px;
+    color: var(--main-font-color);
+    padding-left: 15px;
+}
+
+.title-form {
+    display: block;
+    font-family: 'Inter', sans-serif;
+    font-size: 30px;
+    color: var(--main-font-color);
+    line-height: 1.2;
+    text-align: center;
+}
+
+.subtitle-form{
+    font-family: 'Nunito', sans-serif;
+    font-size: 15px;
+    color: var(--main-font-color);
+    text-align: center;
+    margin-top: 15px;
+}

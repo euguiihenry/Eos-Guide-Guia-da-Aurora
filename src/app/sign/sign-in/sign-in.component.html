@@ -3,36 +3,32 @@
     <div class="wrap-access">
         <form class="login-form">
             <span class="title-form">LOGIN</span>
-            <p class="text-form">Faça seu login para ter acesso as personalizações</p>
+            <p class="subtitle-form">Faça seu login para ter acesso as personalizações</p>
 
             <div>
-                <span class="username-text">USUÁRIO:</span>
+                <span class="text-form">USUÁRIO:</span>
                 <br>
                 <input class="username-login" name="username-login" required="required" type="text"
                     placeholder="johnlennon" />
             </div>
 
-            <br>
-
             <div data-validate="Enter password">
-                <span class="password-text">SENHA:</span>
+                <span class="text-form">SENHA:</span>
                 <br>
                 <input class="password-login" name="password-login" required="required" type="password"
                     placeholder="***********" />
             </div>
 
             <div class="container-form-btn">
-
                 <button class="login-form-btn">
                     ENTRAR
                 </button>
             </div> 
         </form>
 
-        <div class="container-form-btn">
-            <div>
-                <hr>
-                <p class="text-form">Não possui conta?</p>
+        <div class="goToSingUp-field">
+            <p class="subtitle-form">Não possui conta?</p>
+            <div class="container-form-btn">
                 <button class="createUser-form-btn" [routerLink]="['/sign-up']" routerLinkActive="active">
                     CRIAR
                 </button>
