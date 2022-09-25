@@ -1,6 +1,6 @@
 export interface NewsInterface {
     totalArticles: number,
-    article: [
+    article: {
         title: string,
         description: string,
         content: string,
@@ -11,6 +11,5 @@ export interface NewsInterface {
             name: string,
             url: string
         }
-    ]
-    
+    }
 }            
