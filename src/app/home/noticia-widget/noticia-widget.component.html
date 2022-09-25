@@ -1,61 +1,29 @@
-<!-- <div class="container-fluid">
-    <section>
-        <h2>Cursos em alta</h2>
-
-        <div class="row justify-content-center">
-
-            <div *ngFor="let curso of listaCursosTop" class="card col-4 mx-1" style="width: 18rem;">
-                <img style="height: 100px; width: 100px;" [src]="curso.foto" class="card-img-top" alt="...">
-                <div class="card-body">
-                    <h5 class="card-title">{{curso.nome}}</h5>
-                    <p class="card-text">
-                        {{curso.descricao}}.
-                    </p>
-                    <div>
-                        <span>
-                            Preço: {{curso.preco | currency: 'BRL'}}
-                        </span>
-                    </div>
-                    <a [routerLink]="['/curso-detalhe', curso.id]" class="btn btn-success">
-                        Comprar
-                    </a>
-                </div>
-            </div>
-
-
-        </div>
-
-
-    </section>
-</div> -->
-
-<div class="container-fluid">
-    <section>
-        <div class="row justify-content-between">
+<section class="container-fluid news-section">
+    <div class="row justify-content-between align-content-center p-2 news-header">
+        <div class="p-3 news-subdiv-header">
             <h3>Resumo de Notícias</h3>
 
-            <!-- place icon -->
+            <a class="news-icon-fg" href="https://news.google.com/">
+                <svg class="bi news-icon" width="20" height="20" fill="currentColor" id="login-btn">
+                    <use xlink:href="bootstrap-icons.svg#wind"/>
+                </svg>
+            </a>
         </div>
         
-        <div class="row justify-content-center">
-            <div *ngFor="let i=index; let news of noticiasTeste" class="card col-2 mx-1" style="width: 18rem;">
-                
-                <div class="card-body">
-                    <h5 class="card-title">{{news.article[i].title}}</h5>
-                    <p class="card-text">
-                        {{news.article[i].content}}.
-                    </p>
-                    <div>
-                        <span>
-                            Link: {{news.article[i].url}}
-                        </span>
-                    </div>
+    </div>
+    
+    <div class="row justify-content-center news-content">
+        <div *ngFor="let news of noticiasTeste" class="card col-2 mx-1 my-1 news-cards" style="width: 18rem;">
+            <div class="card-body">
+                <h6 class="card-title" style="text-align: center;">{{news.title}}</h6>
+                <p class="card-text">{{news.content}}</p>
+                <div>
+                    <a href="{{news.url}}">Notícia Completa</a>
                 </div>
-
-                <img style="height: 100px; width: 100px;" [src]="news.article[i].image" class="card-img-top" alt="...">
+            </div>
+            <div class="div-for-img">
+                <img [src]="news.image" class="card-img-bottom card-img" alt="...">
             </div>
         </div>
-
-
-    </section>
-</div>
+    </div>
+</section>
