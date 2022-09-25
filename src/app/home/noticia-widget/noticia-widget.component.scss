@@ -37,6 +37,7 @@
         .news-cards{
             border-radius: 1.2em;
             background-color: var(--div1-light-theme-color);
+            border: none;
 
             .card-body{
                 @include display-flex(column, space-around, center, 1em);

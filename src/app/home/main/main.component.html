@@ -19,14 +19,14 @@
     <!-- </div> -->
 </section>
 
-<section class="container-fluid main-sec3">
-    <hr>
+<section class="container-fluid main-sec3 d-flex flex-column justify-items-center align-items-center">
+    <hr id="first-line">
 
-    <div>
+    <div id="check-it">
         Dê uma olhada antes de ir!
     </div>
 
-    <hr>
+    <hr id="second-line">
 </section>
 
 <section class="container-fluid main-sec4">
@@ -34,16 +34,24 @@
 </section>
 
 <section class="container-fluid main-sec5 py-2 my-4">
-    <div class="sec5-div1">
-        <app-comida-widget></app-comida-widget>
+    <div class="container-fluid row justify-content-around  mx-2 mb-4 sec5-div justify-content-center align-items-center">
+        <app-comida-widget class="card col-2 m-2 p-5"></app-comida-widget>
+        <br>
+        <app-cinema-widget class="card col-2 m-2 p-5"></app-cinema-widget>
+        <br>
+        <app-lazer-widget class="card col-2 m-2 p-5"></app-lazer-widget>
+    </div>
+    
+    <div class="sec5-div1 row">
+        
     </div>
 
-    <div class="sec5-div2">
-        <app-cinema-widget></app-cinema-widget>
+    <div class="sec5-div2 row">
+        
     </div>
 
-    <div class="sec5-div3">
-        <app-lazer-widget></app-lazer-widget>
+    <div class="sec5-div3 row">
+        
     </div>
 </section>
 

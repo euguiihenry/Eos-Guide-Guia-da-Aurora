@@ -1,4 +1,5 @@
 @import "../../../assets/scss/mixins.scss";
+@import "../../../assets/scss/variables.scss";
 
 .main-sec2{
     background-image: url('https://i.redd.it/m6y3b2fkyie51.jpg');
@@ -19,6 +20,32 @@
     }
 }
 
+.main-sec3{
+    #first-line{
+        max-width: 100%;
+        width: 23rem;
+        border: solid 3px var(--main-color-in-use-1);
+        border-radius: 1.2em;
+        margin-bottom: 0;
+    }
+
+    #check-it{
+        font: var(--nunito-bold);
+        text-transform: uppercase;
+        padding: 0;
+        margin: 10px;
+    }
+
+    #second-line{
+        display: flex;
+        align-self: center;
+        width: 1em;
+        border: 0.19em solid;
+        border-radius: 1.2em;
+        margin-top: 0;
+    }
+}
+
 .main-sec4{
     
 }
@@ -27,6 +54,16 @@
     @include display-flex(column, space-around, center, 1em);
     align-items: center;
     text-align: center;
+
+    .sec5-div{
+        app-comida-widget, app-cinema-widget, app-lazer-widget{
+            background-color: var(--actual-div1-color);
+            border-radius: 1.2em;
+            border: none;
+            width: 25rem;
+            max-width: 100%;
+        }
+    }
 }
 
 @media only screen and (min-width: 700px) {
