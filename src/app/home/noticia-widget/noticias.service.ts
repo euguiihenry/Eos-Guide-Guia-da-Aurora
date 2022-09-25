@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
-import { Noticias } from './noticias';
+import { NewsInterface } from './noticias';
 
 @Injectable({
   providedIn: 'root'
@@ -12,7 +12,7 @@ export class NoticiasService {
   constructor(private http: HttpClient) { }
 
   list() {
-    return this.http.get<Noticias[]>(this.connection, {
+    return this.http.get<NewsInterface[]>(this.connection, {
       params: {
         topic: "breaking-news",
         lang: "pt",

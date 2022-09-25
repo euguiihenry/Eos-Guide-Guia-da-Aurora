@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { NoticiasService } from './noticias.service';
-import { Noticias } from './noticias';
+import { NewsInterface } from './noticias';
 
 @Component({
   selector: 'app-noticia-widget',
@@ -9,15 +9,16 @@ import { Noticias } from './noticias';
 })
 export class NoticiaWidgetComponent implements OnInit {
 
-  newsArray: Noticias[];
+  newsArray: NewsInterface[] = [];
 
   constructor(private news: NoticiasService) { }
 
   ngOnInit(): void {
     this.news.list()
-    .subscribe( response => this.newsArray = response );
 
-
+    .subscribe( (response) => {
+      return this.newsArray = response;
+    });
   }
 
 }
