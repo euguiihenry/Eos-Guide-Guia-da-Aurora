@@ -10,7 +10,7 @@
             </svg>
         </div>
 
-        <div class="icon-fg" *ngIf="logged">
+        <div [routerLink]="['/settings']" routerLinkActive="active" class="icon-fg" *ngIf="!logged" >
             <svg class="bi nav-icons" fill="currentColor" id="login-btn">
                 <use xlink:href="bootstrap-icons.svg#gear-fill"/>
             </svg>
