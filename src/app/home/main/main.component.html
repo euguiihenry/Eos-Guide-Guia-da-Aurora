@@ -1,9 +1,11 @@
+<!--
+
 <section class="container-fluid main-sec1">
     <app-header></app-header>
 </section>
 
 <section class="container-fluid p-2 main-sec2">
-    <!-- <div class="sub-div-sec2"> -->
+    
         <div class="container sec2-div1 d-flex flex-row justify-content-center">
             <app-clima-widget></app-clima-widget>
         </div>
@@ -16,7 +18,6 @@
                 <app-frase-widget></app-frase-widget>
             </div>
         </div>
-    <!-- </div> -->
 </section>
 
 <section class="container-fluid main-sec3 d-flex flex-column justify-items-center align-items-center">
@@ -43,6 +44,114 @@
     </div>
 </section>
 
-<section class="main-sec6">
+<section class="container-fluid main-sec6">
     <app-footer></app-footer>
 </section>
+
+-->
+
+<!--
+New Sketch
+==============================================================================================================
+-->
+
+<header class="container-fluid header">
+    <app-header></app-header>
+</header>
+
+<main>
+    <article class="container-fluid main-art1">
+        <section class="main-art1-sec1">
+            <div class="main-art1-sec1-weather-card d-flex flex-column justify-content-between align-items-center">
+                <div class="main-art1-sec1-weather-card-div1 container-fluid d-flex flex-row justify-content-between align-content-center">
+
+                    <div class="weather-card-div1-local d-flex flex-column justify-content-center align-content-center">
+                        <span class="weather-main-div1-span">Sua localização:</span>
+                        <h3 class="weather-main-div1-h4">{{local}}</h3>
+                    </div>
+                    
+                    <svg class="bi weather-icon" width="20" height="20" fill="currentColor" id="login-btn">
+                        <use attr.xlink:href="{{bootstrapWeatherIcon}}"></use>
+                    </svg>
+
+                </div>
+
+                <div class="main-art1-sec1-weather-card-div2 d-flex flex-row justify-content-between align-items-center">
+                    <div class="weather-card-div2-detail d-flex flex-row justify-content-between align-items-center">
+
+                        <div class="wind-info d-flex flex-column justify-content-between align-items-center">
+                            <svg class="bi specific-info-icon" width="20" height="20" fill="currentColor" id="login-btn">
+                                <use xlink:href="bootstrap-icons.svg#wind"/>
+                            </svg>
+                            <p>Vento:</p>
+                            <p class="wind-info-p">{{windP}}km/h</p>
+                        </div>
+                        
+                        <div class="umidade d-flex flex-column justify-content-between align-items-center">
+                            <svg class="bi specific-info-icon" width="20" height="20" fill="currentColor" id="login-btn">
+                                <use xlink:href="bootstrap-icons.svg#droplet-half"/>
+                            </svg>
+                            <p>Umidade:</p>
+                            <p class="water-info-p">{{waterP}}%</p>
+                        </div>
+            
+                        <div class="rain-chance d-flex flex-column justify-content-between align-items-center">
+                            <svg class="bi specific-info-icon" width="20" height="20" fill="currentColor" id="login-btn">
+                                <use xlink:href="bootstrap-icons.svg#percent"/>
+                            </svg>
+                            <p>Precipitação:</p>
+                            <p class="rain-p">{{rainP}}%</p>
+                        </div>
+                    </div>
+
+                    <div class="weather-card-div2-status">
+                        <p id="temperature-status-phrase">{{temperatureStatus}}</p>
+                        <p id="degrees">{{degrees}} °C</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+    
+        <section class="main-art1-sec2">
+            <div class="main-art1-sec2-music-card">
+                <div class="music-image"></div>
+
+                <div class="music-details">
+                    <div>
+                        <div class="music-title">{{statusIcon}}</div>
+                        <div class="music-singer">{{singer}}</div>
+                    </div>
+                </div>
+
+                <div class="player-controller">
+                    <svg class="bi player-icon" width="20" height="20" fill="currentColor" id="login-btn">
+                        <use attr.xlink:href="{{statusOfPlayer}}"></use>
+                    </svg>
+                </div>
+            </div>
+
+            <div class="main-art1-sec2-quote-card">
+
+            </div>
+        </section>
+    </article>
+    
+    <article class="container-fluid d-flex flex-column justify-content-center align-content-center align-items-center main-art2">
+        <hr id="first-line">
+    
+        <div id="check-it">
+            Dê uma olhada antes de ir!
+        </div>
+    
+        <hr id="second-line">
+    </article>
+    
+    <article class="main-art3">
+    
+    </article>
+</main>
+
+
+<footer class="main-sec5">
+    <app-footer></app-footer>
+</footer>
