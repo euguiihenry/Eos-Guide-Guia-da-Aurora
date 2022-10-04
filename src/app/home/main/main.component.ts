@@ -24,21 +24,27 @@ export class MainComponent implements OnInit {
 
 
   constructor() { 
-    this.local = "Belo Horizonte";
-    this.iconName = "cloud-sun";
-    this.bootstrapWeatherIcon = "bootstrap-icons.svg#" + this.iconName;
 
-    this.windP = 10;
-    this.waterP = 39;
-    this.rainP = 0;
+    // Weather:
+      this.local = "Belo Horizonte";
+      this.iconName = "cloud-sun";
+      this.bootstrapWeatherIcon = "bootstrap-icons.svg#" + this.iconName;
 
-    this.temperatureStatus = "Parcialmente nublado";
-    this.degrees = 25;
+      this.windP = 10;
+      this.waterP = 39;
+      this.rainP = 0;
 
-    this.musicName = "Physical";
-    this.singer = "Dua Lipa";
-    this.statusIcon = "play-circle-fill"
-    this.statusOfPlayer = "bootstrap-icons.svg#" + this.iconName;
+      this.temperatureStatus = "Parcialmente nublado";
+      this.degrees = 25;
+
+    // Music:
+      this.musicName = "Physical";
+      this.singer = "Dua Lipa";
+      this.statusIcon = "play-circle-fill"
+      this.statusOfPlayer = "bootstrap-icons.svg#" + this.iconName;
+
+    // Quote:
+      
   }
   
   ngOnInit(): void {
