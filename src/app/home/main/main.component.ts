@@ -22,6 +22,9 @@ export class MainComponent implements OnInit {
   statusIcon: string;
   statusOfPlayer: string;
 
+  quoteTitle: string;
+  quoteParagraph: string;
+  quoteAuthor: string;
 
   constructor() { 
 
@@ -41,10 +44,12 @@ export class MainComponent implements OnInit {
       this.musicName = "Physical";
       this.singer = "Dua Lipa";
       this.statusIcon = "play-circle-fill"
-      this.statusOfPlayer = "bootstrap-icons.svg#" + this.iconName;
+      this.statusOfPlayer = "bootstrap-icons.svg#" + this.statusIcon;
 
     // Quote:
-      
+      this.quoteTitle = "Quote do Dia";
+      this.quoteParagraph = "Eu faço da minha dificuldade a minha motivação. A volta por cima vem na continuação.";
+      this.quoteAuthor = "Desconhecido";
   }
   
   ngOnInit(): void {

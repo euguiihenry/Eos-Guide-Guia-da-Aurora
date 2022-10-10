@@ -86,52 +86,63 @@
 
     }
 
-    .main-art1{
-        @include display-flex(column, center, center, 1em);
-        align-items: center;
-        //background-image: url('https://i.redd.it/m6y3b2fkyie51.jpg');
-        background-size: 100% 100%;
-        max-height: 100%;
-        min-height: 60vh;
-        height: 100%;
-        width: 100%;
-
-        background-color: aquamarine;
-
-        .main-art1-sec1{
-
-            .main-art1-sec1-weather-card{
-
-                .main-art1-sec1-weather-card-div1{
-
-                }
-
-                .main-art1-sec1-weather-card-div2{
-
+    .main{
+        .main-art1{
+            @include display-flex(column, center, center, 1em);
+            align-items: center;
+            background-image: url('https://i.redd.it/m6y3b2fkyie51.jpg');
+            background-size: cover;
+            max-height: 100%;
+            min-height: 60vh;
+            height: 100%;
+            width: 100%;
+    
+            .main-art1-sec1{
+                width: 50%;
+                background-color: aqua;
+    
+                .main-art1-sec1-weather-card{
+    
+                    .main-art1-sec1-weather-card-div1{
+    
+                    }
+    
+                    .main-art1-sec1-weather-card-div2{
+    
+                    }
                 }
             }
-        }
-
-        .main-art1-sec2{
-
-            .main-art1-sec2-music-card{
-
-                .music-image{
-                    background-image: url("https://upload.wikimedia.org/wikipedia/en/f/f5/Dua_Lipa_-_Future_Nostalgia_%28Official_Album_Cover%29.png");
-                    background-size: cover;
-                    width: 5em;
-                    height: 5em;
-                    margin: 0;
-                    padding: 0;
-                    border-radius: 1.2em 0 0 1.2em;
+    
+            .main-art1-sec2{
+                width: 50%;
+                @include display-flex(column, center, center, 1em);
+                background-color: aquamarine;
+    
+                .main-art1-sec2-music-card{
+    
+                    .music-image{
+                        background-image: url("https://upload.wikimedia.org/wikipedia/en/f/f5/Dua_Lipa_-_Future_Nostalgia_%28Official_Album_Cover%29.png");
+                        background-size: cover;
+                        width: 5em;
+                        height: 5em;
+                        margin: 0;
+                        padding: 0;
+                        border-radius: 1.2em 0 0 1.2em;
+                    }
+    
+                    .music-details{
+                        
+                    }
                 }
-
-                .music-details{
-                    
+    
+                .main-art1-sec2-quote-card{
+                    @include display-flex(column, center, center, 1em);
                 }
             }
         }
     }
+
+    
 
 /* Desktop and Similar Styles:
 ===============================================================================*/
@@ -144,17 +155,59 @@
             height: 100%;
 
             .main-art1{
+                @include display-flex(row, center, center, 1em);
                 width: 100%;
-                @include display-flex(row, space-between, center, 1em);
+
+                .main-art1-sec1{
+                    max-width: 100%;
+                    width: 100%;
+                    background-color: aqua;
+        
+                    .main-art1-sec1-weather-card{
+        
+                        .main-art1-sec1-weather-card-div1{
+        
+                        }
+        
+                        .main-art1-sec1-weather-card-div2{
+        
+                        }
+                    }
+                }
+        
+                .main-art1-sec2{
+                    width: 100%;
+                    
+        
+                    .main-art1-sec2-music-card{
+        
+                        .music-image{
+                            
+                        }
+        
+                        .music-details{
+                            
+                        }
+                    }
+        
+                    .main-art1-sec2-quote-card{
+                        @include display-flex(column, center, center, 1em);
+                    }
+                }
             }
         }
-        .main-art1{
-            width: 100%;
-            
+
+        
+
+        .main-art2{
+
         }
 
-        .main-sec5{
-            @include display-flex(row, space-around, center, 1em);
-            align-items: center;
+        .main-art3{
+
+        }
+
+        .main-art4{
+            
         }
     }

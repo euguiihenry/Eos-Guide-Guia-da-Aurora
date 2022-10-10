@@ -59,7 +59,7 @@ New Sketch
     <app-header></app-header>
 </header>
 
-<main>
+<main class="main">
     <article class="container-fluid main-art1">
         <section class="main-art1-sec1">
             <div class="main-art1-sec1-weather-card d-flex flex-column justify-content-between align-items-center">
@@ -131,7 +131,9 @@ New Sketch
             </div>
 
             <div class="main-art1-sec2-quote-card">
-
+                <h5 class="quote-main-title">{{quoteTitle}}</h5>
+                <p class="quote-main-paragraph">{{quoteParagraph}}</p>
+                <span class="author">Autor: {{quoteAuthor}}</span>
             </div>
         </section>
     </article>
@@ -152,6 +154,6 @@ New Sketch
 </main>
 
 
-<footer class="main-sec5">
+<footer class="footer">
     <app-footer></app-footer>
 </footer>
