@@ -1,5 +1,6 @@
-@import "../../../assets/scss/mixins.scss";
-@import "../../../assets/scss/variables.scss";
+@use "../../../assets/scss/mixins.scss" as *;
+@use "../../../assets/scss/variables.scss" as *;
+@use "../../../assets/scss/typography.scss" as *;
 
 /*
 .main-sec2{
@@ -80,6 +81,10 @@
 }
 */
 
+/* Local Variables:
+================================================================================================================*/
+    $main-color-1: var(--main-color-in-use-1);  
+
 /* Mobile First:
 ================================================================================================================*/
     .header{
@@ -98,47 +103,245 @@
             width: 100%;
     
             .main-art1-sec1{
-                width: 50%;
-                background-color: aqua;
+                width: 100%;
+                @include display-flex(row, center, center, 1em);
+                align-items: center;
     
                 .main-art1-sec1-weather-card{
+                    @include display-flex(row, center, center, 1.5em);
+                    align-items: center;
+                    border-radius: 1em;
+                    background-color: rgba(255, 243, 194, 0.9);
+                    max-width: 100%;
+                    width: 500px;
+                    height: 100%;
+                    padding: 1.5em 1.3em;
+                    margin: 1em;
     
                     .main-art1-sec1-weather-card-div1{
-    
+                        margin: 1em;
+
+                        .local-span{
+                            font-size:medium;
+                        }
+
+                        .local-h3{
+                            font-size: 2em;
+                            margin-left: -0.06em;
+                        }
+
+                        .weather-icon{
+                            width: 3.5em;
+                            height: 3.5em;
+                        }
                     }
     
                     .main-art1-sec1-weather-card-div2{
-    
+                        @include display-flex(row, space-between, center, 1em);
+                        align-items: center;
+                        flex-wrap: wrap;
+                        text-align: center;
+                        width: 100%;
+
+                        .weather-card-div2-detail{
+                            @include display-flex(row, center, center, 2em);
+                            width: 100%;
+
+                            .detail-title{
+                                font-size: smaller;
+                                margin-top: 0.5em;
+                            }
+
+                            .detail-info{
+                                font-size: small;
+                                margin-top: -0.5em;
+                            }
+                        }
+
+                        .weather-card-div2-status{
+                            width: 100%;
+
+                            #temperature-status-phrase{
+                                margin-bottom: 0.1em;
+                            }
+
+                            #degrees{
+                                font-size: 4em;
+                            }
+                        }
                     }
                 }
             }
     
             .main-art1-sec2{
-                width: 50%;
                 @include display-flex(column, center, center, 1em);
-                background-color: aquamarine;
+                align-items: center;
+                text-align: center;
+                width: 90%;
+                height: 100%;
+                margin-bottom: 1em;
     
                 .main-art1-sec2-music-card{
+                    @include display-flex(row, space-between, center, 1em);
+                    align-items: center;
+                    background-color: rgba(230, 255, 237, 0.7);
+                    max-width: 100%;
+                    width: 350px;
+                    height: 100%;
+                    border-radius: 1.2em;
+                    margin-bottom: 1em;
     
                     .music-image{
                         background-image: url("https://upload.wikimedia.org/wikipedia/en/f/f5/Dua_Lipa_-_Future_Nostalgia_%28Official_Album_Cover%29.png");
                         background-size: cover;
-                        width: 5em;
+                        width: 8em;
                         height: 5em;
                         margin: 0;
                         padding: 0;
                         border-radius: 1.2em 0 0 1.2em;
                     }
+
+                    .music-info{
+                        width: 100%;
+                        height: 100%;
+                        @include display-flex(row, space-between, center, 1em);
+                        align-items: center;
+
+                        .music-details{
+                            @include display-flex(row, start, center, 1em);
+                            width: 100%;
+                            text-align: start;
+
     
-                    .music-details{
-                        
+                            .music-details-div{
+                                width: 100%;
+                            }
+                        }
+    
+                        .player-controller{
+                            @include display-flex(row, end, center, 1em);
+                            width: 100%;
+                            padding-right: 1.2em;
+                            
+                            .player-icon{
+                                width: 3em;
+                                height: 3em;
+                            }
+                        }
                     }
                 }
     
                 .main-art1-sec2-quote-card{
                     @include display-flex(column, center, center, 1em);
+                    align-items: center;
+                    background-color: rgba(230, 255, 237, 0.7);
+                    max-width: 100%;
+                    width: 350px;
+                    height: 100%;
+                    border-radius: 1.2em;
+                    padding: 2em 1.3em;
                 }
             }
+        }
+
+        .main-art2{
+            width: 100%;
+            height: 100%;
+
+            #first-line{
+                max-width: 90%;
+                width: 23rem;
+                border: solid 3px $main-color-1;
+                border-radius: 1.2em;
+                margin-bottom: 0.5em;
+            }
+
+            #check-it{
+                font: var(--nunito-bold);
+                text-transform: uppercase;
+                padding: 0;
+                margin: 10px;
+                font-weight: bold;
+            }
+
+            #second-line{
+                display: flex;
+                align-self: center;
+                width: 1em;
+                border: 0.19em solid $main-color-1;
+                border-radius: 1em;
+                margin-top: 0.5em;
+            }
+        }
+
+        .main-art3{
+            @include display-flex(column, center, center, 1em);
+            align-items: center;
+            width: 100%;
+            height: 100%;
+            padding: 2em;
+
+            .main-art3-sec{
+                width: 100%;
+                padding: 1.5em;
+                background-color: var(--div2-light-theme-color);
+                border-radius: 1.2em;
+
+                .main-art3-div1{
+                    @include display-flex(row, space-between, center, 1em);
+                    align-items: center;
+                    text-align: start;
+                    padding-bottom: 1em;
+                    
+                    .news-btn{
+                        @include display-flex(row, center, center, 1em);
+                        align-items: center;
+                        background-color: var(--div1-light-theme-color);
+                        width: 3em;
+                        height: 3em;
+                        border-radius: 1.2em;
+                        border: none;
+                        cursor: pointer;
+                        color: #000000;
+                    }
+                }
+    
+                .main-art3-div2{
+                    @include display-flex(row, space-between, center, 1em);
+                    flex-wrap: wrap;
+
+                    .news-card{
+                        @include display-flex(row, space-around, center, 1em);
+                        flex-wrap: wrap;
+                        background-color: var(--div1-light-theme-color);
+                        padding: 1rem;
+                        border-radius: 1.2em;
+
+                        .card-body{
+
+                            .news-title{
+
+                            }
+                            
+                            .news-text{
+
+                            }
+
+                            .news-link{
+
+                            }
+                        }
+
+                        .card-img{
+
+                        }
+                    }
+                }
+            }
+        }
+
+        .main-art4{
+            
         }
     }
 
@@ -147,7 +350,6 @@
 /* Desktop and Similar Styles:
 ===============================================================================*/
     @media only screen and (min-width: 700px) {
-
         .main{
             max-width: 100%;
             max-height: 100%;
@@ -160,8 +362,7 @@
 
                 .main-art1-sec1{
                     max-width: 100%;
-                    width: 100%;
-                    background-color: aqua;
+                    width: 50%;
         
                     .main-art1-sec1-weather-card{
         
@@ -170,25 +371,26 @@
                         }
         
                         .main-art1-sec1-weather-card-div2{
-        
+                            @include display-flex(row, space-between, end, 1em);
+                            flex-wrap: nowrap;
+                            
+                            .weather-card-div2-detail{
+                                @include display-flex(row, space-between, center, 1em);
+                                padding-left: 0.5em;
+                            }
+
+                            .weather-card-div2-status{
+                                @include display-flex(column, end, center, 1em);
+                                padding-right: 1em;
+                                text-align: end;
+                            }
                         }
                     }
                 }
         
                 .main-art1-sec2{
-                    width: 100%;
-                    
-        
-                    .main-art1-sec2-music-card{
-        
-                        .music-image{
-                            
-                        }
-        
-                        .music-details{
-                            
-                        }
-                    }
+                    max-width: 100%;
+                    width: 50%;
         
                     .main-art1-sec2-quote-card{
                         @include display-flex(column, center, center, 1em);
@@ -197,14 +399,48 @@
             }
         }
 
-        
-
         .main-art2{
+            #first-line{
+                
+            }
 
+            #check-it{
+
+            }
+
+            #second-line{
+
+            }
         }
 
         .main-art3{
+            .main-art3-sec{
+                .main-art3-div2{
+                    .news-card{
+                        @include display-flex(row, center, center, 1em);
+                        flex-wrap: nowrap;
 
+                        .card-body{
+
+                            .news-title{
+
+                            }
+                            
+                            .news-text{
+
+                            }
+
+                            .news-link{
+
+                            }
+                        }
+
+                        .card-img{
+
+                        }
+                    }
+                }
+            }
         }
 
         .main-art4{
