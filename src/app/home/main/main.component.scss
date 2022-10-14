@@ -160,9 +160,10 @@
 
                         .weather-card-div2-status{
                             width: 100%;
+                            @include display-flex(column, flex-end, center, 1em);
 
                             #temperature-status-phrase{
-                                margin-bottom: 0.1em;
+                                
                             }
 
                             #degrees{
@@ -219,7 +220,7 @@
                         }
     
                         .player-controller{
-                            @include display-flex(row, end, center, 1em);
+                            @include display-flex(row, flex-end, center, 1em);
                             width: 100%;
                             padding-right: 1.2em;
                             
@@ -341,7 +342,45 @@
         }
 
         .main-art4{
-            
+            @include display-flex(row, center, center, 1em);
+            width: 100%;
+            height: 100%;
+            padding: 2em;
+
+            .main-art4-sec1, .main-art4-sec2, .main-art4-sec3{
+                @include display-flex(column, center, center, 1em);
+                align-items: center;
+                width: 100%;
+                height: 30rem;
+                background-color: var(--actual-div1-color);
+                border-radius: 1.2em;
+                padding: 2em;
+
+                .title{
+
+                }
+
+                .image{
+                    width: 100%;
+                    height: 180px;
+                    border-radius: 1em;
+                }
+
+                .subtitle{
+
+                }
+
+                .description{
+                    overflow: hidden;
+                    display: -webkit-box;
+                    -webkit-line-clamp: 3;
+                    -webkit-box-orient: vertical;
+                }
+
+                .link{
+
+                }
+            }
         }
     }
 
@@ -371,7 +410,7 @@
                         }
         
                         .main-art1-sec1-weather-card-div2{
-                            @include display-flex(row, space-between, end, 1em);
+                            @include display-flex(row, space-between, flex-end, 1em);
                             flex-wrap: nowrap;
                             
                             .weather-card-div2-detail{
@@ -380,7 +419,7 @@
                             }
 
                             .weather-card-div2-status{
-                                @include display-flex(column, end, center, 1em);
+                                @include display-flex(column, flex-end, center, 1em);
                                 padding-right: 1em;
                                 text-align: end;
                             }
