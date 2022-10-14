@@ -470,7 +470,7 @@
                         @include display-flex(row, center, center, 1em);
 
                         .news-card{
-                        
+                            @include display-flex(row, space-between, center, 1em);
 
                             .card-body{
     
