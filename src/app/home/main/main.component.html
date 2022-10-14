@@ -163,23 +163,47 @@ New Sketch
             </div>
     
             <div class="main-art3-div2">
-                <div *ngFor="let news of noticiasTeste" class="col-5 news-card">
-                    <div class="card-body">
-                        <div>
-                            <h6 class="news-title" style="text-align: center;">{{news.title}}</h6>
+                <div class="block1 row">
+                    <div *ngFor="let news of noticiasTeste | slice:0:2; let i=index"  class="news-card">
+                        <div class="card-body">
+                            <div>
+                                <h6 class="news-title" style="text-align: center;">{{news.title}}</h6>
+                            </div>
+            
+                            <div>
+                                <p class="news-text">{{news.content}}</p>
+                            </div>
+            
+                            <div>
+                                <a class="news-link" href="{{news.url}}">Notícia Completa</a>
+                            </div>
                         </div>
         
-                        <div>
-                            <p class="news-text">{{news.content}}</p>
-                        </div>
-        
-                        <div>
-                            <a class="news-link" href="{{news.url}}">Notícia Completa</a>
+                        <div class="card-img">
+                            <img [src]="news.image" class="card-img" alt="...">
                         </div>
                     </div>
-    
-                    <div class="card-img">
-                        <img [src]="news.image" class="card-img" alt="...">
+                </div>
+
+                <div class="block2 row">
+                    <div *ngFor="let news of noticiasTeste | slice:2:4; let i=index"  class="news-card">
+                        <div class="card-body">
+                            <div>
+                                <h6 class="news-title" style="text-align: center;">{{news.title}}</h6>
+                            </div>
+            
+                            <div>
+                                <p class="news-text">{{news.content}}</p>
+                            </div>
+            
+                            <div>
+                                <a class="news-link" href="{{news.url}}">Notícia Completa</a>
+                            </div>
+                        </div>
+        
+                        <div class="card-img">
+                            <img [src]="news.image" class="card-img" alt="...">
+                        </div>
                     </div>
                 </div>
             </div>
@@ -192,7 +216,7 @@ New Sketch
             <img class="image" src="{{foodImg}}">
             <h6 class="subtitle">{{foodSubtitle}}</h6>
             <p class="description">{{foodDescription}}</p>
-            <a class="link" href="{{foodLink}}">Continue Lendo</a>
+            <a class="link" href="{{foodLink}}">Saiba Mais</a>
         </section>
         
         <section class="main-art4-sec2">
@@ -200,7 +224,7 @@ New Sketch
             <img class="image" src="{{cinemaImg}}">
             <h6 class="subtitle">{{entertainmentSubtitle}}</h6>
             <p class="description">{{entertainmentDescription}}</p>
-            <a class="link" href="{{cinemaLink}}">Continue Lendo</a>
+            <a class="link" href="{{cinemaLink}}">Saiba Mais</a>
         </section>
 
         <section class="main-art4-sec3">
@@ -208,7 +232,7 @@ New Sketch
             <img class="image" src="{{lazerImg}}">
             <h6 class="subtitle">{{leisureSubtitle}}</h6>
             <p class="description">{{leisureDescription}}</p>
-            <a class="link" href="{{leisureLink}}">Info Adicional</a>
+            <a class="link" href="{{leisureLink}}">Saiba Mais</a>
         </section>
     </article>
 </main>
