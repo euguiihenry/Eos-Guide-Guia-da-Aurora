@@ -117,6 +117,7 @@
                     height: 100%;
                     padding: 1.5em 1em;
                     margin: 1em;
+                    box-shadow: rgba(0, 0, 0, 0.15) 0px 2px 8px;
     
                     .main-art1-sec1-weather-card-div1{
                         margin: 1em;
@@ -191,6 +192,7 @@
                     height: 100%;
                     border-radius: 1.2em;
                     margin-bottom: 1em;
+                    box-shadow: rgba(0, 0, 0, 0.15) 0px 2px 8px;
     
                     .music-image{
                         background-image: url("https://upload.wikimedia.org/wikipedia/en/f/f5/Dua_Lipa_-_Future_Nostalgia_%28Official_Album_Cover%29.png");
@@ -241,6 +243,7 @@
                     height: 100%;
                     border-radius: 1.2em;
                     padding: 2em 1.3em;
+                    box-shadow: rgba(0, 0, 0, 0.15) 0px 2px 8px;
                 }
             }
         }
@@ -281,12 +284,14 @@
             max-width: 100%;
             height: 100%;
             padding: 1.5em;
+            
 
             .main-art3-sec{
                 width: 100%;
                 padding: 1.5em;
                 background-color: var(--div2-light-theme-color);
                 border-radius: 1.2em;
+                box-shadow: rgba(17, 17, 26, 0.05) 0px 4px 16px, rgba(17, 17, 26, 0.05) 0px 8px 32px;
 
                 .main-art3-div1{
                     @include display-flex(row, space-between, center, 1em);
@@ -309,61 +314,40 @@
     
                 .main-art3-div2{
                     .block{
-                        @include display-flex(row, space-around, center, 1em);
-
                         .news-card{
-                            @include display-flex(column, space-between, center, 1em);
-                            width: 25rem;
-                            max-width: 100%;
-                            height: 30em;
+                            background-color: #fBF6DF;
+                            border-radius: 1em;
+                            @include display-flex(column, space-between, center, 0.8em);
+                            align-items: center;
+                            border: none;
+                            box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
 
-                            .card-body{
-                                @include display-flex(column, center, center, 1em);
-                                max-width: 100%;
-                                width: 25em;
-                                height: 30em;
+                            .news-card-img{
+                                height: 14em;
+                                overflow: hidden;
+                                border-radius: 1em 1em 0 0;
+                            }
 
-                                .card{
-                                    @include display-flex(column, space-between, center, 1em);
-                                    align-items: center;
-                                    padding: 1.5em;
-                                    background-color: var(--div1-light-theme-color);
-                                    border: #f1f1f1;
-                                    border-radius: 0.8em;
+                            .news-card-body{
+                                @include display-flex(column, space-between, center, 1em);
+                                align-items: center;
 
-                                    .card-context{
-                                        @include display-flex(column, space-between, center, 1em);
-                                        align-items: center;
+                                .news-title{
 
-                                        .news-title{
-    
-                                        }
+                                }
                                         
-                                        .news-text{
-                                            overflow: hidden;
-                                            display: -webkit-box;
-                                            -webkit-line-clamp: 4;
-                                            -webkit-box-orient: vertical;
-                                            text-align: center;
-                                        }
+                                .news-text{
+                                    /*overflow: hidden;
+                                    display: -webkit-box;
+                                    -webkit-line-clamp: 4;
+                                    -webkit-box-orient: vertical;
+                                    text-align: center;*/
+                                }
             
-                                        .news-link{
-            
-                                        }
-                                    }
-
-                                    .card-div-img{
-
-                                        .card-img{
-                                            width: 20em;
-                                            height: 12em;
-                                            max-width: 100%;
-                                        }
-                                    }
+                                .news-link{
+                                    color: var(--main-font-color);
                                 }
                             }
-    
-
                         }
                     }
                 }
@@ -386,6 +370,7 @@
                 background-color: var(--actual-div2-color);
                 border-radius: 1.2em;
                 padding: 2em;
+                box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
 
                 .title{
 
@@ -410,7 +395,7 @@
                 }
 
                 .link{
-
+                    color: var(--main-font-color);
                 }
             }
         }
@@ -492,7 +477,6 @@
                             .card-body{
 
                                 .card{
-                                    @include display-flex(row, space-between, center, 1em);
 
                                     .card-context{
 
