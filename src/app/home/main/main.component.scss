@@ -308,40 +308,62 @@
                 }
     
                 .main-art3-div2{
-                    @include display-flex(column, center, center, 1.2em);
-
-                    .block1, .block2{
-                        @include display-flex(column, center, center, 1em);
+                    .block{
+                        @include display-flex(row, space-around, center, 1em);
 
                         .news-card{
                             @include display-flex(column, space-between, center, 1em);
-                            text-align: center;
+                            width: 25rem;
                             max-width: 100%;
-                            background-color: var(--div1-light-theme-color);
-                            padding: 2rem;
-                            border-radius: 0.8em;
-                            margin: 0.5em;
-    
+                            height: 30em;
+
                             .card-body{
+                                @include display-flex(column, center, center, 1em);
+                                max-width: 100%;
+                                width: 25em;
+                                height: 30em;
+
+                                .card{
+                                    @include display-flex(column, space-between, center, 1em);
+                                    align-items: center;
+                                    padding: 1.5em;
+                                    background-color: var(--div1-light-theme-color);
+                                    border: #f1f1f1;
+                                    border-radius: 0.8em;
+
+                                    .card-context{
+                                        @include display-flex(column, space-between, center, 1em);
+                                        align-items: center;
+
+                                        .news-title{
     
-    
-                                .news-title{
-    
-                                }
-                                
-                                .news-text{
-                                    text-align: justify;
-                                    margin: 1rem 0;
-                                }
-    
-                                .news-link{
-    
+                                        }
+                                        
+                                        .news-text{
+                                            overflow: hidden;
+                                            display: -webkit-box;
+                                            -webkit-line-clamp: 4;
+                                            -webkit-box-orient: vertical;
+                                            text-align: center;
+                                        }
+            
+                                        .news-link{
+            
+                                        }
+                                    }
+
+                                    .card-div-img{
+
+                                        .card-img{
+                                            width: 20em;
+                                            height: 12em;
+                                            max-width: 100%;
+                                        }
+                                    }
                                 }
                             }
     
-                            .card-img{
-                                border-radius: 0.5rem;
-                            }
+
                         }
                     }
                 }
@@ -465,31 +487,36 @@
         .main-art3{
             .main-art3-sec{
                 .main-art3-div2{
-                    @include display-flex();
-
-                    .block1, .block2{
-                        @include display-flex(row, center, center, 1em);
-
+                    .block{
                         .news-card{
-                            @include display-flex(row, space-between, center, 1em);
-
                             .card-body{
+
+                                .card{
+                                    @include display-flex(row, space-between, center, 1em);
+
+                                    .card-context{
+
+                                        .news-title{
     
-                                .news-title{
-    
-                                }
-                                
-                                .news-text{
-    
-                                }
-    
-                                .news-link{
-    
+                                        }
+                                        
+                                        .news-text{
+                                            
+                                        }
+            
+                                        .news-link{
+            
+                                        }
+                                    }
                                 }
                             }
     
-                            .card-img{
-    
+                            .card-div-img{
+
+
+                                .card-img{
+
+                                }
                             }
                         }
                     }

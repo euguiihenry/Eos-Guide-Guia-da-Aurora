@@ -163,46 +163,40 @@ New Sketch
             </div>
     
             <div class="main-art3-div2">
-                <div class="block1 row">
+                <div class="row row-cols-1 row-cols-md-2 g-4 block">
                     <div *ngFor="let news of noticiasTeste | slice:0:2; let i=index"  class="news-card">
-                        <div class="card-body">
-                            <div>
-                                <h6 class="news-title" style="text-align: center;">{{news.title}}</h6>
+                        <div class="card-body col">
+                            <div class="card">
+                                <div class="card-context">
+                                    <h6 class="news-title" style="text-align: center;">{{news.title}}</h6>
+                                
+                                    <p class="news-text">{{news.content}}</p>
+
+                                    <a class="news-link" href="{{news.url}}">Notícia Completa</a>
+                                </div>
+
+                                <div class="card-div-img">
+                                    <img [src]="news.image" class="card-img" alt="...">
+                                </div>
                             </div>
-            
-                            <div>
-                                <p class="news-text">{{news.content}}</p>
-                            </div>
-            
-                            <div>
-                                <a class="news-link" href="{{news.url}}">Notícia Completa</a>
-                            </div>
-                        </div>
-        
-                        <div class="card-img">
-                            <img [src]="news.image" class="card-img" alt="...">
                         </div>
                     </div>
-                </div>
 
-                <div class="block2 row">
                     <div *ngFor="let news of noticiasTeste | slice:2:4; let i=index"  class="news-card">
-                        <div class="card-body">
-                            <div>
-                                <h6 class="news-title" style="text-align: center;">{{news.title}}</h6>
+                        <div class="card-body col">
+                            <div class="card">
+                                <div class="card-context">
+                                    <h6 class="news-title" style="text-align: center;">{{news.title}}</h6>
+                                
+                                    <p class="news-text">{{news.content}}</p>
+
+                                    <a class="news-link" href="{{news.url}}">Notícia Completa</a>
+                                </div>
+
+                                <div class="card-div-img">
+                                    <img [src]="news.image" class="card-img" alt="...">
+                                </div>
                             </div>
-            
-                            <div>
-                                <p class="news-text">{{news.content}}</p>
-                            </div>
-            
-                            <div>
-                                <a class="news-link" href="{{news.url}}">Notícia Completa</a>
-                            </div>
-                        </div>
-        
-                        <div class="card-img">
-                            <img [src]="news.image" class="card-img" alt="...">
                         </div>
                     </div>
                 </div>
