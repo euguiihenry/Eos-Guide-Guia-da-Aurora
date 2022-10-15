@@ -24,7 +24,7 @@
     background: var(--actual-bg-color);
     border-radius: 10px;
     overflow: hidden;
-    padding: 50px 60px 50px 60px;
+    padding: 30px 60px 30px 60px;
 
     box-shadow: 0 5px 10px 0px var(--actual-shadow-color-use);
     -moz-box-shadow: 0 5px 10px 0px var(--actual-shadow-color-use);
@@ -116,11 +116,16 @@
 
 }
 
-
-.checkbox{
+.form-check-input{
     cursor: pointer;
-    width: 23px;
-    height: 23px;
+    width: 25px;
+    height: 25px;
+    background-color: var(--actual-div2-color);
+    
+}
+
+.form-check-input:checked{
+    background-color: dodgerblue;
 }
 
 .returnSettings-btn{

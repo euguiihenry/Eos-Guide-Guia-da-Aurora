@@ -1,6 +1,6 @@
 <div class="container-access">
     <div class="wrap-access">
-        <form class="registration-form">
+        <form class="registration-form" >
             <span class="title-form">CRIAR CONTA</span>
             <p class="subtitle-form">Crie seu cadastro de usuário abaixo</p>
 
@@ -8,21 +8,21 @@
                 <span class="text-form">NOME:</span>
                 <br>
                 <input class="firstname-registration" name="firstname-registration" required="required" type="text"
-                    placeholder="John" />
+                    placeholder="John" [(ngModel)]="itemFirstname"/>
             </div>
 
             <div class="lastname-field">
                 <span class="text-form">SOBRENOME:</span>
                 <br>
                 <input class="lastname-registration" name="lastname-registration" required="required" type="text"
-                    placeholder="Lennon" />
+                    placeholder="Lennon" [(ngModel)]="itemLastname"/>
             </div>
 
             <div>
                 <span class="text-form">USUÁRIO:</span>
                 <br>
                 <input class="username-login" name="username-login" required="required" type="text"
-                    placeholder="Ex.: johnlennon" />
+                    placeholder="Ex.: johnlennon" [(ngModel)]="itemUsername"/>
             </div>
 
 
@@ -30,7 +30,7 @@
                 <span class="text-form">SENHA:</span>
                 <br>
                 <input class="password-login" name="password-login" required="required" type="password"
-                    placeholder="***********" />
+                    placeholder="***********" [(ngModel)]="itemPassword"/>
             </div>
 
 
@@ -38,11 +38,11 @@
                 <span class="text-form">CONFIRMAR SENHA:</span>
                 <br>
                 <input class="confirmPass-registration" name="confirmPass-registration" required="required"
-                    type="password" placeholder="***********" minlength="8" required />
+                    type="password" placeholder="***********" minlength="8" required [(ngModel)]="itemPasswordConfirm"/>
             </div>
 
             <div class="container-form-btn">
-                <button class="registerUser-form-btn">
+                <button class="registerUser-form-btn" (click)="add()">
                     CRIAR CONTA
                 </button>
             </div>

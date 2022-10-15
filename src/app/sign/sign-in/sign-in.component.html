@@ -9,18 +9,18 @@
                 <span class="text-form">USUÁRIO:</span>
                 <br>
                 <input class="username-login" name="username-login" required="required" type="text"
-                    placeholder="johnlennon" />
+                    placeholder="johnlennon" [(ngModel)]="itemUsername"/>
             </div>
 
             <div data-validate="Enter password">
                 <span class="text-form">SENHA:</span>
                 <br>
                 <input class="password-login" name="password-login" required="required" type="password"
-                    placeholder="***********" />
+                    placeholder="***********" [(ngModel)]="itemPassword"/>
             </div>
 
             <div class="container-form-btn">
-                <button class="login-form-btn">
+                <button class="login-form-btn" (click)="loginUser()">
                     ENTRAR
                 </button>
             </div> 

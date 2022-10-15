@@ -1,0 +1,168 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Nunito&display=swap');
+
+@import "../../../assets/scss/variables.scss";
+
+/*------------------------------------------------------------------
+[ Main container ]*/
+.container-personalize{
+    width:auto;
+    min-height: 100vh;
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -moz-box;
+    display: -ms-flexbox;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    padding: 15px;
+}
+
+.wrap-personalize{
+    width: 600px;
+    background: var(--actual-bg-color);
+    border-radius: 10px;
+    overflow: hidden;
+    padding: 30px 60px 30px 60px;
+
+    box-shadow: 0 5px 10px 0px var(--actual-shadow-color-use);
+    -moz-box-shadow: 0 5px 10px 0px var(--actual-shadow-color-use);
+    -webkit-box-shadow: 0 5px 10px 0px var(--actual-shadow-color-use);
+    -o-box-shadow: 0 5px 10px 0px var(--actual-shadow-color-use);
+    -ms-box-shadow: 0 5px 10px 0px var(--actual-shadow-color-use);
+}
+
+/*------------------------------------------------------------------
+[ Form ]*/
+
+.personalize-form{
+    width: 100%;
+}
+
+.title-form {
+    display: block;
+    font-family: 'Inter', sans-serif;
+    font-size: 20px;
+    color: var(--main-font-color);
+    line-height: 1.2;
+    text-align: center;
+    margin: 5px 0px 15px 0px;
+}
+
+.container-checkbox{
+    width: 100%;
+    display: inline-block;
+    margin: 5px 10px 5px 10px;
+    justify-content: center;
+}
+
+
+.option{
+    margin: 10px;
+
+}
+
+
+/*------------------------------------------------------------------
+[ Button ]*/
+
+.container-salve-btn{
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -moz-box;
+    display: -ms-flexbox;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    margin: 15px 0px 15px 0px;
+}
+
+.salveOptions-btn{
+    font-family: 'Nunito', sans-serif;
+    font-size: 15px;
+    color: var(--main-font-color);
+    line-height: 1.2;
+
+    background-color: var(--actual-div1-color);
+
+    cursor: pointer;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 0 20px;
+    width: 150px;
+    height: 35px;
+
+    -webkit-box-shadow: 0px 0px 3px 0px var(--actual-shadow-color-use);
+    -moz-box-shadow: 0px 0px 3px 0px var(--actual-shadow-color-use);
+    box-shadow: 0px 0px 3px 0px var(--actual-shadow-color-use);
+    border-radius: 16px 16px 16px 16px;
+    -moz-border-radius: 16px 16px 16px 16px;
+    -webkit-border-radius: 16px 16px 16px 16px;
+    border: 1px solid var(--actual-shadow-color-use);
+
+}
+
+.form-check-input{
+    cursor: pointer;
+    width: 25px;
+    height: 25px;
+    background-color: var(--actual-div2-color);
+    
+}
+
+.form-check-input:checked{
+    background-color: dodgerblue;
+}
+
+.returnSettings-btn{
+
+    font-size: 35px;
+
+    background-color: transparent;
+
+    width: 50px;
+    height: 50px;
+
+    border-radius: 16px 16px 16px 16px;
+    -moz-border-radius: 16px 16px 16px 16px;
+    -webkit-border-radius: 16px 16px 16px 16px;
+    border: 1px  transparent;
+}
+
+/*------------------------------------------------------------------
+[ Animation Button ]*/
+
+.salveOptions-btn:hover{
+    background-color: var( --main-color-in-use-2);
+    color: var(--main-font-color);
+    transition: 0.5s;
+
+}
+
+.returnSettings-btn:hover{
+    background-color: var(--secondary-main-color-in-use-1);
+    color: var(--main-font-color);
+    transition: 0.5s;
+
+}
+
+/*------------------------------------------------------------------
+[ Text Forms ]*/
+
+.text-form {
+    font-family: 'Nunito', sans-serif;
+    font-size: 15px;
+    color: var(--main-font-color);
+    padding-left: 15px;
+    
+}
+.text-form-description{
+    font-family: 'Nunito', sans-serif;
+    font-size: 12px;
+    color: var(--main-font-color);
+    padding-left: 35px;
+
+}
