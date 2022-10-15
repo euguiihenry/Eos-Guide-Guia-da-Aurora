@@ -163,6 +163,24 @@ New Sketch
             </div>
     
             <div class="main-art3-div2">
+			
+				<div class="row row-cols-1 row-cols-md-2 g-4 block">
+				
+					<div *ngFor="let news of noticiasTeste" class="col">
+						<div class="card h-100">
+							<img [src]="news.image" class="card-img-top" alt="...">
+
+							<div class="card-body">
+								<h6 class="card-title" style="text-align: center;">{{news.title}}</h6>
+                                <p class="card-text">{{news.content}}</p>
+								<a class="news-link" href="{{news.url}}">Notícia Completa</a>
+							</div>
+						</div>
+					</div>
+				</div>
+				
+				<!--
+				
                 <div class="row row-cols-1 row-cols-md-2 g-4 block">
                     <div *ngFor="let news of noticiasTeste | slice:0:2; let i=index"  class="news-card">
                         <div class="card-body col">
@@ -200,6 +218,9 @@ New Sketch
                         </div>
                     </div>
                 </div>
+				
+				-->
+				
             </div>
         </section>
     </article>
