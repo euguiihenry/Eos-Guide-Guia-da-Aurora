@@ -2,6 +2,8 @@ import { Component, OnInit } from '@angular/core';
 import { UserRegistration } from '../../services/userRegistration.service'
 import { Router } from '@angular/router';
 
+import { User } from '../models/user.model';
+
 @Component({
   selector: 'app-sign-up',
   templateUrl: './sign-up.component.html',
@@ -9,6 +11,8 @@ import { Router } from '@angular/router';
 })
 
 export class SignUpComponent implements OnInit {
+  
+  constructor(private userService: UserRegistration, private rota: Router ) { }
 
   newUserObj = {};
   itemFirstname: string = '';
@@ -16,10 +20,6 @@ export class SignUpComponent implements OnInit {
   itemUsername: string = '';
   itemPassword: string = '';
   itemPasswordConfirm: string = '';
-
-  constructor(private userRegist: UserRegistration, private rota: Router ) { }
-
-  public userData: any [] = [ ];
 
   ngOnInit(): void {
 
@@ -35,13 +35,16 @@ export class SignUpComponent implements OnInit {
       itemPasswordConfirm: this.itemPasswordConfirm
     });
 
-    console.log(this.newUserObj);
-
     if(this.itemPassword===this.itemPasswordConfirm){
       if(this.itemFirstname && this.itemLastname && this.itemUsername && this.itemPassword){
-        await this.userRegist.addUser(this.itemUsername, this.newUserObj);
-        alert(this.itemFirstname);
-        this.rota.navigate(['/home']);
+        this.userService.salveNewUser(this.itemFirstname, this.itemLastname, 
+          this.itemUsername, this.itemPassword).subscribe((user: User[])=>{
+            console.log(user);
+            alert(this.itemFirstname);
+            this.rota.navigate(['/home']);
+          });
+
+        
       }else{
         alert('Não é possível salvar uma tarefa vazia');
       }
@@ -50,10 +53,4 @@ export class SignUpComponent implements OnInit {
     }
   
   }
-/*
-  public getUserdata(){
-    //this.userRegist.teste();
-    alert(this.itemFirstname);
-  }*/
-
 }

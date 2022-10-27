@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { UserRegistration } from '../../services/userRegistration.service'
 import { Router } from '@angular/router';
+import { User } from '../models/user.model';
 
 @Component({
   selector: 'app-sign-in',
@@ -19,8 +20,8 @@ export class SignInComponent implements OnInit {
 
   constructor(private userRegist: UserRegistration, private rota: Router ) { }
 
-  public async loginUser(){
-
+  loginUser(){
+/*
 
     let storaged = this.userRegist.getUser(this.itemUsername)
     .then((user: any)=>{
@@ -36,7 +37,14 @@ export class SignInComponent implements OnInit {
         alert('Usuario e/ou senha incorretos');
       }
 
+*/
+      
+  this.userRegist.getUser("",this.itemUsername).subscribe((user: User[])=>{
+    console.log(user);
 
+  });
+
+  
     
   }
 

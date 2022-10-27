@@ -1,0 +1,32 @@
+{
+  "user": [
+    {
+      "firstname": "Karen",
+      "lastname": "Moreira",
+      "username": "karenMoreira",
+      "password": "123456789",
+      "id": 1
+    },
+    {
+      "firstname": "Helena",
+      "lastname": "Lima",
+      "username": "helena123",
+      "password": "123456789",
+      "id": 2
+    },
+    {
+      "firstname": "Guilherme",
+      "lastname": "Henrique",
+      "username": "guilhenry",
+      "password": "fumec123",
+      "id": 3
+    },
+    {
+      "firstname": "Ana",
+      "lastname": "Maria",
+      "username": "anaMaria_edu",
+      "password": "fumec1234",
+      "id": 4
+    }
+  ]
+}

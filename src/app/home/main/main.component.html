@@ -1,48 +1,157 @@
-<section class="container-fluid main-sec1">
+<header class="container-fluid header">
     <app-header></app-header>
-</section>
+</header>
 
-<section class="container-fluid p-2 main-sec2">
-    <!-- <div class="sub-div-sec2"> -->
-        <div class="container sec2-div1 d-flex flex-row justify-content-center">
-            <app-clima-widget></app-clima-widget>
-        </div>
-        <div class="container sec2-div2">
-            <div class="container sec2-div2-div1 d-flex flex-row justify-content-center">
-                <app-musica-widget></app-musica-widget>
+<main class="main">
+    <article class="container-fluid main-art1">
+        <section class="main-art1-sec1">
+            <div class="main-art1-sec1-weather-card d-flex flex-column justify-content-between align-items-center">
+                <div class="main-art1-sec1-weather-card-div1 container-fluid d-flex flex-row justify-content-between align-content-center">
+
+                    <div class="weather-card-div1-local d-flex flex-column justify-content-center align-content-center">
+                        <span class="local-span">Sua localização:</span>
+                        <h3 class="local-h3">{{local}}</h3>
+                    </div>
+                    
+                    <svg class="bi weather-icon" width="20" height="20" fill="currentColor" id="login-btn">
+                        <use attr.xlink:href="{{bootstrapWeatherIcon}}"></use>
+                    </svg>
+
+                </div>
+
+                <div class="main-art1-sec1-weather-card-div2 d-flex flex-row justify-content-between align-items-center">
+                    <div class="weather-card-div2-detail">
+
+                        <div class="wind-info d-flex flex-column justify-content-between align-items-center">
+                            <svg class="bi specific-info-icon" width="20" height="20" fill="currentColor" id="login-btn">
+                                <use xlink:href="bootstrap-icons.svg#wind"/>
+                            </svg>
+                            <p class="detail-title">Vento</p>
+                            <p class="detail-info">{{windP}}km/h</p>
+                        </div>
+                        
+                        <div class="umidade d-flex flex-column justify-content-between align-items-center">
+                            <svg class="bi specific-info-icon" width="20" height="20" fill="currentColor" id="login-btn">
+                                <use xlink:href="bootstrap-icons.svg#droplet-half"/>
+                            </svg>
+                            <p class="detail-title">Umidade</p>
+                            <p class="detail-info">{{waterP}}%</p>
+                        </div>
+            
+                        <div class="rain-chance d-flex flex-column justify-content-between align-items-center">
+                            <svg class="bi specific-info-icon" width="20" height="20" fill="currentColor" id="login-btn">
+                                <use xlink:href="bootstrap-icons.svg#percent"/>
+                            </svg>
+                            <p class="detail-title">Precipitação</p>
+                            <p class="detail-info">{{rainP}}%</p>
+                        </div>
+                    </div>
+
+                    <div class="weather-card-div2-status">
+                        <p id="temperature-status-phrase">{{temperatureStatus}}</p>
+                        <h3 id="degrees">{{degrees}} °C</h3>
+                    </div>
+                </div>
             </div>
-            <br>
-            <div class="container sec2-div2-div2 d-flex flex-row justify-items-center">
-                <app-frase-widget></app-frase-widget>
+        </section>
+    
+        <section class="main-art1-sec2">
+            <div class="main-art1-sec2-music-card">
+                <div class="music-image"></div>
+
+                <div class="music-info">
+                    <div class="music-details">
+                        <div class="music-details-div">
+                            <div class="music-title">{{musicName}}</div>
+                            <div class="music-singer">{{singer}}</div>
+                        </div>
+                    </div>
+    
+                    <div class="player-controller">
+                        <svg class="bi player-icon" width="20" height="20" fill="currentColor" id="login-btn">
+                            <use attr.xlink:href="{{statusOfPlayer}}"></use>
+                        </svg>
+                    </div>
+                </div>
             </div>
+
+            <div class="main-art1-sec2-quote-card">
+                <h5 class="quote-main-title">{{quoteTitle}}</h5>
+                <p class="quote-main-paragraph">{{quoteParagraph}}</p>
+                <span class="author">Autor: {{quoteAuthor}}</span>
+            </div>
+        </section>
+    </article>
+    
+    <article class="container-fluid d-flex flex-column justify-content-center align-content-center align-items-center main-art2">
+        <hr id="first-line">
+    
+        <div id="check-it">
+            Dê uma olhada antes de ir!
         </div>
-    <!-- </div> -->
-</section>
+    
+        <hr id="second-line">
+    </article>
+    
+    <article class="main-art3">
+        <section class="main-art3-sec">
+            <div class="main-art3-div1 m-2">
+                <h3>Resumo de Notícias</h3>
+    
+                <a class="news-btn" href="https://news.google.com/">
+                    <svg class="bi news-icon" width="20" height="20" fill="currentColor" id="login-btn">
+                        <use xlink:href="bootstrap-icons.svg#newspaper"/>
+                    </svg>
+                </a>
+            </div>
+    
+            <div class="main-art3-div2">
+			
+				<div class="row row-cols-1 row-cols-md-4 g-4 block">
+				
+					<div *ngFor="let news of noticiasTeste" class="col">
+						<div class="card h-100 news-card">
+							<img [src]="news.image" class="card-img-top news-card-img" alt="...">
 
-<section class="container-fluid main-sec3 d-flex flex-column justify-items-center align-items-center">
-    <hr id="first-line">
+							<div class="card-body news-card-body">
+								<h6 class="card-title news-title" style="text-align: center;">{{news.title}}</h6>
+                                <p class="card-text news-text" style="text-align: center;">{{news.content}}</p>
+								<a class="news-link" href="{{news.url}}">Notícia Completa</a>
+							</div>
+						</div>
+					</div>
+				</div>
+            </div>
+        </section>
+    </article>
 
-    <div id="check-it">
-        Dê uma olhada antes de ir!
-    </div>
+    <article class="main-art4">
+        <section class="main-art4-sec1">
+            <h5 class="title">Alimentação</h5>
+            <img class="image" src="{{foodImg}}">
+            <h6 class="subtitle">{{foodSubtitle}}</h6>
+            <p class="description">{{foodDescription}}</p>
+            <a class="link" href="{{foodLink}}">Saiba Mais</a>
+        </section>
+        
+        <section class="main-art4-sec2">
+            <h5 class="title">Entretenimento</h5>
+            <img class="image" src="{{cinemaImg}}">
+            <h6 class="subtitle">{{entertainmentSubtitle}}</h6>
+            <p class="description">{{entertainmentDescription}}</p>
+            <a class="link" href="{{cinemaLink}}">Saiba Mais</a>
+        </section>
 
-    <hr id="second-line">
-</section>
+        <section class="main-art4-sec3">
+            <h5 class="title">Lazer</h5>
+            <img class="image" src="{{lazerImg}}">
+            <h6 class="subtitle">{{leisureSubtitle}}</h6>
+            <p class="description">{{leisureDescription}}</p>
+            <a class="link" href="{{leisureLink}}">Saiba Mais</a>
+        </section>
+    </article>
+</main>
 
-<section class="container main-sec4">
-    <app-noticia-widget></app-noticia-widget>
-</section>
-
-<section class="container main-sec5 py-2 my-4">
-    <div class="container-fluid row justify-content-center mx-2 mb-4 sec5-div align-items-center">
-        <app-comida-widget class="card col-2 m-2 p-5"></app-comida-widget>
-        <br>
-        <app-cinema-widget class="card col-2 m-2 p-5"></app-cinema-widget>
-        <br>
-        <app-lazer-widget class="card col-2 m-2 p-5"></app-lazer-widget>
-    </div>
-</section>
-
-<section class="main-sec6">
+<footer class="footer">
     <app-footer></app-footer>
-</section>
+</footer>
