@@ -14,43 +14,29 @@ export class SignUpComponent implements OnInit {
   
   constructor(private userService: UserRegistration, private rota: Router ) { }
 
-  newUserObj = {};
-  itemFirstname: string = '';
-  itemLastname: string = '';
-  itemUsername: string = '';
   itemPassword: string = '';
   itemPasswordConfirm: string = '';
+  public user: User = new User();
 
   ngOnInit(): void {
 
   }
 
-  public async add() {
-
-    this.newUserObj = ({
-      itemFirstname: this.itemFirstname, 
-      itemLastname: this.itemLastname, 
-      itemUsername: this.itemUsername,
-      itemPassword: this.itemPassword,
-      itemPasswordConfirm: this.itemPasswordConfirm
-    });
+  public async newUser() {
 
     if(this.itemPassword===this.itemPasswordConfirm){
-      if(this.itemFirstname && this.itemLastname && this.itemUsername && this.itemPassword){
-        this.userService.salveNewUser(this.itemFirstname, this.itemLastname, 
-          this.itemUsername, this.itemPassword).subscribe((user: User[])=>{
-            console.log(user);
-            alert(this.itemFirstname);
-            this.rota.navigate(['/home']);
-          });
+      if(this.user){
+        this.userService.salveNewUser(this.user).subscribe((resposta)=>{
+          console.log(resposta);
+          this.rota.navigate(['/home']);
+        });
 
-        
       }else{
         alert('Não é possível salvar uma tarefa vazia');
       }
-    }else {
+    }else{
       alert('As senhas não conferem');
+
     }
-  
   }
 }

@@ -5,6 +5,7 @@ export class User {
     public username: string;
     public password: string;
 
+    constructor()
     constructor( id?: number, firstname?: string, lastname?: string,
                 username?: string, password?: string) {
         this.id = id || 0;

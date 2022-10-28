@@ -4,6 +4,8 @@ import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Observable, throwError } from 'rxjs';
 import { catchError, retry } from 'rxjs/operators';
 import { User } from '../sign/models/user.model'
+import { NodeWithI18n } from '@angular/compiler';
+import { getLocaleTimeFormat } from '@angular/common';
 
 const httpOptions = {
     headers: new HttpHeaders({
@@ -11,68 +13,34 @@ const httpOptions = {
     })
 };
 
-
 @Injectable({
      
     providedIn: 'root'
 })
 
 export class UserRegistration {
-    private url: string = 'http://localhost:3000';
+    private url: string = 'http://localhost:3000/user';
+    private cont: number = 5;
+ 
+    
 
     constructor(private http: HttpClient){ }
 
-    getUser(id: string | undefined, username: string | undefined ) : Observable<any>{
-        return this.http.get<User[]>(this.url+"/user/"+id+"?username="+username);
+    public getUser(id: number) : Observable<User>{
+        return this.http.get<User>(this.url+'/'+id);
         
     }
 
-    salveNewUser( firstname?: string, 
-                lastname?: string, username?: string, 
-                password?: string ) : Observable<any>{
-        const newUser = {firstname: firstname, lastname:lastname, username: username, password: password};
-
+    public salveNewUser(user: User) : Observable<any>{
         
-            return this.http.post<User[]>(this.url+'/user',newUser);
-        
+        const newUserJSON = JSON.stringify(user);
+        return this.http.post(this.url, newUserJSON, httpOptions);
         
     }
-/*
-    newUser(user: User) : Observable<any>{
-        return this.http.post<User>('http://localhost:3000/user/', user, httpOptions);
-    }*/
 
-    /*
-    constructor(private storage: Storage) {
-        this.init();
+    public contUser(): number{
+        return this.cont;
     }
-    
-    public async init() {
-        await this.storage.create();
-    }
-
-    public async addUser(username: string, value: any) {
-        await this.storage.set(username, value);
-    }
-
-    public async getUser(username: string){
-        let user: any = this.storage.get(username);
-
-        return user;
-    }*/
-
-
-
-    
-
-    /*public get(id: number): Curso {
-    const curso = this.cursos.find( curso=> curso.id === id );
-    return curso || new Curso();
-    public getAll(): Observable<Curso[]> {
-    return this.http.get<Curso[]>(this.url);
-  }
-  }*/ 
-
 
 
     

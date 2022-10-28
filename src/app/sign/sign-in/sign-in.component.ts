@@ -8,44 +8,33 @@ import { User } from '../models/user.model';
   templateUrl: './sign-in.component.html',
   styleUrls: ['./sign-in.component.scss']
 })
+
+
 export class SignInComponent implements OnInit {
 
-  newUserObj = {};
   itemUsername: string = '';
   itemPassword: string = '';
 
-  itemUsernameAux: string = '';
-  itemPasswordAux: string = '';
+  constructor(private userService: UserRegistration, private rota: Router) { }
+
+  public user: User = new User();
 
 
-  constructor(private userRegist: UserRegistration, private rota: Router ) { }
-
-  loginUser(){
-/*
-
-    let storaged = this.userRegist.getUser(this.itemUsername)
-    .then((user: any)=>{
-      this.itemUsernameAux = user.itemUsername;
-      this.itemPasswordAux = user.itemPassword;
-    })
-
-    if(this.itemPassword === this.itemPasswordAux
-      && this.itemUsername === this.itemUsernameAux){
-        alert('Bem vindo(a)!');
-        this.rota.navigate(['/home']);
-      }else{
-        alert('Usuario e/ou senha incorretos');
-      }
-
-*/
-      
-  this.userRegist.getUser("",this.itemUsername).subscribe((user: User[])=>{
-    console.log(user);
-
-  });
-
-  
+  loginUser() {
     
+    for (let id: number = 0; id < this.userService.contUser(); id++) {
+
+      this.userService.getUser(id).subscribe((user: User) => {
+        this.user = user;
+
+        if (this.itemPassword === this.user.password
+          && this.itemUsername === this.user.username) {
+          alert('Bem vindo(a)! ' + this.user.firstname + ' ' + this.user.lastname);
+          this.rota.navigate(['/home']);
+        }
+      });
+    }
+
   }
 
   ngOnInit(): void {

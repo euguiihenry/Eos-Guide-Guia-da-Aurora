@@ -8,21 +8,21 @@
                 <span class="text-form">NOME:</span>
                 <br>
                 <input class="firstname-registration" name="firstname-registration" required="required" type="text"
-                    placeholder="John" [(ngModel)]="itemFirstname"/>
+                    placeholder="John" [(ngModel)]="user.firstname"/>
             </div>
 
             <div class="lastname-field">
                 <span class="text-form">SOBRENOME:</span>
                 <br>
                 <input class="lastname-registration" name="lastname-registration" required="required" type="text"
-                    placeholder="Lennon" [(ngModel)]="itemLastname"/>
+                    placeholder="Lennon" [(ngModel)]="user.lastname"/>
             </div>
 
             <div>
                 <span class="text-form">USUÁRIO:</span>
                 <br>
                 <input class="username-login" name="username-login" required="required" type="text"
-                    placeholder="Ex.: johnlennon" [(ngModel)]="itemUsername"/>
+                    placeholder="Ex.: johnlennon" [(ngModel)]="user.username"/>
             </div>
 
 
@@ -30,7 +30,7 @@
                 <span class="text-form">SENHA:</span>
                 <br>
                 <input class="password-login" name="password-login" required="required" type="password"
-                    placeholder="***********" [(ngModel)]="itemPassword"/>
+                    placeholder="***********" [(ngModel)]="user.password" [(ngModel)]="itemPassword"/>
             </div>
 
 
@@ -42,7 +42,7 @@
             </div>
 
             <div class="container-form-btn">
-                <button class="registerUser-form-btn" (click)="add()">
+                <button class="registerUser-form-btn" (click)="newUser()">
                     CRIAR CONTA
                 </button>
             </div>
