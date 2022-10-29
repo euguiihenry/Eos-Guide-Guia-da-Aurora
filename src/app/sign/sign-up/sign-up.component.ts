@@ -32,7 +32,7 @@ export class SignUpComponent implements OnInit {
         });
 
       }else{
-        alert('Não é possível salvar uma tarefa vazia');
+        alert('Erro ao criar o usuário! Preencha todos os campos!');
       }
     }else{
       alert('As senhas não conferem');

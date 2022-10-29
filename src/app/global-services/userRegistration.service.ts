@@ -14,15 +14,12 @@ const httpOptions = {
 };
 
 @Injectable({
-     
     providedIn: 'root'
 })
 
 export class UserRegistration {
     private url: string = 'http://localhost:3000/user';
     private cont: number = 5;
- 
-    
 
     constructor(private http: HttpClient){ }
 
@@ -41,7 +38,4 @@ export class UserRegistration {
     public contUser(): number{
         return this.cont;
     }
-
-
-    
 }
