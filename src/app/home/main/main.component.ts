@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import { NoticiasService } from '../services/noticias.service';
+import { NoticiasService } from '../services/news/noticias.service';
+//import { newsDb } from '../services/news/newsDb.json';
 
 @Component({
   selector: 'app-main',
@@ -43,6 +44,8 @@ export class MainComponent implements OnInit {
   leisureLink: string;
 
   // Simulação de um dados trazido até a variável pela API:
+      //public noticiasTeste:any[] = newsDb.articles;
+
     public noticiasTeste: any[] = [
       {
         title: "Profissionalização e investimento até em redes sociais: como o Corinthians virou potência no futebol feminino",
