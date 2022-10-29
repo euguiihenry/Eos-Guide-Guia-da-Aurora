@@ -106,16 +106,18 @@
             </div>
     
             <div class="main-art3-div2">
+
+                <p class="text-center pb-2" style="color: red" *ngIf="showNewsErrorMsg">Desculpe o incomodo! Mas tivemos um erro ao buscar as informações das notícias no servidor!</p>
 			
 				<div class="row row-cols-1 row-cols-md-4 g-4 block">
 				
-					<div *ngFor="let news of noticiasTeste" class="col">
+					<div *ngFor="let news of newsArticles" class="col">
 						<div class="card h-100 news-card">
 							<img [src]="news.image" class="card-img-top news-card-img" alt="...">
 
 							<div class="card-body news-card-body">
 								<h6 class="card-title news-title" style="text-align: center;">{{news.title}}</h6>
-                                <p class="card-text news-text" style="text-align: center;">{{news.content}}</p>
+                                <p class="card-text news-text" style="text-align: center;">{{news.description}}</p>
 								<a class="news-link" href="{{news.url}}">Notícia Completa</a>
 							</div>
 						</div>

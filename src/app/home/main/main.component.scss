@@ -323,7 +323,8 @@
                             box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
 
                             .news-card-img{
-                                height: 14em;
+                                width: 100%;
+                                height: auto;
                                 overflow: hidden;
                                 border-radius: 1em 1em 0 0;
                             }

@@ -1,7 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { NoticiasService } from '../services/news/noticias.service';
 //import { newsDb } from '../services/news/newsDb.json';
-import { FinalNewsInterface, NewsInterface } from '../services/news/noticias';
+import { NewsInterface } from '../services/news/models/proto-news-interface';
+import { FinalNewsInterface } from '../services/news/models/final-news-interface';
 
 @Component({
   selector: 'app-main',
@@ -46,7 +47,8 @@ export class MainComponent implements OnInit {
 
   // News variables:
     public protoNews: NewsInterface;
-    //public news: FinalNewsInterface;
+    public newsArticles: any;
+    public showNewsErrorMsg: Boolean;
 
   // Simulação de um dados trazido até a variável pela API:
     public noticiasTeste: any[] = [
@@ -144,24 +146,31 @@ export class MainComponent implements OnInit {
       this.leisureLink = "";
 
     // News:
-      this.protoNews = this.getNewsDB();
-      //this.news = this.formatingNews(this.protoNews);
+      this.protoNews  = {} as NewsInterface;
+      this.newsArticles = '';
+      this.showNewsErrorMsg = false;
+
   }
 
-  private getNewsDB() {
-    this.newsService.getAllNews().subscribe((newsType: NewsInterface) => {
-      this.protoNews.totalArticles = newsType.totalArticles;
-      this.protoNews.articles = newsType.articles;
+  private getNewsDB = () => {
+
+    this.newsService.getAllNews()
+    .subscribe((newsType: NewsInterface) => {
+      this.protoNews = newsType;
+      this.newsArticles = this.protoNews.articles.map(article => article);
+
+      if(this.newsService.showErrorMsgForUser) {
+        this.showNewsErrorMsg = true;
+      }
     })
-
-    return this.protoNews;
-  }
-
-  private formatingNews(news: FinalNewsInterface) {
-    return this.protoNews.articles.flatMap((article) => article);
   }
   
   ngOnInit(): void {
+    this.getNewsDB();
+
+    if(this.protoNews = {} as NewsInterface) {
+      this.showNewsErrorMsg = false;
+    }
   }
 
 }
