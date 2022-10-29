@@ -107,7 +107,7 @@
     
             <div class="main-art3-div2">
 
-                <p class="text-center pb-2" style="color: red" *ngIf="showNewsErrorMsg">Desculpe o incomodo! Mas tivemos um erro ao buscar as informações das notícias no servidor!</p>
+                <p class="text-center pb-2" style="color: red" *ngIf="newsArticles?.length == 0">Desculpe o incomodo! Mas tivemos um erro ao buscar as informações das notícias no servidor! Tente inicicializar o JSON-Server e recarregar a página.</p>
 			
 				<div class="row row-cols-1 row-cols-md-4 g-4 block">
 				
