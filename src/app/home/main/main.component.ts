@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { NoticiasService } from '../services/news/noticias.service';
 //import { newsDb } from '../services/news/newsDb.json';
+import { FinalNewsInterface, NewsInterface } from '../services/news/noticias';
 
 @Component({
   selector: 'app-main',
@@ -43,9 +44,11 @@ export class MainComponent implements OnInit {
   leisureDescription: string;
   leisureLink: string;
 
-  // Simulação de um dados trazido até a variável pela API:
-      //public noticiasTeste:any[] = newsDb.articles;
+  // News variables:
+    public protoNews: NewsInterface;
+    //public news: FinalNewsInterface;
 
+  // Simulação de um dados trazido até a variável pela API:
     public noticiasTeste: any[] = [
       {
         title: "Profissionalização e investimento até em redes sociais: como o Corinthians virou potência no futebol feminino",
@@ -97,7 +100,7 @@ export class MainComponent implements OnInit {
       }
     ];
 
-  constructor(private news: NoticiasService) { 
+  constructor(private newsService: NoticiasService) { 
 
     // Weather:
       this.local = "Belo Horizonte";
@@ -139,6 +142,23 @@ export class MainComponent implements OnInit {
       this.lazerImg = "https://images.unsplash.com/photo-1638886050954-dbd7208412c0?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8NXx8cnVubmluZ3xlbnwwfDJ8MHx8&auto=format&fit=crop&w=500&q=60";
       this.leisureDescription = "O clima propicia uma leve caminhada e até mesmo, caso seja de sua vontade, uma corrida leve.";
       this.leisureLink = "";
+
+    // News:
+      this.protoNews = this.getNewsDB();
+      //this.news = this.formatingNews(this.protoNews);
+  }
+
+  private getNewsDB() {
+    this.newsService.getAllNews().subscribe((newsType: NewsInterface) => {
+      this.protoNews.totalArticles = newsType.totalArticles;
+      this.protoNews.articles = newsType.articles;
+    })
+
+    return this.protoNews;
+  }
+
+  private formatingNews(news: FinalNewsInterface) {
+    return this.protoNews.articles.flatMap((article) => article);
   }
   
   ngOnInit(): void {
