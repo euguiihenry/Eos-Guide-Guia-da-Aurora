@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { UserRegistration } from 'src/app/global-services/userRegistration.service';
 
 @Component({
   selector: 'app-header',
@@ -6,13 +7,14 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./header.component.scss']
 })
 export class HeaderComponent implements OnInit {
-  logged: Boolean;
+  logged: Boolean = false;
 
-  constructor() {
-    this.logged = false;
+  constructor(private userAuth: UserRegistration) {
+    
   }
 
   ngOnInit(): void {
+    this.logged = this.userAuth.isUserAuthenticated();
   }
 
 }
