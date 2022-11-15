@@ -10,6 +10,8 @@ import { HomeModule } from './home/home.module';
 import { SignModule} from './sign/sign.module'
 import { ReactiveFormsModule } from '@angular/forms';
 import { IonicStorageModule } from '@ionic/storage-angular';
+import { UserRegistration } from './global-services/userRegistration.service';
+import { AuthGuard } from './guards/auth.guard';
 
 @NgModule({
   declarations: [
@@ -27,7 +29,7 @@ import { IonicStorageModule } from '@ionic/storage-angular';
       driverOrder: [ Drivers.IndexedDB, Drivers.LocalStorage]
     })
   ],
-  providers: [],
+  providers: [UserRegistration, AuthGuard],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

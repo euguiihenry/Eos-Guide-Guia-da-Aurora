@@ -4,13 +4,13 @@
     </div>
 
     <div class="nav-links d-flex flex-row justify-content-between align-content-center">
-        <div [routerLink]="['/sign-in']" routerLinkActive="active" class="icon-fg">
+        <div [routerLink]="['/sign-in']" routerLinkActive="active" class="icon-fg" *ngIf="!logged">
             <svg class="bi nav-icons" fill="currentColor" id="login-btn">
                 <use xlink:href="bootstrap-icons.svg#person-circle"/>
             </svg>
         </div>
 
-        <div [routerLink]="['/settings']" routerLinkActive="active" class="icon-fg" *ngIf="!logged" >
+        <div [routerLink]="['/settings']" routerLinkActive="active" class="icon-fg" *ngIf="logged" >
             <svg class="bi nav-icons" fill="currentColor" id="login-btn">
                 <use xlink:href="bootstrap-icons.svg#gear-fill"/>
             </svg>
