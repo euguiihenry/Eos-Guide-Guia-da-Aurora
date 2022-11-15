@@ -2,8 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { UserRegistration } from '../../global-services/userRegistration.service'
 import { Router } from '@angular/router';
 import { User } from '../models/user.model';
-import { FormGroup, FormBuilder,
-  FormArray, Validators } from '@angular/forms';
+import { FormGroup, FormBuilder, FormArray, Validators } from '@angular/forms';
 
 @Component({
   selector: 'app-sign-up',
@@ -42,7 +41,7 @@ export class SignUpComponent implements OnInit {
   itemPassword: string = '';
   itemPasswordConfirm: string = '';
   public user: User = new User();
-  userForm!: FormGroup;
+  public userForm!: FormGroup;
   
 
   ngOnInit(): void {
