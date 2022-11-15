@@ -1,0 +1,86 @@
+{
+  "news": {
+    "totalArticles": 4,
+    "articles": [
+      {
+        "title": "Em debate com Leite, Onyx se esquiva de perguntas e viraliza",
+        "description": "Questionado pelo tucano, o candidato do PL se recusou responder sobre o regime de recuperação fiscal. Leia no Poder360.",
+        "content": "Questionado pelo tucano, o candidato do PL se recusou responder sobre o regime de recuperação fiscal\nLeite (à esq.) insistiu com perguntas sobre recuperação fiscal, enquanto Onyx (à dir.) deu respostas curtas\nO ex-ministro e candidato ao governo do R... [2500 chars]",
+        "url": "https://www.poder360.com.br/eleicoes/em-debate-com-leite-onyx-se-esquiva-de-perguntas-e-viraliza/",
+        "image": "https://static.poder360.com.br/2022/10/Leite-Onyx-848x477.jpg",
+        "publishedAt": "2022-10-25T22:10:30Z",
+        "source": {
+          "name": "Poder360",
+          "url": "https://www.poder360.com.br"
+        }
+      },
+      {
+        "title": "521 mil votaram 22 para o governo em SP; votos foram anulados",
+        "description": "Nº 22 é do PL de Jair Bolsonaro, sem candidato ao cargo; presidente apoia Tarcísio (Republicanos) no Estado, cujo nº é 10. Leia no Poder360.",
+        "content": "Número 22 é do PL de Jair Bolsonaro, sem candidato ao cargo; presidente apoia Tarcísio (Republicanos) no Estado, cujo número é 10\nTarcísio de Freitas (foto) é aliado do presidente Jair Bolsonaro, cujo número de urna, do PL, é 22 –o do ex-ministro, do... [3275 chars]",
+        "url": "https://www.poder360.com.br/eleicoes/521-mil-votaram-22-para-o-governo-em-sp-votos-foram-anulados/",
+        "image": "https://static.poder360.com.br/2022/03/DamaresAlves-TarcisioDeFreitas-Republicanos-Filiacao-MichelleBolsonaro-MarcosPereira-HamiltonMourao-133-1-848x477.jpg",
+        "publishedAt": "2022-10-25T21:53:54Z",
+        "source": {
+          "name": "Poder360",
+          "url": "https://www.poder360.com.br"
+        }
+      },
+      {
+        "title": "Como será o 3T22 do IRB (IRBR3)? Ação valendo menos que R$ 1 sentirá mais pressão?",
+        "description": "A ação do IRB (IRBR3) perdeu a marca de R$ 1 após a divulgação de um novo prejuízo em agosto. Saiba o que esperar dos resultados.",
+        "content": "A ação do IRB (IRBR3) perdeu a marca de R$ 1 após a divulgação de um novo prejuízo em agosto, de R$ 164,7 milhões, sinalizando mais um trimestre com saldo negativo.\nA resseguradora chegou a despencar mais de 8% depois que publicou o formulário mensal... [3214 chars]",
+        "url": "https://www.moneytimes.com.br/como-sera-o-3t22-do-irb-irbr3-acao-valendo-menos-que-r-1-sentira-mais-pressao/",
+        "image": "https://media.moneytimes.com.br/uploads/2019/03/moneytimes44.jpg",
+        "publishedAt": "2022-10-25T21:11:00Z",
+        "source": {
+          "name": "Money Times",
+          "url": "https://www.moneytimes.com.br"
+        }
+      },
+      {
+        "title": "Modelo brasileira vence concurso Miss Grand International 2022",
+        "description": "Isabella Menin rompeu o jejum de 51 anos do Brasil sem ganhar uma coroa mundial",
+        "content": "Reprodução/Instagram Modelo brasileira vence Miss Grand International\nA modelo Isabella Menin venceu o Miss Grand International, um dos maiores concursos de beleza do mundo, nesta terça-feira (25), em Jacarta, na Indonésia. A brasileira de 26 anos co... [806 chars]",
+        "url": "https://gente.ig.com.br/colunas/gabriel-perline/2022-10-25/modelo-brasileira-vence-concurso-miss-grand-international-2022.html",
+        "image": "https://i0.statig.com.br/bancodeimagens/9s/bv/lz/9sbvlzpobxcmij1q64uykq5j6.jpg",
+        "publishedAt": "2022-10-25T19:03:00Z",
+        "source": {
+          "name": "gente.ig.com.br",
+          "url": "https://gente.ig.com.br"
+        }
+      }
+    ]
+  },
+
+  "user": [
+    {
+      "id": 0,
+      "firstname": "Karen",
+      "lastname": "Moreira",
+      "username": "karenMoreira",
+      "password": "123456789"
+    },
+    {
+      "id": 1,
+      "firstname": "Guilherme",
+      "lastname": "Henrique",
+      "username": "guiihenry",
+      "password": "987654321"
+    },
+    {
+      "id": 2,
+      "firstname": "Helena",
+      "lastname": "Lima",
+      "username": "helena123",
+      "password": "123456"
+    },
+    {
+      "id": 3,
+      "firstname": "Ana",
+      "lastname": "Maria",
+      "username": "anaMaria_edu",
+      "password": "2022"
+    }
+  ]
+}
