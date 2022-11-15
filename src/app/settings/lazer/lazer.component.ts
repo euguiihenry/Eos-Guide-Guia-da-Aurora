@@ -14,27 +14,25 @@ export class LazerComponent implements OnInit {
 
   constructor(private formBuilder: FormBuilder) {
     this.leisureForm = this.formBuilder.group({
-    caminhar : false,
-    fotografia: false,
-    ler: false,
-    bar: false,
-    esportes: false,
-    cinema: false,
-    piquiniques: false,
-    viajar: false,
-    pescaria: false,
-    turismo: false,
-  });
+      caminhar: [false],
+      fotografia: [false],
+      ler: [false],
+      bar: [false],
+      esportes: [false],
+      cinema: [false],
+      piquiniques: [false],
+      viajar: [false],
+      pescaria: [false],
+      turismo: [false],
+    })
   }
 
   ngOnInit(): void {
+    
   }
 
-  
-
-
-
-
-
+  buildLeisure() {
+    //const values = this.leisureForm.map(value => newForm(false))
+  }
 
 }

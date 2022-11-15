@@ -6,7 +6,7 @@
             <button class="returnSettings-btn bi bi-arrow-left-short" [routerLink]="['/settings']"></button>
         </div>
 
-        <form class="personalize-form">
+        <form class="personalize-form" [formGroup]="leisureForm">
             
             <span class="title-form">PREFERÊNCIAS DE LAZER </span>
             <section >
@@ -15,27 +15,27 @@
             <div class="container-checkbox" >
                 <div class="column column1">
                     <div class="option">
-                        <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault" >
+                        <input class="form-check-input" type="checkbox" formControlName="caminhar" id="flexCheckDefault" >
                         <label for="caminhar" class="text-form">Caminhar</label>
                     </div>
     
                     <div class="option">
-                        <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
+                        <input class="form-check-input" type="checkbox" formControlName='fotografia' id="flexCheckDefault">
                         <label for="fotografia" class="text-form">Fotografia</label>
                     </div>
     
                     <div class="option">
-                        <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
+                        <input class="form-check-input" type="checkbox" formControlName="ler" id="flexCheckDefault">
                         <label for="ler" class="text-form">Ler</label>
                     </div>
     
                     <div class="option">
-                        <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
+                        <input class="form-check-input" type="checkbox" formControlName="bar" id="flexCheckDefault">
                         <label for="bar" class="text-form">Bares & Restaurantes</label>
                     </div>
     
                     <div class="option">
-                        <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
+                        <input class="form-check-input" type="checkbox" formControlName="esportes" id="flexCheckDefault">
                         <label for="esportes" class="text-form">Praticar Esportes</label>
                     </div>
 
@@ -44,27 +44,27 @@
 
                 <div class="column">
                     <div class="option">
-                        <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
+                        <input class="form-check-input" type="checkbox" formControlName="cinema" id="flexCheckDefault">
                         <label for="cinema" class="text-form">Cinematográfia</label>
                     </div>
     
                     <div class="option">
-                        <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
+                        <input class="form-check-input" type="checkbox" formControlName="piquiniques" id="flexCheckDefault">
                         <label for="piquiniques" class="text-form">Piquiniques</label>
                     </div>
     
                     <div class="option">
-                        <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
+                        <input class="form-check-input" type="checkbox" formControlName="viajar" id="flexCheckDefault">
                         <label for="viajar" class="text-form">Viajar</label>
                     </div>
     
                     <div class="option">
-                        <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
+                        <input class="form-check-input" type="checkbox" formControlName="pescaria" id="flexCheckDefault">
                         <label for="pescaria" class="text-form">Pescaria</label>
                     </div>
     
                     <div class="option">
-                        <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
+                        <input class="form-check-input" type="checkbox" formControlName="turismo" id="flexCheckDefault">
                         <label for="Turismo" class="text-form">Turismo</label>
                     </div>
 
