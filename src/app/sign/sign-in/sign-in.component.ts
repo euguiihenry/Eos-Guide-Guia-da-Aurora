@@ -3,6 +3,7 @@ import { UserRegistration } from '../../global-services/userRegistration.service
 import { Router } from '@angular/router';
 import { User } from '../models/user.model';
 
+
 @Component({
   selector: 'app-sign-in',
   templateUrl: './sign-in.component.html',
@@ -15,7 +16,10 @@ export class SignInComponent implements OnInit {
   itemUsername: string = '';
   itemPassword: string = '';
 
-  constructor(private userService: UserRegistration, private rota: Router) { }
+  constructor(private userService: UserRegistration, private rota: Router) { 
+
+    
+  }
 
   public user: User = new User();
 

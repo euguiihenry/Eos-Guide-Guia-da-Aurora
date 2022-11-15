@@ -1,6 +1,7 @@
 import { HttpClientModule } from '@angular/common/http';
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
+import {FormsModule, ReactiveFormsModule} from '@angular/forms';
 
 import { Drivers, Storage} from '@ionic/storage';
 
@@ -8,12 +9,13 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { HomeModule } from './home/home.module';
 import { SignModule} from './sign/sign.module'
-import { ReactiveFormsModule } from '@angular/forms';
+import { SettingsModule } from './settings/settings.module';
+
 import { IonicStorageModule } from '@ionic/storage-angular';
 
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
   ],
   imports: [
     BrowserModule,
@@ -21,7 +23,9 @@ import { IonicStorageModule } from '@ionic/storage-angular';
     HttpClientModule,
     HomeModule,
     SignModule,
+    SettingsModule,
     ReactiveFormsModule,
+    FormsModule,
     IonicStorageModule.forRoot({
       name: '_usersDB',
       driverOrder: [ Drivers.IndexedDB, Drivers.LocalStorage]
