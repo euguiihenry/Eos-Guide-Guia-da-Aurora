@@ -7,6 +7,7 @@ import { MenuComponent } from './menu/menu.component';
 import { CinemaComponent } from './cinema/cinema.component';
 import { ComidaComponent } from './comida/comida.component';
 import { LazerComponent } from './lazer/lazer.component';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 
 
@@ -19,7 +20,8 @@ import { LazerComponent } from './lazer/lazer.component';
   ],
   imports: [
     CommonModule,
-    AppRoutingModule
+    AppRoutingModule,
+    ReactiveFormsModule
   ]
 })
 export class SettingsModule { }
