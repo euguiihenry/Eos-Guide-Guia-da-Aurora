@@ -2,15 +2,27 @@
 
 <div class="container-settings">
     <div class="wrap-settings">
+
+        <div class="container-return-btn">
+            <button class="returnSettings-btn bi bi-arrow-left-short" (click)="saveCEP()" type="submit"></button>
+        </div>
+
         <span class="title-form">CONFIGURAÇÕES</span>
 
             <br>
 
-            <div class="settings-field">
+            <div class="settings-field" #form="ngForm" [formGroup]="menuForm" (ngSubmit)="saveCEP()">
                 <p>
                     <span class="forms-text">Trocar Endereço</span>
-                    <input class="address-field" name="address-field" type="text" placeholder="30130-000" />
+                    <input class="address-field" name="address-field" type="text" placeholder="30130-000" formControlName="cep"/>
                 </p>
+                <div class="alert alert-danger mt-1" *ngIf="
+                      (menuForm.get('cep')?.errors?.['required'] ||
+                      menuForm.get('cep')?.errors?.['minlength'] || 
+                      menuForm.get('cep')?.errors?.['maxlength'])
+                      && form.submitted">
+                    Informe a quantidade correta de caracteres!
+                </div>
             </div>
 
             <br>

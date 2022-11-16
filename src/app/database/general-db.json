@@ -52,7 +52,6 @@
       }
     ]
   },
-
   "user": [
     {
       "id": 0,
@@ -81,6 +80,13 @@
       "lastname": "Maria",
       "username": "anaMaria_edu",
       "password": "2022"
+    },
+    {
+      "id": 4,
+      "firstname": "Ana",
+      "lastname": "Maria",
+      "username": "anaMaria_edu",
+      "password": "123456789"
     }
   ]
 }
