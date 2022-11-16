@@ -6,8 +6,7 @@
             <button class="returnSettings-btn bi bi-arrow-left-short" [routerLink]="['/settings']"></button>
         </div>
 
-        <form class="personalize-form" [formGroup]="leisureForm">
-            
+        <form class="personalize-form" #form="ngForm" [formGroup]="leisureForm">
             <span class="title-form">PREFERÊNCIAS DE LAZER </span>
             <section >
 
