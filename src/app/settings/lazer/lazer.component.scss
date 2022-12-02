@@ -17,10 +17,16 @@
     justify-content: center;
     align-items: center;
     padding: 15px;
+    
+    background: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)),
+        url(https://wallpaperaccess.com/full/7097427.jpg);
+    background-size: cover;
+    
+    
 }
 
 .wrap-personalize{
-    width: 550px;
+    width: 600px;
     background: var(--actual-bg-color);
     border-radius: 10px;
     overflow: hidden;
@@ -47,13 +53,13 @@
     color: var(--main-font-color);
     line-height: 1.2;
     text-align: center;
-    margin: 5px 0px 15px 0px;
+    margin: 15px 0px 15px 0px;
 }
 
 .container-checkbox{
     width: 100%;
     display: inline-block;
-    margin: 5px 10px 5px 10px;
+    margin: 25px 20px 35px 20px;
     justify-content: center;
 }
 

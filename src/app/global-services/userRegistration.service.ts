@@ -21,7 +21,7 @@ const httpOptions = {
 
 export class UserRegistration {
     private url: string = 'http://localhost:3000/user';
-    private cont: number = 5;
+    private cont: number = 1000;
     public user: User = new User();
     private userAuthenticated: boolean = false;
 
@@ -39,12 +39,8 @@ export class UserRegistration {
 
     }
 
-    public contUser(): number {
-        return this.cont;
-    }
-
     login(itemPassword: string, itemUsername: string) {
-        for (let id: number = 0; id < this.contUser(); id++) {
+        for (let id: number = 0; id < this.cont; id++) {
 
             this.getUser(id).subscribe((user: User) => {
                 this.user = user;

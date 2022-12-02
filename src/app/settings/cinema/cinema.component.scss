@@ -17,10 +17,14 @@
     justify-content: center;
     align-items: center;
     padding: 15px;
+    background: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)),
+    /*https://wallpaper.dog/large/20552208.jpg*/
+        url(https://wallpaper.dog/large/20552208.jpg);
+    background-size: cover;
 }
 
 .wrap-personalize{
-    width: 550px;
+    width: 600px;
     background: var(--actual-bg-color);
     border-radius: 10px;
     overflow: hidden;
@@ -62,11 +66,7 @@
     display: block;
     float: left;
     width: 47%; 
-    padding-left: 20px;
-}
-
-.column1{
-    margin-right: 5px;
+    margin: 0px 5px 0px 5px;
 }
 
 .option{

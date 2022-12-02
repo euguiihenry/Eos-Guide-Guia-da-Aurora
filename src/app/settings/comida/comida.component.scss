@@ -17,6 +17,10 @@
     justify-content: center;
     align-items: center;
     padding: 15px;
+    background: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)),
+        url(https://images.squarespace-cdn.com/content/v1/59e54c0e4c0dbfc799496037/1511989926235-GBWVHIE5EGOURV4B7MAU/Orange+Blueberry+Bundt+Cake.jpg?format=2500w);
+    background-size: cover;
+    
 }
 
 .wrap-personalize{
@@ -161,7 +165,7 @@
 }
 .text-form-description{
     font-family: 'Nunito', sans-serif;
-    font-size: 12px;
+    font-size: 13.5px;
     color: var(--main-font-color);
     padding-left: 35px;
 

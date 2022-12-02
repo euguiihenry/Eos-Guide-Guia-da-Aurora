@@ -5,7 +5,7 @@
 /*------------------------------------------------------------------
 [ Main container ]*/
 .container-settings {
-    width:auto;
+    width:100%;
     min-height: 100vh;
     display: -webkit-box;
     display: -webkit-flex;
@@ -16,11 +16,13 @@
     justify-content: center;
     align-items: center;
     padding: 15px;
-    /*background-color: rgb(214, 219, 239);*/
     
+    background: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)),
+        url(https://wallpaperaccess.com/full/714374.jpg);
+    background-size: cover;
 }
 .wrap-settings {
-    width: 550px;
+    width: 600px;
     background: var(--actual-bg-color);
     border-radius: 10px;
     overflow: hidden;

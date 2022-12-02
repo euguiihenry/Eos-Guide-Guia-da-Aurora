@@ -1,0 +1,18 @@
+ng g c nome-componente
+---------------------------------
+ng g s nome-servico
+
+---------------------------------
+npm install npm - -g
+npm –v
+
+---------------------------------
+npm install -g @angular/cli
+ng --version
+
+---------------------------------
+npx ng new nome-projeto
+
+npx ng serve -o --> abrir servidor 
+
+json-server --watch dbUsers.json --> servidor JSON
