@@ -21,7 +21,7 @@ const httpOptions = {
 
 export class UserRegistration {
     private url: string = 'http://localhost:3000/user';
-    private cont: number = 1000;
+    private cont: number = 100;
     public user: User = new User();
     private userAuthenticated: boolean = false;
 
