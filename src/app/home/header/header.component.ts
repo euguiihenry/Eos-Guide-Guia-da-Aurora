@@ -9,6 +9,8 @@ import { UserRegistration } from 'src/app/global-services/userRegistration.servi
 export class HeaderComponent implements OnInit {
   logged: Boolean = false;
 
+  dark: Boolean = false;
+
   constructor(private userAuth: UserRegistration) {
     
   }
@@ -17,4 +19,9 @@ export class HeaderComponent implements OnInit {
     this.logged = this.userAuth.isUserAuthenticated();
   }
 
+  public toggle(){
+    document.body.classList.toggle('dark_therme');
+    this.dark = !(this.dark);
+    
+  }
 }

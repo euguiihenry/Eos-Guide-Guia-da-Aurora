@@ -3,7 +3,7 @@
 
 .footer-body{
     background-color: var(--main-color-in-use-1);
-    color: var(--alternative-font-color);
+    color: var(--indian-yellow-primary-color);
     @include display-flex(column, space-around, center, 2em);
     align-items: center;
     text-align: center;
@@ -12,6 +12,7 @@
     max-height: 100%;
     width: 100%;
     height: 100%;
+    
 
     .footer-body-sec1{
         //width: 100%;

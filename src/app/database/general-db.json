@@ -94,6 +94,13 @@
       "lastname": "Dark",
       "username": "helena123",
       "password": "123456789"
+    },
+    {
+      "id": 6,
+      "firstname": "Joana",
+      "lastname": "Dark",
+      "username": "joannaDark",
+      "password": "joanna1899"
     }
   ]
 }

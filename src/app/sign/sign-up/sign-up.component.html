@@ -7,7 +7,7 @@
             <div class="firstname-field">
                 <span class="text-form">NOME:</span>
                 <br>
-                <input class="firstname-registration" name="firstname-registration" required="required" type="text"
+                <input class="firstname-registration" name="firstname-registration" required type="text"
                     placeholder="John" minlength="2" [(ngModel)]="user.firstname">
 
 
@@ -16,7 +16,7 @@
             <div class="lastname-field">
                 <span class="text-form">SOBRENOME:</span>
                 <br>
-                <input class="lastname-registration" name="lastname-registration" required="required" type="text"
+                <input class="lastname-registration" name="lastname-registration" required type="text"
                     placeholder="Lennon" minlength="2" [(ngModel)]="user.lastname">
                 
             </div>
@@ -24,8 +24,8 @@
             <div>
                 <span class="text-form">USUÁRIO:</span>
                 <br>
-                <input class="username-login" name="username-login" required="required" type="text"
-                    placeholder="Ex.: johnlennon" [(ngModel)]="user.username">
+                <input class="username-login" name="username-login" required type="text"
+                    placeholder="Ex.: johnlennon" minlength="8" [(ngModel)]="user.username">
                 
             </div>
 
@@ -33,7 +33,7 @@
             <div data-validate="Enter password">
                 <span class="text-form">SENHA:</span>
                 <br>
-                <input class="password-login" name="password-login" required="required" type="password" value="password"
+                <input class="password-login" name="password-login" required type="password" minlength="8" value="password"
                     placeholder="***********" [(ngModel)]="user.password">
             </div>
 
@@ -41,7 +41,7 @@
             <div data-validate="Enter password" class="field-input">
                 <span class="text-form">CONFIRMAR SENHA:</span>
                 <br>
-                <input class="confirmPass-registration" name="confirmPass-registration" required="required"
+                <input class="confirmPass-registration" name="confirmPass-registration" required
                     type="password" placeholder="***********" minlength="8" [(ngModel)]="itemPasswordConfirm">
             </div>
 

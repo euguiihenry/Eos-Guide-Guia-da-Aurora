@@ -276,11 +276,3 @@ export class MainComponent implements OnInit {
   }
 
 }
-
-/*
-
-      
-      
-      
-      piquiniques: this.lazerForm.value.piquiniques,
-      */

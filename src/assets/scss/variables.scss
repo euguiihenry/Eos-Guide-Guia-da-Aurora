@@ -24,12 +24,20 @@
 
         /* Div Colors:
         ================================================================*/
-            --div1-light-theme-color: #FFF3C2;
-            --div2-light-theme-color: #E6FFED;
+            --div1-light-theme-color: rgba(255, 243, 194, 0.87);
+            --div2-light-theme-color: rgba(230, 255, 237, 0.9);
 
         /* Shadow Colors:
         ================================================================*/
             --shadow-light-theme-color: #00000081;
+        
+        /* Color Button Header:
+        =================================================================*/
+            --button-Header-light-theme-color: rgba(199, 188, 138, 0.5);
+
+        /* Fundo Home
+        ====================================================================*/
+            --bg-img-light-theme: url(https://i.redd.it/m6y3b2fkyie51.jpg);
         
 
 
@@ -37,7 +45,7 @@
     ================================================================*/
         /* Font Colors:
         ================================================================*/
-            --font-dark-theme-color: #FFF5C9;
+            --font-dark-theme-color: #f5ebbfea;
 
         /* BG Color:
         ================================================================*/
@@ -46,7 +54,15 @@
         /* Div Colors:
         ================================================================*/
             --div1-dark-theme-color: #293745;
-            --div2-dark-theme-color: #23353B;
+            --div2-dark-theme-color: #233a41;
+
+        /* Color Button Header:
+        =================================================================*/
+        --button-Header-Dark-theme-color: rgba(41, 55, 69, 1);
+
+        /* Fundo Home
+        ====================================================================*/
+        --bg-img-dark-theme: url(https://c.wallhere.com/photos/bc/e6/nature_photography-52461.jpg!d);
 
     /* Actual Colors:
     ================================================================*/
@@ -74,5 +90,32 @@
         /* Actual Shadow Colors in Use:
         ================================================================*/
             --actual-shadow-color-use: var(--shadow-light-theme-color);
+        
+
+        /* Actual Backgroude Image:
+        ================================================================*/
+        --actual-bg-image-use: var(--bg-img-light-theme);
+        
+        
+
+}
+
+:root .dark_therme{
+
+    --actual-bg-color: var(--bg-dark-theme-color);
+    --actual-div1-color: var(--div1-dark-theme-color);
+    --actual-div2-color: var(--div2-dark-theme-color);
+
+    --main-font-color: var(--font-dark-theme-color);
+    --alternative-font-color: var(--font-light-theme-color);
+
+    --main-color-in-use-1: var(--charcoal-primary-color);
+    --main-color-in-use-2: var(--indian-yellow-primary-color);
+    --secondary-main-color-in-use-1: var(--sage-secondary-color);
+    --secondary-main-color-in-use-2: var(--khaki-secondary-color);
+
+
+    --actual-bg-image-use: var(--bg-img-dark-theme);
+        
 
 }

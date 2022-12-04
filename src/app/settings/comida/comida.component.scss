@@ -134,6 +134,7 @@
     -moz-border-radius: 16px 16px 16px 16px;
     -webkit-border-radius: 16px 16px 16px 16px;
     border: 1px  transparent;
+    color: var(--main-font-color);
 }
 
 /*------------------------------------------------------------------
@@ -141,14 +142,14 @@
 
 .salveOptions-btn:hover{
     background-color: var( --main-color-in-use-2);
-    color: var(--main-font-color);
+    color: var(--alternative-font-color);
     transition: 0.5s;
 
 }
 
 .returnSettings-btn:hover{
     background-color: var(--secondary-main-color-in-use-1);
-    color: var(--main-font-color);
+    color: var(--alternative-font-color);
     transition: 0.5s;
 
 }

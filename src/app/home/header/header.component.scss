@@ -4,6 +4,7 @@ nav{
             font-family: var(--inter-title);
             text-transform: uppercase;
             font-size: 1.2rem;
+            color: var(--main-font-color);
         }
     }
 
@@ -16,14 +17,21 @@ nav{
             display: flex;
             justify-content: center;
             align-items: center;
-            background-color: rgba(199, 188, 138, 0.5);
+            background-color: var(--sage-secondary-color);
             border-radius: 1em;
             cursor: pointer;
     
             .nav-icons{
                 width: 1.8rem;
                 height: 1.8rem;
+                
             }
         }
+
+        .icon-fg:hover{
+            background-color: var(--main-color-in-use-2);
+            transition: 0.5s;
+        }
     }
+
 }
