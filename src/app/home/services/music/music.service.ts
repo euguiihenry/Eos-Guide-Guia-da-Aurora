@@ -21,19 +21,26 @@ export class MusicService {
   };
 
   saveViralTracks(now: Date) {
-    this.http.get<any>(this.URL, this.options)
-    .subscribe((data: any)=> {
+    try{
+      this.http.get<any>(this.URL, this.options)
+        .subscribe((data: any)=> {
+    
+          localStorage.setItem('viralMusic', JSON.stringify(data));
+          let info: any = []
+          data.tracks.forEach((element: any) => {
+            info.push(element);
+          });
+    
+          info.push(now.getTime());
+    
+          localStorage.setItem('viralMusic', JSON.stringify(info));
+      })
 
-      localStorage.setItem('viralMusic', JSON.stringify(data));
-      let info: any = []
-      data.tracks.forEach((element: any) => {
-        info.push(element);
-      });
-
-      info.push(now.getTime());
-
-      localStorage.setItem('viralMusic', JSON.stringify(info));
-  })
+      
+    }
+    catch(err){
+      //console.log(err);
+    }
 }
 
   getViralTracks() {
@@ -51,6 +58,8 @@ export class MusicService {
       } else {
         this.saveViralTracks(now);
       }
+    } else {
+      this.saveViralTracks(now);
     }
   }
 
@@ -71,7 +80,7 @@ export class MusicService {
       } else {
         artists += ", " + e.name;
       }
-
+      console.log(e);
       x++;
     });
 

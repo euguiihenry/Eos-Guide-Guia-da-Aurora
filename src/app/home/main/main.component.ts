@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, EventEmitter, OnInit } from '@angular/core';
 import { NoticiasService } from '../services/news/noticias.service';
 import { NewsInterface } from '../services/news/models/proto-news-interface';
 import { NewsArticles } from '../services/news/models/final-news-interface';
@@ -20,6 +20,7 @@ export class MainComponent implements OnInit {
     musicName: string; singer: string; musicImg: string; musicLink: string;
     statusIcon: string;
     statusOfPlayer: string;
+    public status: EventEmitter<boolean> = new EventEmitter<boolean>();
 
   quoteTitle: string;
   quoteParagraph: string;
@@ -163,12 +164,19 @@ export class MainComponent implements OnInit {
 
   showMusic() {
     this.musicService.getViralTracks();
-    let music = this.musicService.getSavedMusic();
-    
-    this.musicName = music.name;
-    this.singer = music.artists;
-    this.musicImg = music.image;
-    this.musicLink = music.link;
+
+    if(Object.keys(JSON.parse(localStorage.getItem('viralMusic') || '{}')).length !== 0) {
+      let music = this.musicService.getSavedMusic();
+
+      this.musicName = music.name;
+      this.singer = music.artists;
+      this.musicImg = music.image;
+      this.musicLink = music.link;
+    } else {
+      alert("Error ao acessar o acervo de música! Provavelmente a API chegou ao seu limite de acessos!");
+      this.musicImg = "https://upload.wikimedia.org/wikipedia/en/f/f5/Dua_Lipa_-_Future_Nostalgia_%28Official_Album_Cover%29.png";
+      this.musicLink = "https://open.spotify.com/track/3AzjcOeAmA57TIOr9zF1ZW?si=9cf4d7fd9cca42b5";
+    }
   }
   
   ngOnInit(): void {
