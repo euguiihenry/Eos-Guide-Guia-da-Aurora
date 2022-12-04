@@ -31,6 +31,7 @@ export class MenuComponent implements OnInit {
 
   logout() {
     this.userAuth.saveUserAuth(false);
+    localStorage.clear();
 
     this.router.navigate(['/home']);
   }

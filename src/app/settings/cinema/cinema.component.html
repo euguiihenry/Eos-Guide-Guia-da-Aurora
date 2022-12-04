@@ -5,99 +5,83 @@
             <button class="returnSettings-btn bi bi-arrow-left-short" [routerLink]="['/settings']"></button>
         </div>
 
-        <form class="personalize-form">
+        <form class="personalize-form" #form="ngForm" [formGroup]="cinemaForm">
             
             <span class="title-form">GÊNEROS CINEMATOGRÁFICOS</span>
 
             <div class="container-checkbox">
                 <div class="column column1">
                     <div class="option">
-                        <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
+                        <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault" formControlName="musical">
                         <label for="musical" class="text-form">Musical</label>
                     </div>
     
                     <div class="option">
-                        <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
+                        <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault" formControlName="biografia">
                         <label for="biografia" class="text-form">Biografia</label>
                     </div>
+
     
                     <div class="option">
-                        <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
-                        <label for="fantasia" class="text-form">Fantasia</label>
+                        <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault" formControlName="investigacao">
+                        <label for="investigacao" class="text-form">Investigação & Mistério</label>
                     </div>
     
                     <div class="option">
-                        <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
-                        <label for="policial" class="text-form">Policial</label>
-                    </div>
-    
-                    <div class="option">
-                        <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
+                        <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault" formControlName="drama">
                         <label for="drama" class="text-form">Drama</label>
                     </div>
     
                     <div class="option">
-                        <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
-                        <label for="esporte" class="text-form">Esporte</label>
+                        <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault" formControlName="aventura">
+                        <label for="esporte" class="text-form">Aventura</label>
                     </div>
-    
                     <div class="option">
-                        <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
-                        <label for="velhoOeste" class="text-form">Velho Oeste</label>
-                    </div>
-    
-                    <div class="option">
-                        <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
-                        <label for="misterio" class="text-form">Mistério</label>
+                        <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault" formControlName="thriller">
+                        <label for="thriller" class="text-form">Thriller</label>
                     </div>
     
                 </div>
 
                 <div class="column">
-                    <div class="option">
-                        <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
-                        <label for="thriller" class="text-form">Thriller</label>
-                    </div>
+                    
     
                     <div class="option">
-                        <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
+                        <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault" formControlName="horror">
                         <label for="Horror" class="text-form">Horror</label>
                     </div>
     
                     <div class="option">
-                        <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
+                        <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault" formControlName="guerra">
                         <label for="guerra" class="text-form">Guerra</label>
                     </div>
     
                     <div class="option">
-                        <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
+                        <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault" formControlName="acao">
                         <label for="acao" class="text-form">Ação</label>
                     </div>
     
                     <div class="option">
-                        <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
+                        <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault" formControlName="comedia">
                         <label for="comedia" class="text-form">Comédia</label>
                     </div>
     
                     <div class="option">
-                        <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
-                        <label for="sci-fi" class="text-form">Sci-Fi</label>
+                        <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault" formControlName="scifi">
+                        <label for="sci-fi" class="text-form">Sci-Fi & Fantasia</label>
                     </div>
     
                     <div class="option">
-                        <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
+                        <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault" formControlName="romance">
                         <label for="romance" class="text-form">Romance</label>
                     </div>
     
-                    <div class="option">
-                        <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
-                        <label for="historia" class="text-form">História</label>
-                    </div>
+                    
                 </div>
             </div>
 
             <div class="container-salve-btn">
-                    <button class="salveOptions-btn" [routerLink]="['/settings']">
+                    <button class="salveOptions-btn" (click)="salvar()">
                         SALVAR
                     </button>
             </div>

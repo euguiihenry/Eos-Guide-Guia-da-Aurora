@@ -87,6 +87,13 @@
       "lastname": "Maria",
       "username": "anaMaria_edu",
       "password": "123456789"
+    },
+    {
+      "id": 5,
+      "firstname": "Helena",
+      "lastname": "Dark",
+      "username": "helena123",
+      "password": "123456789"
     }
   ]
 }

@@ -21,7 +21,7 @@ const httpOptions = {
 
 export class UserRegistration {
     private url: string = 'http://localhost:3000/user';
-    private cont: number = 100;
+    private cont: number = 10;
     public user: User = new User();
     private userAuthenticated: boolean = false;
 
@@ -35,7 +35,10 @@ export class UserRegistration {
     public salveNewUser(user: User): Observable<any> {
 
         const newUserJSON = JSON.stringify(user);
+        this.saveUserAuth(true);
+        this.rota.navigate(['/home']);
         return this.http.post(this.url, newUserJSON, httpOptions);
+        
 
     }
 

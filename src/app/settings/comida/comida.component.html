@@ -5,50 +5,50 @@
             <button class="returnSettings-btn bi bi-arrow-left-short" [routerLink]="['/settings']"></button>
         </div>
 
-        <form class="personalize-form">
+        <form class="personalize-form" #form="ngForm" [formGroup]="comidaForm">
             
             <span class="title-form">PREFERÊNCIAS ALIMENTARES</span>
 
             <div class="container-checkbox">
                 <div class="column">
                     <div class="option">
-                        <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
+                        <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault" formControlName="padrao">
                         <label for="padrao" class="text-form">Padrão</label>
                         <br>
                         <label class="text-form-description">inclui carne em geral, ovos, laticínios e alimentos vegetais.</label>
                     </div>
 
                     <div class="option">
-                        <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
+                        <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault" formControlName="pescatariana">
                         <label for="pescatariana" class="text-form">Pescatariana</label>
                         <br>
                         <label class="text-form-description">inclui peixe, ovos, laticínios e alimentos vegetais, exclui carne vermelha ou aves.</label>
                     </div>
 
                     <div class="option">
-                        <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
-                        <label for="pescatariana" class="text-form">Vegetariana</label>
+                        <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault" formControlName="vegetariana">
+                        <label for="vegetariana" class="text-form">Vegetariana</label>
                         <br>
                         <label class="text-form-description">inclui ovos, laticínios e alimentos vegetais, exclui carne vermelha, peixe ou aves.</label>
                     </div>
 
                     <div class="option">
-                        <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
-                        <label for="pescatariana" class="text-form">Lacto-vegetariana</label>
+                        <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault" formControlName="lactovegetariana">
+                        <label for="lactovegetariana" class="text-form">Lacto-vegetariana</label>
                         <br>
                         <label class="text-form-description">inclui laticínios e alimentos vegetais, exclui carne vermelha, peixe, aves e ovos.</label>
                     </div>
 
                     <div class="option">
-                        <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
-                        <label for="pescatariana" class="text-form">Ovo-vegetariana</label>
+                        <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault" formControlName="ovovegetariana">
+                        <label for="ovovegetariana" class="text-form">Ovo-vegetariana</label>
                         <br>
                         <label class="text-form-description">inclui apenas ovos e alimentos de origem vegetais.</label>
                     </div>
 
                     <div class="option">
-                        <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
-                        <label for="pescatariana" class="text-form">Vegana</label>
+                        <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault" formControlName="vegana">
+                        <label for="vegana" class="text-form">Vegana</label>
                         <br>
                         <label class="text-form-description">inclui apenas alimentos de origem vegetal e exclui alimentos de origem animal.</label>
                     </div>
@@ -59,7 +59,7 @@
             </div>
 
             <div class="container-salve-btn">
-                    <button class="salveOptions-btn" [routerLink]="['/settings']">
+                    <button class="salveOptions-btn" (click)="salvar()">
                         SALVAR
                     </button>
             </div>

@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import { FormGroup, FormBuilder,
-  FormArray, Validators } from '@angular/forms';
+import { FormGroup, FormBuilder} from '@angular/forms';
+
 
 
 @Component({
@@ -10,25 +10,55 @@ import { FormGroup, FormBuilder,
 })
 export class LazerComponent implements OnInit {
 
-  public leisureForm : FormGroup;
+  public lazerForm!: FormGroup;
 
-  constructor(private formBuilder: FormBuilder) {
-    this.leisureForm = this.formBuilder.group({
-    caminhar : false,
-    fotografia: false,
-    ler: false,
-    bar: false,
-    esportes: false,
-    cinema: false,
-    piquiniques: false,
-    viajar: false,
-    pescaria: false,
-    turismo: false,
-  });
+  constructor(private formBuilder: FormBuilder) { 
+
+    this.lazerForm = this.formBuilder.group({
+      caminhar: false,
+      fotografia:false,
+      ler: false,
+      bar: false,
+      esportes: false,
+      cinema: false,
+      piquiniques: false,
+      viajar: false,
+      pescaria: false,
+      turismo:false,
+    })
+
+
   }
-
+  
   ngOnInit(): void {
+    
   }
+
+
+  salvar() {
+
+    let lazer = {
+      caminhar : this.lazerForm.value.caminhar,
+      fotografia: this.lazerForm.value.fotografia,
+      ler: this.lazerForm.value.ler,
+      bar: this.lazerForm.value.bar,
+      esportes: this.lazerForm.value.esportes,
+      cinema: this.lazerForm.value.cinema,
+      piquiniques: this.lazerForm.value.piquiniques,
+      viajar: this.lazerForm.value.viajar,
+      pescaria: this.lazerForm.value.pescaria,
+      turismo:this.lazerForm.value.turismo
+
+    }
+
+    localStorage.setItem('lazer', JSON.stringify(lazer));
+    alert('Preferências salvas! Confira a página principal')
+
+
+  }
+
+
+
 
   
 

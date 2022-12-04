@@ -1,6 +1,6 @@
 <div class="container-access">
     <div class="wrap-access">
-        <form class="registration-form" #form="ngForm" [formGroup]="userForm" (ngSubmit)="newUser()">
+        <form class="registration-form" #form="ngForm" >
             <span class="title-form">CRIAR CONTA</span>
             <p class="subtitle-form">Crie seu cadastro de usuário abaixo</p>
 
@@ -8,14 +8,7 @@
                 <span class="text-form">NOME:</span>
                 <br>
                 <input class="firstname-registration" name="firstname-registration" required="required" type="text"
-                    placeholder="John" [(ngModel)]="user.firstname" formControlName="nome" />
-                <div class="alert alert-danger mt-1" *ngIf="
-                      (userForm.get('nome')?.errors?.['required'] ||
-                      userForm.get('nome')?.errors?.['minlength'] || 
-                      userForm.get('nome')?.errors?.['maxlength'])
-                      && form.submitted">
-                    Informe a quantidade correta de caracteres!
-                </div>
+                    placeholder="John" minlength="2" [(ngModel)]="user.firstname">
 
 
             </div>
@@ -24,44 +17,24 @@
                 <span class="text-form">SOBRENOME:</span>
                 <br>
                 <input class="lastname-registration" name="lastname-registration" required="required" type="text"
-                    placeholder="Lennon" [(ngModel)]="user.lastname" formControlName="sobrenome" />
-                <div class="alert alert-danger mt-1" *ngIf="
-                      (userForm.get('sobrenome')?.errors?.['required'] ||
-                      userForm.get('sobrenome')?.errors?.['minlength'] || 
-                      userForm.get('sobrenome')?.errors?.['maxlength'])
-                      && form.submitted">
-                    Informe a quantidade correta de caracteres!
-                </div>
+                    placeholder="Lennon" minlength="2" [(ngModel)]="user.lastname">
+                
             </div>
 
             <div>
                 <span class="text-form">USUÁRIO:</span>
                 <br>
                 <input class="username-login" name="username-login" required="required" type="text"
-                    placeholder="Ex.: johnlennon" [(ngModel)]="user.username" formControlName="usuario" />
-                <div class="alert alert-danger mt-1" *ngIf="
-                    (userForm.get('usuario')?.errors?.['required'] ||
-                    userForm.get('usuario')?.errors?.['minlength'] || 
-                    userForm.get('usuario')?.errors?.['maxlength'])
-                    && form.submitted">
-                    Informe a quantidade correta de caracteres!
-                </div>
+                    placeholder="Ex.: johnlennon" [(ngModel)]="user.username">
+                
             </div>
 
 
             <div data-validate="Enter password">
                 <span class="text-form">SENHA:</span>
                 <br>
-                <input class="password-login" name="password-login" required="required" type="password"
-                    placeholder="***********" [(ngModel)]="user.password"
-                    formControlName="senha" />
-                <div class="alert alert-danger mt-1" *ngIf="
-                    (userForm.get('senha')?.errors?.['required'] ||
-                    userForm.get('senha')?.errors?.['minlength'] || 
-                    userForm.get('senha')?.errors?.['maxlength'])
-                    && form.submitted">
-                    Informe a quantidade correta de caracteres!
-                </div>
+                <input class="password-login" name="password-login" required="required" type="password" value="password"
+                    placeholder="***********" [(ngModel)]="user.password">
             </div>
 
 
@@ -69,11 +42,11 @@
                 <span class="text-form">CONFIRMAR SENHA:</span>
                 <br>
                 <input class="confirmPass-registration" name="confirmPass-registration" required="required"
-                    type="password" placeholder="***********" minlength="8" required [(ngModel)]="itemPasswordConfirm"/>
+                    type="password" placeholder="***********" minlength="8" [(ngModel)]="itemPasswordConfirm">
             </div>
 
             <div class="container-form-btn">
-                <button class="registerUser-form-btn" type="submit">
+                <button class="registerUser-form-btn" (click)="newUser()">
                     CRIAR CONTA
                 </button>
             </div>

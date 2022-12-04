@@ -15,4 +15,4 @@ npx ng new nome-projeto
 
 npx ng serve -o --> abrir servidor 
 
-json-server --watch dbUsers.json --> servidor JSON
+json-server --watch general-db.json --> servidor JSON

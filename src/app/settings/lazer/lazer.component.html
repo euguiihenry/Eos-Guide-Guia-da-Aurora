@@ -6,7 +6,7 @@
             <button class="returnSettings-btn bi bi-arrow-left-short" [routerLink]="['/settings']"></button>
         </div>
 
-        <form class="personalize-form" #form="ngForm" [formGroup]="leisureForm">
+        <form class="personalize-form" #form="ngForm" [formGroup]="lazerForm">
             
             <span class="title-form">PREFERÊNCIAS DE LAZER </span>
             <section >
@@ -15,27 +15,27 @@
             <div class="container-checkbox" >
                 <div class="column column1">
                     <div class="option">
-                        <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault" >
+                        <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault"  formControlName="caminhar">
                         <label for="caminhar" class="text-form">Caminhar</label>
                     </div>
     
                     <div class="option">
-                        <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
+                        <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault" formControlName="fotografia">
                         <label for="fotografia" class="text-form">Fotografia</label>
                     </div>
     
                     <div class="option">
-                        <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
+                        <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault" formControlName="ler">
                         <label for="ler" class="text-form">Ler</label>
                     </div>
     
                     <div class="option">
-                        <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
+                        <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault" formControlName="bar">
                         <label for="bar" class="text-form">Bares & Restaurantes</label>
                     </div>
     
                     <div class="option">
-                        <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
+                        <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault" formControlName="esportes">
                         <label for="esportes" class="text-form">Praticar Esportes</label>
                     </div>
 
@@ -44,27 +44,27 @@
 
                 <div class="column">
                     <div class="option">
-                        <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
+                        <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault" formControlName="cinema">
                         <label for="cinema" class="text-form">Cinematográfia</label>
                     </div>
     
                     <div class="option">
-                        <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
+                        <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault" formControlName="piquiniques">
                         <label for="piquiniques" class="text-form">Piquiniques</label>
                     </div>
     
                     <div class="option">
-                        <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
+                        <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault" formControlName="viajar">
                         <label for="viajar" class="text-form">Viajar</label>
                     </div>
     
                     <div class="option">
-                        <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
+                        <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault" formControlName="pescaria">
                         <label for="pescaria" class="text-form">Pescaria</label>
                     </div>
     
                     <div class="option">
-                        <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
+                        <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault" formControlName="turismo">
                         <label for="Turismo" class="text-form">Turismo</label>
                     </div>
 
@@ -72,7 +72,7 @@
             </div>
 
             <div class="container-salve-btn">
-                    <button class="salveOptions-btn" [routerLink]="['/settings']">
+                    <button class="salveOptions-btn" (click)="salvar()" >
                         SALVAR
                     </button>
             </div>
