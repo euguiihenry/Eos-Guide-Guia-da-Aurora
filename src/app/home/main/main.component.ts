@@ -2,6 +2,9 @@ import { Component, OnInit } from '@angular/core';
 import { NoticiasService } from '../services/news/noticias.service';
 import { NewsInterface } from '../services/news/models/proto-news-interface';
 import { NewsArticles } from '../services/news/models/final-news-interface';
+import { WeatherService } from '../services/weather/weather.service';
+import { weatherInterface } from '../services/weather/models/weather-info-interface';
+import { weatherFinal } from '../services/weather/models/weather-final-interface';
 
 @Component({
   selector: 'app-main',
@@ -48,7 +51,7 @@ export class MainComponent implements OnInit {
     public protoNews: NewsInterface;
     public newsArticles: NewsArticles[];
 
-  constructor(private newsService: NoticiasService) { 
+  constructor(private newsService: NoticiasService, private weatherService: WeatherService) { 
 
     // Weather:
       this.local = "Belo Horizonte";
@@ -109,9 +112,60 @@ export class MainComponent implements OnInit {
       });
     })
   }
+
+  private showWeather(weatherInfo: weatherFinal) {
+    if(Object.keys(weatherInfo).length !== 0) {
+      this.local = weatherInfo.location;
+      this.windP = ((weatherInfo.wind)*3,6);
+      this.waterP = weatherInfo.humidity;
+
+      this.temperatureStatus = weatherInfo.description;
+      this.degrees = weatherInfo.temp;
+    } 
+  }
+
+  private getInfo() {
+    const weatherInfo: weatherFinal = JSON.parse(localStorage.getItem('weatherInfo') || '{}');
+    let now = new Date();
+    let sumTime = 3600000;
+
+    if (Object.keys(weatherInfo).length !== 0) {
+      if (weatherInfo.time >= (now.getTime()+sumTime)) { 
+        localStorage.removeItem('weatherInfo');
+        this.getWeather(now);
+
+      } else {
+        this.showWeather(weatherInfo);
+      }
+
+    } else {
+      this.getWeather(now);
+    }
+  }
+
+  private getWeather = async (now: Date) => {
+    let coords = await this.weatherService.getCoords();
+
+    (this.weatherService.getWeatherStatus(coords))
+      .subscribe((data:weatherInterface) => {
+        let info = {
+          location: data.name,
+          description: data.weather.at(0)?.description,
+          icon: data.weather.at(0)?.icon,
+          temp: Math.trunc(data.main.temp),
+          wind: data.wind.speed,
+          humidity: data.main.humidity,
+          time: now.getTime()
+        }
+
+        localStorage.setItem('weatherInfo', JSON.stringify(info));
+        this.showWeather(JSON.parse(localStorage.getItem('weatherInfo') || '{}'));
+      })
+  }
   
   ngOnInit(): void {
     this.getNewsDB();
+    this.getInfo();
   }
 
 }

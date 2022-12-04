@@ -14,7 +14,7 @@ import { MainComponent } from './main/main.component';
   declarations: [
     FooterComponent,
     HeaderComponent,
-    MainComponent,
+    MainComponent
   ],
   imports: [
     CommonModule,
