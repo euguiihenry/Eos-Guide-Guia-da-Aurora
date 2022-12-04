@@ -1,6 +1,7 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { weatherInterface } from './models/weather-info-interface';
+import { environment } from 'src/environments/environment';
 
 @Injectable({
   providedIn: 'root'
@@ -8,7 +9,7 @@ import { weatherInterface } from './models/weather-info-interface';
 
 export class WeatherService {
   private weatherInfo: weatherInterface;
-  private weatherAPI: string = 'a5cf07b31ef30d7f5a16d1df55135522'; //process.env['OPEN_WEATHER'];
+  private weatherAPI: string = environment.openWeather //process.env['OPEN_WEATHER'];
 
   constructor(private http: HttpClient) {
     this.weatherInfo = {} as weatherInterface;

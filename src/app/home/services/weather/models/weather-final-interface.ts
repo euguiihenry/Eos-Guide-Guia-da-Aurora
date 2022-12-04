@@ -5,5 +5,6 @@ export interface weatherFinal {
     "temp": number,
     "wind": number,
     "humidity": number,
+    "pressure": number
     "time": number
 }

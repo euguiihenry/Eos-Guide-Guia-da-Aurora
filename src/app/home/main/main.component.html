@@ -13,9 +13,9 @@
                         <h3 class="local-h3">{{local}}</h3>
                     </div>
                     
-                    <svg class="bi weather-icon" width="20" height="20" fill="currentColor" id="login-btn">
-                        <use attr.xlink:href="{{bootstrapWeatherIcon}}"></use>
-                    </svg>
+                    <div class="weather-icon">
+                        <img src="{{iconLink}}" alt="ícone do tempo" style="width: 4.5rem; height: 4.5rem; margin-left: -0.5em;">
+                    </div>
 
                 </div>
 
@@ -42,8 +42,8 @@
                             <svg class="bi specific-info-icon" width="20" height="20" fill="currentColor" id="login-btn">
                                 <use xlink:href="bootstrap-icons.svg#percent"/>
                             </svg>
-                            <p class="detail-title">Precipitação</p>
-                            <p class="detail-info">{{rainP}}%</p>
+                            <p class="detail-title">Pressão</p>
+                            <p class="detail-info">{{pressure}}hPa</p>
                         </div>
                     </div>
 

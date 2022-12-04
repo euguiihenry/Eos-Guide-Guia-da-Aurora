@@ -12,16 +12,8 @@ import { weatherFinal } from '../services/weather/models/weather-final-interface
   styleUrls: ['./main.component.scss']
 })
 export class MainComponent implements OnInit {
-  local: string;
-  iconName: string;
-  bootstrapWeatherIcon: string;
-
-  windP: number;
-  waterP: number;
-  rainP: number;
-
-  temperatureStatus: string;
-  degrees: number;
+  //@ts-ignore
+    local: string; iconLink: string;  windP: number; waterP: number; pressure: number; temperatureStatus: string; degrees: number;
 
   musicName: string;
   singer: string;
@@ -52,18 +44,18 @@ export class MainComponent implements OnInit {
     public newsArticles: NewsArticles[];
 
   constructor(private newsService: NoticiasService, private weatherService: WeatherService) { 
-
     // Weather:
-      this.local = "Belo Horizonte";
-      this.iconName = "cloud-sun";
-      this.bootstrapWeatherIcon = "bootstrap-icons.svg#" + this.iconName;
+      if (Object.keys(JSON.parse(localStorage.getItem('weatherInfo') || '{}')).length === 0) {
+        this.local = "Belo Horizonte";
+        this.iconLink = "http://openweathermap.org/img/wn/02d.png";
 
-      this.windP = 10;
-      this.waterP = 39;
-      this.rainP = 0;
+        this.windP = 10;
+        this.waterP = 39;
+        this.pressure = 0;
 
-      this.temperatureStatus = "Parcialmente nublado";
-      this.degrees = 25;
+        this.temperatureStatus = "Parcialmente nublado";
+        this.degrees = 25;
+      }
 
     // Music:
       this.musicName = "Physical";
@@ -118,8 +110,9 @@ export class MainComponent implements OnInit {
       this.local = weatherInfo.location;
       this.windP = ((weatherInfo.wind)*3,6);
       this.waterP = weatherInfo.humidity;
-
-      this.temperatureStatus = weatherInfo.description;
+      this.pressure = weatherInfo.pressure;
+      this.temperatureStatus = weatherInfo.description.charAt(0).toUpperCase() + weatherInfo.description.slice(1);
+      this.iconLink = `http://openweathermap.org/img/wn/${weatherInfo.icon}.png`;
       this.degrees = weatherInfo.temp;
     } 
   }
@@ -155,6 +148,7 @@ export class MainComponent implements OnInit {
           temp: Math.trunc(data.main.temp),
           wind: data.wind.speed,
           humidity: data.main.humidity,
+          pressure: data.main.pressure,
           time: now.getTime()
         }
 
