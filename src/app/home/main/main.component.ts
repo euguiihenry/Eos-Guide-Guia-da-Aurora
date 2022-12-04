@@ -5,6 +5,7 @@ import { NewsArticles } from '../services/news/models/final-news-interface';
 import { WeatherService } from '../services/weather/weather.service';
 import { weatherInterface } from '../services/weather/models/weather-info-interface';
 import { weatherFinal } from '../services/weather/models/weather-final-interface';
+import { MusicService } from '../services/music/music.service';
 
 @Component({
   selector: 'app-main',
@@ -15,10 +16,10 @@ export class MainComponent implements OnInit {
   //@ts-ignore
     local: string; iconLink: string;  windP: number; waterP: number; pressure: number; temperatureStatus: string; degrees: number;
 
-  musicName: string;
-  singer: string;
-  statusIcon: string;
-  statusOfPlayer: string;
+  //@ts-ignore
+    musicName: string; singer: string; musicImg: string; musicLink: string;
+    statusIcon: string;
+    statusOfPlayer: string;
 
   quoteTitle: string;
   quoteParagraph: string;
@@ -43,7 +44,7 @@ export class MainComponent implements OnInit {
     public protoNews: NewsInterface;
     public newsArticles: NewsArticles[];
 
-  constructor(private newsService: NoticiasService, private weatherService: WeatherService) { 
+  constructor(private newsService: NoticiasService, private weatherService: WeatherService, private musicService: MusicService) { 
     // Weather:
       if (Object.keys(JSON.parse(localStorage.getItem('weatherInfo') || '{}')).length === 0) {
         this.local = "Belo Horizonte";
@@ -58,8 +59,11 @@ export class MainComponent implements OnInit {
       }
 
     // Music:
-      this.musicName = "Physical";
-      this.singer = "Dua Lipa";
+      if(Object.keys(JSON.parse(localStorage.getItem('viralMusic') || '{}')).length === 0) {
+        this.musicName = "Physical";
+        this.singer = "Dua Lipa";
+      }
+
       this.statusIcon = "play-circle-fill"
       this.statusOfPlayer = "bootstrap-icons.svg#" + this.statusIcon;
 
@@ -156,10 +160,21 @@ export class MainComponent implements OnInit {
         this.showWeather(JSON.parse(localStorage.getItem('weatherInfo') || '{}'));
       })
   }
+
+  showMusic() {
+    this.musicService.getViralTracks();
+    let music = this.musicService.getSavedMusic();
+    
+    this.musicName = music.name;
+    this.singer = music.artists;
+    this.musicImg = music.image;
+    this.musicLink = music.link;
+  }
   
   ngOnInit(): void {
     this.getNewsDB();
     this.getInfo();
+    this.showMusic();
   }
 
 }

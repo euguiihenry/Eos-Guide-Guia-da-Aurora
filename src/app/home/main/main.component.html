@@ -57,7 +57,9 @@
     
         <section class="main-art1-sec2">
             <div class="main-art1-sec2-music-card">
-                <div class="music-image"></div>
+                <div class="music-image">
+                    <img src="{{musicImg}}" style="width: 5.6em; height: 5em" class="div-img-music">
+                </div>
 
                 <div class="music-info">
                     <div class="music-details">
@@ -67,11 +69,11 @@
                         </div>
                     </div>
     
-                    <div class="player-controller">
+                    <a class="player-controller" href="{{musicLink}}" target="_blank">
                         <svg class="bi player-icon" width="20" height="20" fill="currentColor" id="login-btn">
                             <use attr.xlink:href="{{statusOfPlayer}}"></use>
                         </svg>
-                    </div>
+                    </a>
                 </div>
             </div>
 
