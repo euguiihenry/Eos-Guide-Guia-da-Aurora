@@ -2,6 +2,10 @@ import { Component, OnInit } from '@angular/core';
 import { NoticiasService } from '../services/news/noticias.service';
 import { NewsInterface } from '../services/news/models/proto-news-interface';
 import { NewsArticles } from '../services/news/models/final-news-interface';
+import { weatherFinal } from '../services/weather/models/weather-final-interface';
+import { WeatherService } from '../services/weather/weather.service';
+import { MusicService } from '../services/music/music.service';
+import { weatherInterface } from '../services/weather/models/weather-info-interface';
 
 
 @Component({
@@ -10,21 +14,13 @@ import { NewsArticles } from '../services/news/models/final-news-interface';
   styleUrls: ['./main.component.scss']
 })
 export class MainComponent implements OnInit {
-  local: string;
-  iconName: string;
-  bootstrapWeatherIcon: string;
+  //@ts-ignore
+  local: string; iconLink: string;  windP: number; waterP: number; pressure: number; temperatureStatus: string; degrees: number;
 
-  windP: number;
-  waterP: number;
-  rainP: number;
-
-  temperatureStatus: string;
-  degrees: number;
-
-  musicName: string;
-  singer: string;
-  statusIcon: string;
-  statusOfPlayer: string;
+  //@ts-ignore
+    musicName: string; singer: string; musicImg: string; musicLink: string;
+    statusIcon: string;
+    statusOfPlayer: string;
 
   quoteTitle: string;
   quoteParagraph: string;
@@ -55,25 +51,28 @@ export class MainComponent implements OnInit {
     public protoNews: NewsInterface;
     public newsArticles: NewsArticles[];
 
-  constructor(private newsService: NoticiasService) { 
+  constructor(private newsService: NoticiasService, private weatherService: WeatherService, private musicService: MusicService) { 
+// Weather:
+  if (Object.keys(JSON.parse(localStorage.getItem('weatherInfo') || '{}')).length === 0) {
+    this.local = "Belo Horizonte";
+    this.iconLink = "http://openweathermap.org/img/wn/02d.png";
 
-    // Weather:
-      this.local = "Belo Horizonte";
-      this.iconName = "cloud-sun";
-      this.bootstrapWeatherIcon = "bootstrap-icons.svg#" + this.iconName;
+    this.windP = 10;
+    this.waterP = 39;
+    this.pressure = 0;
 
-      this.windP = 10;
-      this.waterP = 39;
-      this.rainP = 0;
+    this.temperatureStatus = "Parcialmente nublado";
+    this.degrees = 25;
+  }
 
-      this.temperatureStatus = "Parcialmente nublado";
-      this.degrees = 25;
+  // Music:
+  if(Object.keys(JSON.parse(localStorage.getItem('viralMusic') || '{}')).length === 0) {
+    this.musicName = "Physical";
+    this.singer = "Dua Lipa";
+  }
 
-    // Music:
-      this.musicName = "Physical";
-      this.singer = "Dua Lipa";
-      this.statusIcon = "play-circle-fill"
-      this.statusOfPlayer = "bootstrap-icons.svg#" + this.statusIcon;
+  this.statusIcon = "play-circle-fill"
+  this.statusOfPlayer = "bootstrap-icons.svg#" + this.statusIcon;
 
     // Quote:
       this.quoteTitle = "Quote do Dia";
@@ -98,12 +97,103 @@ export class MainComponent implements OnInit {
       });
     })
   }
+
+  private showWeather(weatherInfo: weatherFinal) {
+    if(Object.keys(weatherInfo).length !== 0) {
+      this.local = weatherInfo.location;
+      this.windP = ((weatherInfo.wind)*3,6);
+      this.waterP = weatherInfo.humidity;
+      this.pressure = weatherInfo.pressure;
+      this.temperatureStatus = weatherInfo.description.charAt(0).toUpperCase() + weatherInfo.description.slice(1);
+      this.iconLink = `http://openweathermap.org/img/wn/${weatherInfo.icon}.png`;
+      this.degrees = weatherInfo.temp;
+    } 
+  }
+
+  private getInfo() {
+    const weatherInfo: weatherFinal = JSON.parse(localStorage.getItem('weatherInfo') || '{}');
+    let now = new Date();
+    let sumTime = 3600000;
+
+    if (Object.keys(weatherInfo).length !== 0) {
+      if (weatherInfo.time >= (now.getTime()+sumTime)) { 
+        localStorage.removeItem('weatherInfo');
+        this.getWeather(now);
+
+      } else {
+        this.showWeather(weatherInfo);
+      }
+
+    } else {
+      this.getWeather(now);
+    }
+  }
+
+  private getWeather = async (now: Date) => {
+    let coords = await this.weatherService.getCoords();
+
+    (this.weatherService.getWeatherStatus(coords))
+      .subscribe((data:weatherInterface) => {
+        let info = {
+          location: data.name,
+          description: data.weather.at(0)?.description,
+          icon: data.weather.at(0)?.icon,
+          temp: Math.trunc(data.main.temp),
+          wind: data.wind.speed,
+          humidity: data.main.humidity,
+          pressure: data.main.pressure,
+          time: now.getTime()
+        }
+
+        localStorage.setItem('weatherInfo', JSON.stringify(info));
+        this.showWeather(JSON.parse(localStorage.getItem('weatherInfo') || '{}'));
+      })
+  }
+
+  showMusic() {
+    this.musicService.getViralTracks();
+
+    if(Object.keys(JSON.parse(localStorage.getItem('viralMusic') || '{}')).length !== 0) {
+      let music = this.musicService.getSavedMusic();
+
+      this.musicName = music.name;
+      this.singer = music.artists;
+      this.musicImg = music.image;
+      this.musicLink = music.link;
+    } else {
+      if(Object.keys(JSON.parse(localStorage.getItem('musicError') || '{}')).length !== 0) {
+        alert("Error ao acessar o acervo de música! Provavelmente a API chegou ao seu limite de acessos!");
+        this.musicImg = "https://upload.wikimedia.org/wikipedia/en/f/f5/Dua_Lipa_-_Future_Nostalgia_%28Official_Album_Cover%29.png";
+        this.musicLink = "https://open.spotify.com/track/3AzjcOeAmA57TIOr9zF1ZW?si=9cf4d7fd9cca42b5";
+        localStorage.setItem('musicError', 'true');
+
+      } else {
+        let answer = localStorage.getItem('musicError');
+
+        if(answer != 'true') {
+          alert("Error ao acessar o acervo de música! Provavelmente a API chegou ao seu limite de acessos!");
+          this.musicImg = "https://upload.wikimedia.org/wikipedia/en/f/f5/Dua_Lipa_-_Future_Nostalgia_%28Official_Album_Cover%29.png";
+          this.musicLink = "https://open.spotify.com/track/3AzjcOeAmA57TIOr9zF1ZW?si=9cf4d7fd9cca42b5";
+          localStorage.setItem('musicError', 'true');
+
+        } else {
+          localStorage.setItem('musicError', 'true');
+          this.musicImg = "https://upload.wikimedia.org/wikipedia/en/f/f5/Dua_Lipa_-_Future_Nostalgia_%28Official_Album_Cover%29.png";
+          this.musicLink = "https://open.spotify.com/track/3AzjcOeAmA57TIOr9zF1ZW?si=9cf4d7fd9cca42b5";
+        }
+      }
+    }
+  }
   
   ngOnInit(): void {
     this.getNewsDB();
     this.setLazerHome();
     this.setCinemaHome();
     this.setComidaHome();
+    this.getNewsDB();
+    this.getInfo();
+    this.showMusic();
+
   }
 
   public setLazerHome(){

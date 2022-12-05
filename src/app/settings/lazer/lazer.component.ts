@@ -26,14 +26,11 @@ export class LazerComponent implements OnInit {
       pescaria: false,
       turismo:false,
     })
-
-
   }
   
   ngOnInit(): void {
     
   }
-
 
   salvar() {
 
@@ -56,15 +53,4 @@ export class LazerComponent implements OnInit {
 
 
   }
-
-
-
-
-  
-
-
-
-
-
-
 }
