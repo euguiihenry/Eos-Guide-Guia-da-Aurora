@@ -6,6 +6,7 @@ import { weatherFinal } from '../services/weather/models/weather-final-interface
 import { WeatherService } from '../services/weather/weather.service';
 import { MusicService } from '../services/music/music.service';
 import { weatherInterface } from '../services/weather/models/weather-info-interface';
+import { QuoteService } from '../services/quote/quote.service';
 
 
 @Component({
@@ -21,10 +22,8 @@ export class MainComponent implements OnInit {
     musicName: string; singer: string; musicImg: string; musicLink: string;
     statusIcon: string;
     statusOfPlayer: string;
-
-  quoteTitle: string;
-  quoteParagraph: string;
-  quoteAuthor: string;
+  //@ts-ignore
+    quoteTitle: string; quoteParagraph: string; quoteAuthor: string;
 
   // Alimentação:
   foodTitle: string = "Alimentação";
@@ -51,7 +50,7 @@ export class MainComponent implements OnInit {
     public protoNews: NewsInterface;
     public newsArticles: NewsArticles[];
 
-  constructor(private newsService: NoticiasService, private weatherService: WeatherService, private musicService: MusicService) { 
+  constructor(private newsService: NoticiasService, private weatherService: WeatherService, private musicService: MusicService, private quotService: QuoteService) { 
 // Weather:
   if (Object.keys(JSON.parse(localStorage.getItem('weatherInfo') || '{}')).length === 0) {
     this.local = "Belo Horizonte";
@@ -74,11 +73,14 @@ export class MainComponent implements OnInit {
   this.statusIcon = "play-circle-fill"
   this.statusOfPlayer = "bootstrap-icons.svg#" + this.statusIcon;
 
-    // Quote:
-      this.quoteTitle = "Quote do Dia";
-      this.quoteParagraph = "Eu faço da minha dificuldade a minha motivação. A volta por cima vem na continuação.";
-      this.quoteAuthor = "Desconhecido";
+  // Quote:
+    this.quoteTitle = "Quote do Dia";
 
+    if (Object.keys(JSON.parse(localStorage.getItem('phrase') || '{}')).length === 0) {
+      this.quoteParagraph = "Eu faço da minha dificuldade a minha motivação. A volta por cima vem na continuação.";
+      this.quoteAuthor = "Desconhecido"
+    }
+      
     // News:
       this.protoNews  = {} as NewsInterface;
       this.newsArticles = [];
@@ -184,6 +186,22 @@ export class MainComponent implements OnInit {
       }
     }
   }
+
+  quote() {
+    const quote = JSON.parse(localStorage.getItem('phrase') || '{}');
+    
+    if (Object.keys(quote).length === 0) {
+      this.quotService.phrase();
+      this.quote();
+      
+    } else {
+      let random = Math.floor(Math.random() * 10);
+      
+      this.quoteParagraph = quote[random].texto;
+      this.quoteAuthor = quote[random].autor;
+    }
+    
+  }
   
   ngOnInit(): void {
     this.getNewsDB();
@@ -193,7 +211,7 @@ export class MainComponent implements OnInit {
     this.getNewsDB();
     this.getInfo();
     this.showMusic();
-
+    this.quote();
   }
 
   public setLazerHome(){
