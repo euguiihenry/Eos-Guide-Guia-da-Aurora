@@ -101,6 +101,13 @@
       "lastname": "Dark",
       "username": "joannaDark",
       "password": "joanna1899"
+    },
+    {
+      "id": 7,
+      "firstname": "Guilherme",
+      "lastname": "Henry",
+      "username": "gui12345678",
+      "password": "12345678"
     }
   ]
 }
