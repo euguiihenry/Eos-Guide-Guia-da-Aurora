@@ -11,7 +11,13 @@ import { NewsInterface } from './models/proto-news-interface';
 export class NoticiasService {
 
   //private readonly connection = "https://gnews.io/api/v4/top-headlines?token=67cf13a832ba3a73fce52db137b964ff&topic=breaking-news&lang=pt&country=br&max=4";
-  private readonly connection = 'http://localhost:3000/news';  
+  //private readonly connection = 'http://localhost:3000/news';  
+  private readonly newsAPI = process.env['newsAPI'];
+  private topic = 'breaking-news';
+  private lang = 'pt';
+  private country = 'br';
+  private max = 4;
+  private connection = `https://gnews.io/api/v4/top-headlines?token=${this.newsAPI}&topic=${this.topic}&${this.lang}&${this.country}&max=${this.max}`;
 
   constructor(private http: HttpClient) {}
 
