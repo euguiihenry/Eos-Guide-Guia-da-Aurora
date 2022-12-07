@@ -18,7 +18,7 @@ export class NoticiasService {
   private lang = 'pt';
   private country = 'br';
   private max = 4;
-  private connection = `https://gnews.io/api/v4/top-headlines?token=${this.newsAPI}&topic=${this.topic}&${this.lang}&${this.country}&max=${this.max}`;
+  private connection = `https://gnews.io/api/v4/top-headlines?token=${this.newsAPI}&topic=${this.topic}&lang=${this.lang}&country=${this.country}&max=${this.max}`;
 
   constructor(private http: HttpClient) {}
 
